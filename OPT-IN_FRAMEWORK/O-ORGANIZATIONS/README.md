@@ -64,4 +64,4 @@ Start with individual ATA chapter folders for specific topics:
 
 ---
 
-**Part of**: [AMPEL360 Q100 OPT-IN Framework](../../README.md)
+**Part of**: [OPT-IN Framework](../README.md) | [AMPEL360 Q100](../../README.md)
