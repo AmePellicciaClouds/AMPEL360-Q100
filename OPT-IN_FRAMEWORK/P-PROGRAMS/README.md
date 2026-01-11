@@ -112,7 +112,7 @@ P-PROGRAMS/
 |---------|-------------|-------|
 | ATA 06 | Dimensions and Areas | — |
 | ATA 07 | Lifting and Shoring | — |
-| ATA 08 | Leveling and Weighing | PROGRAM scope (no overlay with INFRA) |
+| ATA 08 | Leveling and Weighing | PROGRAM scope (no overlay with I-INFRASTRUCTURES) |
 | ATA 09 | Towing and Taxiing | — |
 | ATA 10 | Parking, Mooring, Storage, Return to Service | — |
 | ATA 11 | Placards and Markings | — |

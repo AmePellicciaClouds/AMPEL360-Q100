@@ -33,7 +33,7 @@ Program procedures, dimensions, lifting, parking, placards, and servicing.
 
 On-board systems and technologies organized by subsystem category.
 
-See [T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS/00_INDEX.md](./T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS/README.md) for complete listing.
+See [T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS](./T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS/README.md) for complete listing.
 
 ## I-INFRASTRUCTURES
 
