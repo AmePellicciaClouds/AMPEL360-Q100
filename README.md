@@ -1189,7 +1189,7 @@ OPT-IN_FRAMEWORK/
 ```
 ---
 
-## Canonical ATA Content Pattern (Sub-Subject Level)
+## Canonical ATA Content Pattern 
 
 **CSDB lives at section level. ** Each section carries both SSOT and PUB: 
 
