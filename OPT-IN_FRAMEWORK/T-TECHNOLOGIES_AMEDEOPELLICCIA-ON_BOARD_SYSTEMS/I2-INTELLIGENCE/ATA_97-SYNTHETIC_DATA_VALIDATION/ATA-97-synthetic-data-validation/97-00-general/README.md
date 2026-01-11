@@ -53,7 +53,7 @@ This section covers the general aspects of synthetic data generation and validat
 ## Related Chapters
 
 - [ATA 95 — AI/ML Models](../../ATA_95-AI_ML_MODELS/)
-- [ATA 96 — Traceability/DPP Ledger](../../ATA_96-TRACEABILITY_DPP_LEDGER/)
+- [ATA 96 — Traceability/DPP Ledger](../../../../../N-NEURAL_NETWORKS/ATA_96-TRACEABILITY_DPP_LEDGER/)
 - LC06 — Verification (SSOT lifecycle phase)
 
 ---
