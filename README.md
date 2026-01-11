@@ -1439,7 +1439,7 @@ HTML/PDF are outputs; the **IETP runtime** is the deliverable software "image" t
 
 ## License
 
-Apache 2.0 — see [LICENSE](./LICENSE).
+Creative Commons Zero v1.0 Universal — see [LICENSE](./LICENSE).
 
 ---
 
