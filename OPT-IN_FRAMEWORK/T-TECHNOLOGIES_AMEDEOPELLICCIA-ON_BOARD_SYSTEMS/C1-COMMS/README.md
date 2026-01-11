@@ -4,7 +4,7 @@
 
 This axis of the OPT-IN Framework covers **communications systems** for the AMPEL360 Q100 aircraft — speech communications, SATCOM, data transmission, interphone, and audio systems.
 
-> **Governance Note:** ATA chapter 23 is the standard ATA chapter for Communications. It represents *"what comunica"* — speech, data, satellite, interphone, audio integration.
+> **Governance Note:** ATA chapter 23 is the standard ATA chapter for Communications. It represents *"what communicates"* — speech, data, satellite, interphone, audio integration.
 
 ---
 
