@@ -107,6 +107,45 @@ I-INFRASTRUCTURES/
 | ATA 85 | Fuel Cell Systems Infrastructure (enablement only) |
 | IN (non-ATA) | H₂ GSE and Supply Chain |
 
+## Sub-Subject Structure
+
+Each sub-subject folder contains SSOT (Single Source of Truth) and PUB (Publications) subdirectories:
+
+```
+<sub-subject>/
+├── SSOT/                              # Lifecycle Engineering Artifacts
+│   ├── LC01_PROBLEM_STATEMENT/
+│   ├── LC02_SYSTEM_REQUIREMENTS/
+│   ├── LC03_SAFETY_RELIABILITY/
+│   ├── LC04_DESIGN_DEFINITION/
+│   ├── LC05_ANALYSIS_MODELS/
+│   ├── LC06_VERIFICATION/
+│   ├── LC07_VALIDATION/
+│   ├── LC08_CONFIGURATION/
+│   ├── LC09_PRODUCTION/
+│   ├── LC10_OPERATIONS/
+│   ├── LC11_MAINTENANCE/
+│   ├── LC12_CUSTOMER_CARE/
+│   ├── LC13_TRAINING/
+│   └── LC14_RETIREMENT_CIRCULARITY/
+│
+└── PUB/                               # Controlled Deliverables
+    └── AMM/
+        ├── CSDB/
+        │   ├── APPLICABILITY/
+        │   ├── BREX/
+        │   ├── COMMON/
+        │   ├── DM/
+        │   ├── DML/
+        │   ├── ICN/
+        │   └── PM/
+        ├── EXPORT/
+        └── IETP/
+            ├── DEPLOY/
+            ├── PKG/
+            └── RUNTIME/
+```
+
 ## Related Documentation
 
 - See the main [OPT-IN Framework](../README.md) documentation for overall structure
