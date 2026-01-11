@@ -52,7 +52,7 @@ This section covers the general aspects of AI/ML models for the AMPEL360 Q100 ai
 
 ## Related Chapters
 
-- [ATA 96 — Traceability/DPP Ledger](../../ATA_96-TRACEABILITY_DPP_LEDGER/)
+- [ATA 96 — Traceability/DPP Ledger](../../../N-NEURAL_NETWORKS/ATA_96-TRACEABILITY_DPP_LEDGER/)
 - [ATA 97 — Synthetic Data Validation](../../ATA_97-SYNTHETIC_DATA_VALIDATION/)
 - ATA 45 — Central Maintenance System (T-TECHNOLOGIES axis)
 

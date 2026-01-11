@@ -52,8 +52,8 @@ This section covers the general aspects of traceability and Digital Product Pass
 
 ## Related Chapters
 
-- [ATA 95 — AI/ML Models](../../ATA_95-AI_ML_MODELS/)
-- [ATA 97 — Synthetic Data Validation](../../ATA_97-SYNTHETIC_DATA_VALIDATION/)
+- [ATA 95 — AI/ML Models](../../T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS/I2-INTELLIGENCE/ATA_95-AI_ML_MODELS/)
+- [ATA 97 — Synthetic Data Validation](../../T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS/I2-INTELLIGENCE/ATA_97-SYNTHETIC_DATA_VALIDATION/)
 - LC08 — Configuration Management (SSOT lifecycle phase)
 - LC14 — Retirement/Circularity (SSOT lifecycle phase)
 
