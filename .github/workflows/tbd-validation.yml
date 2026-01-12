@@ -27,7 +27,7 @@ jobs:
           LEGACY_PATTERN='TBD-[0-9]{2}-[0-9]{3}([^0-9-]|$)'
           
           # Check for legacy IDs in markdown files (excluding TBD_REGISTER.csv which has legacy column)
-          if grep -rE "$LEGACY_PATTERN" OPT-IN_FRAMEWORK --include="*.md" 2>/dev/null | grep -v "TBD_REGISTER.csv"; then
+          if grep -rE "$LEGACY_PATTERN" OPT-IN_FRAMEWORK --include="*.md" 2>/dev/null | grep -v "/TBD_REGISTER\.csv:"; then
             echo "❌ Found legacy TBD IDs in markdown files"
             echo "Please migrate to canonical format: TBD-AA-SS-KKK-TYPE-OOO-TTT"
             exit 1
