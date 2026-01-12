@@ -108,7 +108,7 @@ jobs:
           echo "Link validation completed for all markdown files." >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Markdown Files" >> $GITHUB_STEP_SUMMARY
-          total_files=$(find . -name "*.md" -o -name "*.MD" 2>/dev/null | grep -v node_modules | grep -v .git | wc -l)
+          total_files=$(find . \( -name "*.md" -o -name "*.MD" \) 2>/dev/null | grep -v node_modules | grep -v .git | wc -l)
           echo "Total markdown files: **$total_files**" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Key Directories" >> $GITHUB_STEP_SUMMARY
