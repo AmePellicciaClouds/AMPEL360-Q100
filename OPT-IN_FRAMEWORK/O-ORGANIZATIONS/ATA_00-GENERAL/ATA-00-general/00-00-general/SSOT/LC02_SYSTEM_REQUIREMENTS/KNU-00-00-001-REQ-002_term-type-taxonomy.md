@@ -10,7 +10,7 @@ Define the hierarchical taxonomy for classifying terminology entries in the AMPE
 
 | Code | Category | Description |
 |------|----------|-------------|
-| ACRO | Acronym | Abbreviated forms (e.g., BWB, LH₂) |
+| ACRO | Acronym | Abbreviated forms (e.g., BWB, LH₂ for liquid hydrogen) |
 | TERM | Technical Term | Domain-specific terminology |
 | UNIT | Unit of Measure | SI and derived units |
 | SYMB | Symbol | Graphical symbols, placards |
