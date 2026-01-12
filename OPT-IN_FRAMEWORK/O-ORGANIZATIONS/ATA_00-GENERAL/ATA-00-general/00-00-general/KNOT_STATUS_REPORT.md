@@ -12,18 +12,18 @@
 | Metric | Value | Progress |
 |--------|-------|----------|
 | **Total KNOTs** | 6 | — |
-| **Total KNUs** | 57 | — |
-| **GENERATED KNUs** | 31 | 54.4% |
-| **PLANNED KNUs** | 26 | 45.6% |
+| **Total KNUs** | 58 | — |
+| **GENERATED KNUs** | 32 | 55.2% |
+| **PLANNED KNUs** | 26 | 44.8% |
 | **APPROVED KNUs** | 0 | 0.0% |
 | **BLOCKED KNUs** | 0 | 0.0% |
-| **Overall Completion** | 31/57 | 54.4% |
+| **Overall Completion** | 32/58 | 55.2% |
 
 ### Status Distribution
 
 ```
-🔵 GENERATED: 31 ( 54.4%) █████████████████████████████░
-⚪ PLANNED:   26 ( 45.6%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░
+🔵 GENERATED: 32 ( 55.2%) ██████████████████████████████░
+⚪ PLANNED:   26 ( 44.8%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 🟢 APPROVED:   0 (  0.0%) 
 🔴 BLOCKED:    0 (  0.0%) 
 ```
@@ -36,7 +36,7 @@
 
 ✅ **4 new TBDs discovered** - CM phase reveals governance and infrastructure uncertainties (expected)
 
-✅ **54.4% overall progress** - 31 of 57 KNUs now in GENERATED status (+6.4% increase)
+✅ **55.2% overall progress** - 32 of 58 KNUs now in GENERATED status (+7.2% increase)
 
 ✅ **3 new spawned KNUs added** - CCB Charter, Cloud Provider Selection, DR Test Procedure
 
@@ -354,7 +354,7 @@ KNOT-00-00-005: ████████████████████░�
 KNOT-96-10-001: ████████████████████░░░░░░ 67% (2/3 KNUs)   =
                 DPP Identifier Grammar (Cross-KNOT)
 
-OVERALL:         ██████████████████████████░ 54% (31/57 KNUs) ⬆ +6%
+OVERALL:         ███████████████████████████░ 55% (32/58 KNUs) ⬆ +7%
 ```
 
 ### Type Distribution
@@ -377,11 +377,11 @@ OVERALL:         █████████████████████
 
 ### Completion Metrics
 
-- **Total Work Packages (KNUs):** 57
-- **Baseline KNUs:** 24 (42%)
-- **Spawned KNUs (from TBDs):** 33 (58%)
-- **GENERATED:** 31 KNUs (54%)
-- **Target for Q1 2026:** 38 KNUs (67%)
+- **Total Work Packages (KNUs):** 58
+- **Baseline KNUs:** 24 (41%)
+- **Spawned KNUs (from TBDs):** 34 (59%)
+- **GENERATED:** 32 KNUs (55%)
+- **Target for Q1 2026:** 39 KNUs (67%)
 - **Current vs Target:** On track (need 7 more by end of Q1)
 
 ### Residual Uncertainty
