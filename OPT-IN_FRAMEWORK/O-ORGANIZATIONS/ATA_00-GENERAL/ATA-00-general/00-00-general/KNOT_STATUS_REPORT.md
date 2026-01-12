@@ -356,18 +356,6 @@ KNOT-00-00-005: ██████████████░░░░░░░�
 
 ---
 
-## 📞 Contact Information
-
-For questions about this report or KNOT/KNU status:
-
-- **Program Management:** STK_CM (cm@ampel360.aero)
-- **Systems Engineering:** STK_SE (se@ampel360.aero)
-- **Data Management:** STK_DATA (data@ampel360.aero)
-- **Publications:** STK_PUB (pub@ampel360.aero)
-- **Testing:** STK_TEST (test@ampel360.aero)
-
----
-
 *This report is automatically generated from KNU_PLAN.csv. For the most current status, refer to the live CSV file in the repository.*
 
 **Repository:** `AmedeoPelliccia/AMPEL360-Q100`
