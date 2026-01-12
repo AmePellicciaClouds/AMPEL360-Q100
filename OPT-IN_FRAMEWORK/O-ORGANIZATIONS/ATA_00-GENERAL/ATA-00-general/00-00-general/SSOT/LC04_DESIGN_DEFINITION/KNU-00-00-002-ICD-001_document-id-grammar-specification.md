@@ -257,7 +257,7 @@ DMC-AMPEL360-96-10-0-0-01-00A-001A-A_001-00_en-US.xml
 ```bash
 #!/bin/bash
 # Example pre-commit hook for KNU ID validation
-grep -E "^KNU-\d{2}-\d{2}-\d{3}-(REQ|ICD|ANA|TEST|PUB|CM|PLAN|SAF)-\d{3}" KNU_PLAN.csv | \
+grep -E "^KNU-[0-9]{2}-[0-9]{2}-[0-9]{3}-(REQ|ICD|ANA|TEST|PUB|CM|PLAN|SAF)-[0-9]{3}" KNU_PLAN.csv | \
   cut -d',' -f1 | sort | uniq -d
 ```
 
