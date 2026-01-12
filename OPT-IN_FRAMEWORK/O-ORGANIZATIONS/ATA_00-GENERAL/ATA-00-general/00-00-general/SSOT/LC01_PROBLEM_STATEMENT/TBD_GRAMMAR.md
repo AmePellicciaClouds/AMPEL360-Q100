@@ -36,8 +36,8 @@ From a canonical TBD ID, the following can be automatically derived:
 
 | Derived Value | Extraction |
 |---------------|------------|
-| ATA Chapter | Segments 1-2 |
-| ATA Section | Segments 2-3 |
+| ATA Chapter | Segment 2 (AA) |
+| ATA Section | Segment 3 (SS) |
 | Parent KNOT | `KNOT-{AA}-{SS}-{KKK}` |
 | Origin KNU | `KNU-{AA}-{SS}-{KKK}-{TYPE}-{OOO}` |
 | TBD Index | Segment 7 |
