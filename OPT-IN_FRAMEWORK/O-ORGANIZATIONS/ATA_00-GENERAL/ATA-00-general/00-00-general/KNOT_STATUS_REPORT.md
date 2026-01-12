@@ -223,8 +223,6 @@
 
 **Key Completions:**
 - ✅ KNU-00-00-004-ANA-001: Traceability Matrix Template (5-level, ~48,500 links)
-
-**Key Completions:**
 - ✅ KNU-00-00-004-ICD-001: Reference Syntax Specification
 - 🆕 1 new KNU spawned by TBD-00-00-004-ICD-001-001
 
