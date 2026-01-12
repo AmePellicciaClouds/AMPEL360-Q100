@@ -251,7 +251,7 @@ function validateDppUri(uri) {
     throw new Error('Invalid DPP URI format');
   }
   
-  const [_, namespace, identifier] = match;
+  const [fullMatch, namespace, identifier] = match;
   
   // Validate namespace
   const validNamespaces = ['term', 'unit', 'component', 'doc', 'knu'];
