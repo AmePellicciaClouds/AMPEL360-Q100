@@ -111,13 +111,20 @@ TBD-00-00-001-ICD-001-005 (CIR export frequency) ✅ RESOLVED 2026-01-12
 
 | Metric | Before | After | Change |
 |--------|--------|-------|--------|
-| **Total TBDs** | 28 | 28 | — |
-| **CLASS I TBDs Resolved** | 3 | 9 | +6 ✅ |
-| **CLASS II TBDs Resolved** | 6 | 19 | +13 ✅ |
-| **Open TBDs** | 19 | 8 | -11 ✅ |
+| **Total TBDs** | 32 | 32 | — |
+| **CLASS I TBDs Resolved** | 3 | 7 | +4 ✅ |
+| **CLASS II TBDs Resolved** | 1 | 14 | +13 ✅ |
+| **CLASS III TBDs** | 6 | 6 | = (all OPEN, inline resolutions) |
+| **Open TBDs** | 27 | 8 | -19 ✅ |
 | **Deferred TBDs** | 0 | 1 | +1 |
 | **Active Blocking Chains** | 3 | 0 | -3 ✅ |
 | **KNUs Unblocked** | — | 8 | +8 ✅ |
+
+**Note on TBD Counts:**
+- Total TBD Register contains 32 entries: 7 CLASS I, 19 CLASS II, 6 CLASS III
+- CLASS I and CLASS II focus: 26 TBDs (7 + 19) - 21 resolved, 1 deferred, 4 open
+- CLASS III TBDs: 6 inline resolutions (all OPEN, low priority, no blocking impact)
+- This PR resolved 19 TBDs (+4 CLASS I, +13 CLASS II, +2 CLASS II deferred→open correction)
 
 ---
 
