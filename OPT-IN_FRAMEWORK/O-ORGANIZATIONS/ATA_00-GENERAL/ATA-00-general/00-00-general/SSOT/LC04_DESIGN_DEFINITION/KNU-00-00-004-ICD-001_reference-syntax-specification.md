@@ -485,25 +485,42 @@ The following KNUs are spawned by this ICD to address embedded TBDs:
 import re
 
 # Extract all URI-style references
-uri_pattern = r'(term|knu|knot|tbd|ampel360)://[\w-]+'
+# Pattern handles both :// format (term://, knu://, etc.) and : format (ampel360:)
+uri_pattern = r'(?:term|knu|knot|tbd)://[\w-]+|ampel360:[\w:]+[\w-]+'
 refs = re.findall(uri_pattern, markdown_content)
+
+# Examples matched:
+# - term://bwb
+# - knu://KNU-00-00-001-REQ-001
+# - ampel360:term:bwb
+# - ampel360:unit:kg
+# - ampel360:component:FWD-LH2-TANK-001
 ```
 
 **Stage 2: Resolve Targets**
 ```python
 def resolve_reference(uri: str):
-    scheme, target = uri.split('://', 1)
+    """Resolve URI to target resource.
+    Handles both :// format and ampel360: format."""
     
-    if scheme == 'term':
-        return database.query_term(target)
-    elif scheme == 'knu':
-        return csv_lookup('KNU_PLAN.csv', target)
-    elif scheme == 'knot':
-        return csv_lookup('KNOTS.csv', target)
-    elif scheme == 'tbd':
-        return tbd_register.lookup(target)
-    elif scheme.startswith('ampel360'):
+    # Handle ampel360: format (e.g., ampel360:term:bwb)
+    if uri.startswith('ampel360:'):
         return dpp_api.query(uri)
+    
+    # Handle :// format (e.g., term://bwb)
+    if '://' in uri:
+        scheme, target = uri.split('://', 1)
+        
+        if scheme == 'term':
+            return database.query_term(target)
+        elif scheme == 'knu':
+            return csv_lookup('KNU_PLAN.csv', target)
+        elif scheme == 'knot':
+            return csv_lookup('KNOTS.csv', target)
+        elif scheme == 'tbd':
+            return tbd_register.lookup(target)
+    
+    return None
 ```
 
 **Stage 3: Validate Links**

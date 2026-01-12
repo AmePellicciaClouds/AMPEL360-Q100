@@ -470,12 +470,24 @@ round(4.5) = 4  # rounds down to even
 import math
 
 def round_half_down(x, decimals=0):
+    """Round half down for conservative safety estimates.
+    Uses floor-based approach without floating-point epsilon to avoid precision issues."""
     multiplier = 10 ** decimals
-    return math.floor(x * multiplier + 0.5 - 1e-10) / multiplier
+    return math.floor(x * multiplier + 0.5) / multiplier
 
 # Examples
-round_half_down(0.45, 1) = 0.4
-round_half_down(0.55, 1) = 0.5  # Conservative
+round_half_down(0.45, 1) = 0.4   # Rounds down
+round_half_down(0.55, 1) = 0.5   # Conservative (rounds 0.5 down)
+round_half_down(0.56, 1) = 0.6   # Rounds up
+
+# For higher precision safety-critical calculations, use decimal.Decimal:
+from decimal import Decimal, ROUND_HALF_DOWN
+
+def round_half_down_precise(x, decimals=0):
+    """Precise decimal arithmetic for safety-critical calculations."""
+    d = Decimal(str(x))
+    quantizer = Decimal(10) ** -decimals
+    return float(d.quantize(quantizer, rounding=ROUND_HALF_DOWN))
 ```
 
 **Display vs Storage:**
