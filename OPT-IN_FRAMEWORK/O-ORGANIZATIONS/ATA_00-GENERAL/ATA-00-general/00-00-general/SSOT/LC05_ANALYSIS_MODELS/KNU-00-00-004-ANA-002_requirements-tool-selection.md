@@ -38,7 +38,7 @@ Cost-effective, Git-native solution aligned with SSOT architecture.
 | Scalability | 15% | 90 | 85 | 80 | 80 |
 | Team Skill | 10% | 70 | 75 | 65 | 90 |
 | Vendor Support | 10% | 95 | 90 | 85 | 60 |
-| **Weighted** | 100% | **70** | **75** | **69** | **87** |
+| **Weighted** | 100% | **69** | **75** | **68** | **87** |
 
 ## 4. Architecture
 
