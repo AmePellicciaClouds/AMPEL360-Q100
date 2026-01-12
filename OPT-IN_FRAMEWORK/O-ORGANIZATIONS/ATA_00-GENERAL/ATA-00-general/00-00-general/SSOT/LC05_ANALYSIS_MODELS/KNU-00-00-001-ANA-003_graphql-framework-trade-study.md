@@ -39,11 +39,11 @@ verification_method: "Analysis"
 effort_predicted: 3
 
 # Modification Tracking
-spawned_by_tbd: "TBD-00-002"
+spawned_by_tbd: "TBD-00-00-001-ICD-001-002"
 triggers_tbds:
-  - "TBD-00-017"
+  - "TBD-00-00-001-ANA-003-002"
 resolves_tbds:
-  - "TBD-00-002"
+  - "TBD-00-00-001-ICD-001-002"
 modification_type: "NEW"
 
 # Traceability
@@ -100,11 +100,11 @@ This trade study evaluates GraphQL API frameworks for the AMPEL360 Q100 terminol
 
 ### Resolved TBD
 
-✅ **[TBD-00-002]** GraphQL framework selection — **RESOLVED: PostGraphile**
+✅ **[TBD-00-00-001-ICD-001-002]** GraphQL framework selection — **RESOLVED: PostGraphile**
 
 ### New TBDs
 
-🆕 **[TBD-00-017]** API authentication strategy (CLASS II) → spawns KNU-00-00-001-ICD-003  
+🆕 **[TBD-00-00-001-ANA-003-002]** API authentication strategy (CLASS II) → spawns KNU-00-00-001-ICD-003  
 
 ---
 
@@ -378,7 +378,7 @@ CREATE POLICY terms_write_policy ON terms
 
 ## 6. Identified TBDs
 
-### [TBD-00-017] API Authentication Strategy
+### [TBD-00-00-001-ANA-003-002] API Authentication Strategy
 
 **Classification:** CLASS II  
 **Description:** Define authentication/authorization strategy for GraphQL API (JWT vs OAuth 2.0 vs mTLS vs PostgreSQL RLS-only).  
@@ -393,13 +393,13 @@ CREATE POLICY terms_write_policy ON terms
 ### 7.1 Immediate Actions (Week 1)
 
 1. ✅ **Approve PostGraphile** as GraphQL framework
-2. 🔄 **Resolve TBD-00-002** (GraphQL framework uncertainty) — **RESOLVED: PostGraphile**
+2. 🔄 **Resolve TBD-00-00-001-ICD-001-002** (GraphQL framework uncertainty) — **RESOLVED: PostGraphile**
 3. 📋 **Update KNU-00-00-001-ICD-001** with PostGraphile integration details
 4. 📋 **Provision development environment** (PostGraphile 4.13 + PostgreSQL 15)
 
 ### 7.2 Short-Term Actions (Weeks 2-4)
 
-1. 📋 **Generate KNU-00-00-001-ICD-003** (API Authentication Spec) to resolve TBD-00-017
+1. 📋 **Generate KNU-00-00-001-ICD-003** (API Authentication Spec) to resolve TBD-00-00-001-ANA-003-002
 2. 📋 **Implement PostGraphile server** with smart comments for schema control
 3. 📋 **Performance testing** (validate 5,500 rps throughput)
 4. 📋 **GraphQL Playground** setup for development/testing
@@ -421,14 +421,14 @@ CREATE POLICY terms_write_policy ON terms
 |--------------------|--------------|
 | KNU-00-00-001-ICD-001 | Trade study supports GraphQL API layer for terminology database |
 | KNU-00-00-001-ANA-002 | PostgreSQL 15 selection enables PostGraphile integration |
-| TBD-00-002 | GraphQL framework uncertainty → **RESOLVED: PostGraphile** |
+| TBD-00-00-001-ICD-001-002 | GraphQL framework uncertainty → **RESOLVED: PostGraphile** |
 
 ### Downstream Traceability
 
 | Child Artifact | Relationship |
 |----------------|--------------|
 | KNU-00-00-001-ICD-001 | Database schema will be updated with PostGraphile smart comments |
-| KNU-00-00-001-ICD-003 | API Authentication Specification (spawned by TBD-00-017) |
+| KNU-00-00-001-ICD-003 | API Authentication Specification (spawned by TBD-00-00-001-ANA-003-002) |
 
 ---
 
@@ -446,7 +446,7 @@ CREATE POLICY terms_write_policy ON terms
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| I01-R01 | 2026-01-12 | STK_DATA | Initial trade study; PostGraphile selected; TBD-00-002 resolved |
+| I01-R01 | 2026-01-12 | STK_DATA | Initial trade study; PostGraphile selected; TBD-00-00-001-ICD-001-002 resolved |
 
 ---
 

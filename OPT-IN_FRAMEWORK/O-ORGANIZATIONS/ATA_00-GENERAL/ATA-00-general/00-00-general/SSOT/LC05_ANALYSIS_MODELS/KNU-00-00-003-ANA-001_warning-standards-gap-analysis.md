@@ -41,8 +41,8 @@ effort_predicted: 3
 # Modification Tracking
 spawned_by_tbd: null
 triggers_tbds:
-  - "TBD-03-003"
-  - "TBD-03-004"
+  - "TBD-00-00-003-ANA-001-001"
+  - "TBD-00-00-003-ANA-001-002"
 modification_type: "NEW"
 
 # Traceability
@@ -299,13 +299,13 @@ This analysis identifies safety labeling and warning symbol gaps between AMPEL36
 2. **Compound symbol** (single integrated warning)
 3. **Hierarchical** (primary hazard + "see manual for details")
 
-**Spawns**: **[TBD-03-003]** Compound hazard symbol strategy (CLASS II)
+**Spawns**: **[TBD-00-00-003-ANA-001-001]** Compound hazard symbol strategy (CLASS II)
 
 ---
 
 ## 5. Identified TBDs
 
-### [TBD-03-003] Compound Hazard Symbols
+### [TBD-00-00-003-ANA-001-001] Compound Hazard Symbols
 
 **Classification:** CLASS II  
 **Description:** Define strategy for compound hazard symbols (multiple symbols vs integrated compound symbol vs hierarchical).  
@@ -313,7 +313,7 @@ This analysis identifies safety labeling and warning symbol gaps between AMPEL36
 **Resolution Target:** 2026-03-31  
 **Spawns:** KNU-00-00-003-ANA-002 (Compound Hazard Symbol Design Study)  
 
-### [TBD-03-004] Symbol Visibility Testing
+### [TBD-00-00-003-ANA-001-002] Symbol Visibility Testing
 
 **Classification:** CLASS II  
 **Description:** Define visibility testing requirements for novel symbols (legibility at 5m distance, color contrast ratios, lighting conditions).  
@@ -328,13 +328,13 @@ This analysis identifies safety labeling and warning symbol gaps between AMPEL36
 ### 6.1 Immediate Actions (Within 2 Weeks)
 
 1. 🔴 **CRITICAL**: Coordinate with EASA for AI/ML indication symbol guidance
-2. 📋 **Resolve TBD-03-003** (Compound hazard strategy) — Blocking symbol design
+2. 📋 **Resolve TBD-00-00-003-ANA-001-001** (Compound hazard strategy) — Blocking symbol design
 3. 📋 **Symbol design RFP** — Engage industrial design firm (experience: ISO 7010, aerospace)
 
 ### 6.2 Short-Term Actions (2-4 Weeks)
 
-1. 📋 **Generate KNU-00-00-003-ANA-002** (Compound Hazard Symbol Study) to resolve TBD-03-003
-2. 📋 **Generate KNU-00-00-003-TEST-002** (Visibility Test Protocol) to resolve TBD-03-004
+1. 📋 **Generate KNU-00-00-003-ANA-002** (Compound Hazard Symbol Study) to resolve TBD-00-00-003-ANA-001-001
+2. 📋 **Generate KNU-00-00-003-TEST-002** (Visibility Test Protocol) to resolve TBD-00-00-003-ANA-001-002
 3. 📋 **Prototype symbols** — Digital mockups for all 19 gaps
 4. 📋 **Stakeholder review** — Engineering, Safety, Maintenance, Operations
 
@@ -361,8 +361,8 @@ This analysis identifies safety labeling and warning symbol gaps between AMPEL36
 | Child Artifact | Relationship |
 |----------------|--------------|
 | KNU-00-00-003-ICD-001 | H₂ Hazard Symbol Library will include gap-identified symbols |
-| KNU-00-00-003-ANA-002 | Compound Hazard Symbol Study (spawned by TBD-03-003) |
-| KNU-00-00-003-TEST-002 | Symbol Visibility Test Protocol (spawned by TBD-03-004) |
+| KNU-00-00-003-ANA-002 | Compound Hazard Symbol Study (spawned by TBD-00-00-003-ANA-001-001) |
+| KNU-00-00-003-TEST-002 | Symbol Visibility Test Protocol (spawned by TBD-00-00-003-ANA-001-002) |
 
 ---
 

@@ -41,8 +41,8 @@ effort_predicted: 3
 # Modification Tracking
 spawned_by_tbd: null
 triggers_tbds:
-  - "TBD-00-020"
-  - "TBD-00-021"
+  - "TBD-00-00-004-ANA-001-001"
+  - "TBD-00-00-004-ANA-001-002"
 modification_type: "NEW"
 
 # Traceability
@@ -297,7 +297,7 @@ change_history:
 | **ReqView** | 75/100 | Affordable; good YAML support; limited certification reports |
 | **Custom (Python)** | 70/100 | Full YAML control; requires development effort |
 
-**Spawns**: **[TBD-00-020]** Requirements tool selection (CLASS I)
+**Spawns**: **[TBD-00-00-004-ANA-001-001]** Requirements tool selection (CLASS I)
 
 ---
 
@@ -312,13 +312,13 @@ change_history:
 | **Verification Coverage** | 100% | All requirements must be verified |
 | **Certification Coverage** | 100% | All cert-related requirements must trace to regulations |
 
-**Spawns**: **[TBD-00-021]** Coverage thresholds (CLASS II) — Rationale: May need exceptions for non-critical requirements
+**Spawns**: **[TBD-00-00-004-ANA-001-002]** Coverage thresholds (CLASS II) — Rationale: May need exceptions for non-critical requirements
 
 ---
 
 ## 7. Identified TBDs
 
-### [TBD-00-020] Requirements Tool Selection
+### [TBD-00-00-004-ANA-001-001] Requirements Tool Selection
 
 **Classification:** CLASS I  
 **Description:** Select requirements management tool (IBM DOORS Next vs Jama Connect vs ReqView vs custom Python solution).  
@@ -326,7 +326,7 @@ change_history:
 **Resolution Target:** 2026-03-01  
 **Spawns:** KNU-00-00-004-ANA-002 (Requirements Tool Trade Study)  
 
-### [TBD-00-021] Coverage Thresholds
+### [TBD-00-00-004-ANA-001-002] Coverage Thresholds
 
 **Classification:** CLASS II  
 **Description:** Define coverage threshold exceptions (e.g., 95% instead of 100% for non-critical requirements).  
@@ -340,14 +340,14 @@ change_history:
 
 ### 8.1 Immediate Actions (Within 2 Weeks)
 
-1. 📋 **Resolve TBD-00-020** (Requirements tool selection) — CRITICAL for implementation
+1. 📋 **Resolve TBD-00-00-004-ANA-001-001** (Requirements tool selection) — CRITICAL for implementation
 2. 📋 **Pilot traceability** — Implement template for KNOT-00-00-001 (12 KNUs)
 3. 📋 **YAML schema validation** — Define JSON Schema for traceability metadata
 
 ### 8.2 Short-Term Actions (2-4 Weeks)
 
-1. 📋 **Generate KNU-00-00-004-ANA-002** (Requirements Tool Trade Study) to resolve TBD-00-020
-2. 📋 **Generate KNU-00-00-004-REQ-002** (Coverage Threshold Requirements) to resolve TBD-00-021
+1. 📋 **Generate KNU-00-00-004-ANA-002** (Requirements Tool Trade Study) to resolve TBD-00-00-004-ANA-001-001
+2. 📋 **Generate KNU-00-00-004-REQ-002** (Coverage Threshold Requirements) to resolve TBD-00-00-004-ANA-001-002
 3. 📋 **Tooling integration** — Connect requirements tool with Git, CSDB
 4. 📋 **Training** — Requirements management best practices for STK_SE, STK_CM
 
@@ -375,8 +375,8 @@ change_history:
 | Child Artifact | Relationship |
 |----------------|--------------|
 | KNU-00-00-004-ICD-001 | Reference syntax specification implements traceability URIs |
-| KNU-00-00-004-ANA-002 | Requirements Tool Trade Study (spawned by TBD-00-020) |
-| KNU-00-00-004-REQ-002 | Coverage Threshold Requirements (spawned by TBD-00-021) |
+| KNU-00-00-004-ANA-002 | Requirements Tool Trade Study (spawned by TBD-00-00-004-ANA-001-001) |
+| KNU-00-00-004-REQ-002 | Coverage Threshold Requirements (spawned by TBD-00-00-004-ANA-001-002) |
 
 ---
 

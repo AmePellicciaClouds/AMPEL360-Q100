@@ -16,13 +16,13 @@ This document tracks **Class I TBDs** — program-level decisions requiring exec
 
 | TBD ID | Description | Decision Owner | Decision Date Target | Blocked KNUs | Status |
 |--------|-------------|----------------|----------------------|--------------|--------|
-| **TBD-00-015** | Cloud vs on-premises deployment | STK_DATA | 2026-02-28 | KNU-00-00-001-ANA-005; KNU-00-00-001-CM-003 | 🔴 OPEN |
-| **TBD-00-019** | Multi-language requirements | STK_CM | 2026-03-15 | KNU-00-00-002-ANA-003; KNU-00-00-002-PLAN-001 | 🔴 OPEN |
-| **TBD-00-020** | Requirements tool selection | STK_SE | 2026-03-01 | KNU-00-00-004-ANA-002 | 🔴 OPEN |
+| **TBD-00-00-001-ANA-002-002** | Cloud vs on-premises deployment | STK_DATA | 2026-02-28 | KNU-00-00-001-ANA-005; KNU-00-00-001-CM-003 | 🔴 OPEN |
+| **TBD-00-00-002-ANA-001-002** | Multi-language requirements | STK_CM | 2026-03-15 | KNU-00-00-002-ANA-003; KNU-00-00-002-PLAN-001 | 🔴 OPEN |
+| **TBD-00-00-004-ANA-001-001** | Requirements tool selection | STK_SE | 2026-03-01 | KNU-00-00-004-ANA-002 | 🔴 OPEN |
 
 ---
 
-## TBD-00-015: Cloud vs On-Premises Deployment
+## TBD-00-00-001-ANA-002-002: Cloud vs On-Premises Deployment
 
 ### Decision Required
 
@@ -76,7 +76,7 @@ Select deployment model for terminology database and supporting infrastructure:
 
 ---
 
-## TBD-00-019: Multi-Language Requirements
+## TBD-00-00-002-ANA-001-002: Multi-Language Requirements
 
 ### Decision Required
 
@@ -131,7 +131,7 @@ Define multi-language documentation strategy for international certification and
 
 ---
 
-## TBD-00-020: Requirements Tool Selection
+## TBD-00-00-004-ANA-001-001: Requirements Tool Selection
 
 ### Decision Required
 
@@ -241,17 +241,17 @@ A Class I TBD automatically escalates to the next approval level if:
 
 ### Immediate Actions (This Week)
 
-1. **TBD-00-020 (Requirements Tool):** Schedule decision brief with STK_SE + Chief Engineer by 2026-01-17
-2. **TBD-00-015 (Cloud Deployment):** Complete KNU-00-00-001-ANA-005 (Cloud Deployment Trade Study) by 2026-01-24
-3. **TBD-00-019 (Multi-Language):** Complete KNU-00-00-002-ANA-003 (Multi-Language Strategy) by 2026-01-31
+1. **TBD-00-00-004-ANA-001-001 (Requirements Tool):** Schedule decision brief with STK_SE + Chief Engineer by 2026-01-17
+2. **TBD-00-00-001-ANA-002-002 (Cloud Deployment):** Complete KNU-00-00-001-ANA-005 (Cloud Deployment Trade Study) by 2026-01-24
+3. **TBD-00-00-002-ANA-001-002 (Multi-Language):** Complete KNU-00-00-002-ANA-003 (Multi-Language Strategy) by 2026-01-31
 
 ### Decision Checkpoints
 
 | Date | Checkpoint | Decision |
 |------|------------|----------|
-| **2026-02-01** | Requirements Tool Decision Deadline | TBD-00-020 (MUST decide) |
-| **2026-02-28** | Cloud Deployment Decision Deadline | TBD-00-015 (MUST decide) |
-| **2026-03-15** | Multi-Language Decision Deadline | TBD-00-019 (MUST decide) |
+| **2026-02-01** | Requirements Tool Decision Deadline | TBD-00-00-004-ANA-001-001 (MUST decide) |
+| **2026-02-28** | Cloud Deployment Decision Deadline | TBD-00-00-001-ANA-002-002 (MUST decide) |
+| **2026-03-15** | Multi-Language Decision Deadline | TBD-00-00-002-ANA-001-002 (MUST decide) |
 
 ---
 

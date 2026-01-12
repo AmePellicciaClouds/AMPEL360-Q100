@@ -39,12 +39,12 @@ verification_method: "Analysis"
 effort_predicted: 2
 
 # Modification Tracking
-spawned_by_tbd: "TBD-00-001"
+spawned_by_tbd: "TBD-00-00-001-ICD-001-001"
 triggers_tbds:
-  - "TBD-00-014"
-  - "TBD-00-015"
+  - "TBD-00-00-001-ANA-002-001"
+  - "TBD-00-00-001-ANA-002-002"
 resolves_tbds:
-  - "TBD-00-001"
+  - "TBD-00-00-001-ICD-001-001"
 modification_type: "NEW"
 
 # Traceability
@@ -105,12 +105,12 @@ This trade study evaluates database platforms for the AMPEL360 Q100 Program Glos
 
 ### Resolved TBD
 
-✅ **[TBD-00-001]** PostgreSQL 15 vs 16 version uncertainty — **RESOLVED: PostgreSQL 15**
+✅ **[TBD-00-00-001-ICD-001-001]** PostgreSQL 15 vs 16 version uncertainty — **RESOLVED: PostgreSQL 15**
 
 ### New TBDs
 
-🆕 **[TBD-00-014]** Database backup strategy (CLASS II) → spawns KNU-00-00-001-CM-003  
-🆕 **[TBD-00-015]** Cloud vs on-premises deployment (CLASS I) → spawns KNU-00-00-001-ANA-005  
+🆕 **[TBD-00-00-001-ANA-002-001]** Database backup strategy (CLASS II) → spawns KNU-00-00-001-CM-003  
+🆕 **[TBD-00-00-001-ANA-002-002]** Cloud vs on-premises deployment (CLASS I) → spawns KNU-00-00-001-ANA-005  
 
 ---
 
@@ -444,7 +444,7 @@ Despite PostgreSQL 16 scoring slightly higher (93.5 vs 90.5), **PostgreSQL 15 is
 
 This analysis has identified the following uncertainties requiring resolution:
 
-### [TBD-00-014] Database Backup Strategy
+### [TBD-00-00-001-ANA-002-001] Database Backup Strategy
 
 **Classification:** CLASS II  
 **Description:** Define backup frequency, retention policy, and disaster recovery procedures for terminology database (daily incremental vs continuous WAL archiving).  
@@ -452,7 +452,7 @@ This analysis has identified the following uncertainties requiring resolution:
 **Resolution Target:** 2026-02-15  
 **Spawns:** KNU-00-00-001-CM-003 (Database Backup and Recovery Procedure)  
 
-### [TBD-00-015] Cloud vs On-Premises Deployment
+### [TBD-00-00-001-ANA-002-002] Cloud vs On-Premises Deployment
 
 **Classification:** CLASS I  
 **Description:** Select deployment model: cloud-hosted (AWS RDS, Azure Database) vs on-premises (self-managed) vs hybrid.  
@@ -467,14 +467,14 @@ This analysis has identified the following uncertainties requiring resolution:
 ### 7.1 Immediate Actions (Week 1)
 
 1. ✅ **Approve PostgreSQL 15** as terminology database platform
-2. 🔄 **Resolve TBD-00-001** (PostgreSQL 15 vs 16 uncertainty) — **RESOLVED: PostgreSQL 15**
+2. 🔄 **Resolve TBD-00-00-001-ICD-001-001** (PostgreSQL 15 vs 16 uncertainty) — **RESOLVED: PostgreSQL 15**
 3. 📋 **Update KNU-00-00-001-ICD-001** (Terminology Database Schema) with PostgreSQL 15 specification
 4. 📋 **Provision development environment** (PostgreSQL 15.5 instance)
 
 ### 7.2 Short-Term Actions (Weeks 2-4)
 
-1. 📋 **Generate KNU-00-00-001-CM-003** (Database Backup Procedure) to resolve TBD-00-014
-2. 📋 **Generate KNU-00-00-001-ANA-005** (Cloud Deployment Trade Study) to resolve TBD-00-015
+1. 📋 **Generate KNU-00-00-001-CM-003** (Database Backup Procedure) to resolve TBD-00-00-001-ANA-002-001
+2. 📋 **Generate KNU-00-00-001-ANA-005** (Cloud Deployment Trade Study) to resolve TBD-00-00-001-ANA-002-002
 3. 📋 **Implement schema** (tables, indexes, triggers, audit functions)
 4. 📋 **Integrate with PostGraphile** (see KNU-00-00-001-ANA-003)
 
@@ -482,7 +482,7 @@ This analysis has identified the following uncertainties requiring resolution:
 
 1. 📋 **Load initial glossary data** (95 terms from KNU-00-00-001-ANA-001)
 2. 📋 **Implement CSDB export** (PostgreSQL → S1000D XML pipeline)
-3. 📋 **Production deployment** (resolve TBD-00-015 first)
+3. 📋 **Production deployment** (resolve TBD-00-00-001-ANA-002-002 first)
 4. 📋 **Stakeholder training** (engineering, CM, publications teams)
 
 ---
@@ -494,7 +494,7 @@ This analysis has identified the following uncertainties requiring resolution:
 | Parent Requirement | Relationship |
 |--------------------|--------------|
 | KNU-00-00-001-ICD-001 | Trade study supports database platform selection for terminology schema |
-| TBD-00-001 | PostgreSQL 15 vs 16 uncertainty → **RESOLVED: PostgreSQL 15** |
+| TBD-00-00-001-ICD-001-001 | PostgreSQL 15 vs 16 uncertainty → **RESOLVED: PostgreSQL 15** |
 
 ### Downstream Traceability
 
@@ -502,8 +502,8 @@ This analysis has identified the following uncertainties requiring resolution:
 |----------------|--------------|
 | KNU-00-00-001-ICD-001 | Schema specification will be updated with PostgreSQL 15 details |
 | KNU-00-00-001-ANA-003 | GraphQL framework trade study (PostGraphile selected for PG15 integration) |
-| KNU-00-00-001-CM-003 | Database Backup Procedure (spawned by TBD-00-014) |
-| KNU-00-00-001-ANA-005 | Cloud Deployment Trade Study (spawned by TBD-00-015) |
+| KNU-00-00-001-CM-003 | Database Backup Procedure (spawned by TBD-00-00-001-ANA-002-001) |
+| KNU-00-00-001-ANA-005 | Cloud Deployment Trade Study (spawned by TBD-00-00-001-ANA-002-002) |
 
 ---
 
@@ -536,7 +536,7 @@ This analysis has identified the following uncertainties requiring resolution:
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| I01-R01 | 2026-01-12 | STK_DATA | Initial trade study; PostgreSQL 15 selected; TBD-00-001 resolved |
+| I01-R01 | 2026-01-12 | STK_DATA | Initial trade study; PostgreSQL 15 selected; TBD-00-00-001-ICD-001-001 resolved |
 
 ---
 

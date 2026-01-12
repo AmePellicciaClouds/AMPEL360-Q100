@@ -41,8 +41,8 @@ effort_predicted: 2
 # Modification Tracking
 spawned_by_tbd: null
 triggers_tbds:
-  - "TBD-00-018"
-  - "TBD-00-019"
+  - "TBD-00-00-002-ANA-001-001"
+  - "TBD-00-00-002-ANA-001-002"
 modification_type: "NEW"
 
 # Traceability
@@ -276,7 +276,7 @@ This analysis projects the total documentation volume for the AMPEL360 Q100 BWB 
 
 ## 5. Identified TBDs
 
-### [TBD-00-018] Post-PDR Volume Refinement
+### [TBD-00-00-002-ANA-001-001] Post-PDR Volume Refinement
 
 **Classification:** CLASS II  
 **Description:** Refine document volume projection after PDR milestone based on actual KNOT/KNU generation rates.  
@@ -284,7 +284,7 @@ This analysis projects the total documentation volume for the AMPEL360 Q100 BWB 
 **Resolution Target:** 2026-06-01 (Post-PDR)  
 **Spawns:** KNU-00-00-002-ANA-002 (Post-PDR Volume Analysis)  
 
-### [TBD-00-019] Multi-Language Requirements
+### [TBD-00-00-002-ANA-001-002] Multi-Language Requirements
 
 **Classification:** CLASS I  
 **Description:** Define multi-language documentation requirements (English, French, German, Spanish) for international certification and operations.  
@@ -325,7 +325,7 @@ This analysis projects the total documentation volume for the AMPEL360 Q100 BWB 
 ### 7.1 Immediate Actions (Within 2 Weeks)
 
 1. 📋 **Baseline projection** — Accept 1.7M page projection as baseline
-2. 📋 **Resolve TBD-00-019** — Multi-language requirements (CRITICAL for resource planning)
+2. 📋 **Resolve TBD-00-00-002-ANA-001-002** — Multi-language requirements (CRITICAL for resource planning)
 3. 📋 **Staffing plan** — Allocate authors for TIER 1 KNOTs (85 KNOTs, 850 KNUs)
 
 ### 7.2 Short-Term Actions (2-4 Weeks)
@@ -337,7 +337,7 @@ This analysis projects the total documentation volume for the AMPEL360 Q100 BWB 
 ### 7.3 Medium-Term Actions (1-3 Months)
 
 1. 📋 **Pilot KNOTs** — Complete 3 TIER 1 KNOTs to validate projection
-2. 📋 **Post-PDR refinement** — Resolve TBD-00-018 after PDR milestone
+2. 📋 **Post-PDR refinement** — Resolve TBD-00-00-002-ANA-001-001 after PDR milestone
 3. 📋 **Continuous monitoring** — Track actual vs projected page counts
 
 ---
@@ -355,8 +355,8 @@ This analysis projects the total documentation volume for the AMPEL360 Q100 BWB 
 
 | Child Artifact | Relationship |
 |----------------|--------------|
-| KNU-00-00-002-ANA-002 | Post-PDR Volume Analysis (spawned by TBD-00-018) |
-| KNU-00-00-002-ANA-003 | Multi-Language Strategy Analysis (spawned by TBD-00-019) |
+| KNU-00-00-002-ANA-002 | Post-PDR Volume Analysis (spawned by TBD-00-00-002-ANA-001-001) |
+| KNU-00-00-002-ANA-003 | Multi-Language Strategy Analysis (spawned by TBD-00-00-002-ANA-001-002) |
 | KNU-00-00-002-CM-001 | Version control strategy sized based on this projection |
 
 ---

@@ -41,7 +41,7 @@ effort_predicted: 3
 # Modification Tracking
 spawned_by_tbd: null
 triggers_tbds:
-  - "TBD-00-023"
+  - "TBD-00-00-005-ANA-001-002"
 modification_type: "NEW"
 
 # Traceability
@@ -399,7 +399,7 @@ Example:
 
 ## 4. Identified TBDs
 
-### [TBD-00-023] H₂ Industry Standards Coordination
+### [TBD-00-00-005-ANA-001-002] H₂ Industry Standards Coordination
 
 **Classification:** CLASS II  
 **Description:** Coordinate with H₂ industry standards (ISO/TR 15916, SAE J2601, IEC 62282) to ensure unit consistency for certification and international operations.  
@@ -413,13 +413,13 @@ Example:
 
 ### 5.1 Immediate Actions (Within 2 Weeks)
 
-1. 📋 **Resolve TBD-00-023** (H₂ standards coordination) — Align with ISO/TR 15916
+1. 📋 **Resolve TBD-00-00-005-ANA-001-002** (H₂ standards coordination) — Align with ISO/TR 15916
 2. 📋 **Update KNU-00-00-005-ICD-001** (Unit Conversion Table Specification) with H₂ units
 3. 📋 **Training** — H₂ unit conventions for engineering, operations, maintenance teams
 
 ### 5.2 Short-Term Actions (2-4 Weeks)
 
-1. 📋 **Generate KNU-00-00-005-ANA-002** (H₂ Standards Coordination Analysis) to resolve TBD-00-023
+1. 📋 **Generate KNU-00-00-005-ANA-002** (H₂ Standards Coordination Analysis) to resolve TBD-00-00-005-ANA-001-002
 2. 📋 **Validation** — Cross-check all H₂ unit calculations in design documents
 3. 📋 **Integration** — Update CSDB S1000D unit libraries with H₂ units
 
@@ -446,7 +446,7 @@ Example:
 | Child Artifact | Relationship |
 |----------------|--------------|
 | KNU-00-00-005-ICD-001 | Unit Conversion Table Specification implements H₂ units |
-| KNU-00-00-005-ANA-002 | H₂ Standards Coordination Analysis (spawned by TBD-00-023) |
+| KNU-00-00-005-ANA-002 | H₂ Standards Coordination Analysis (spawned by TBD-00-00-005-ANA-001-002) |
 
 ---
 

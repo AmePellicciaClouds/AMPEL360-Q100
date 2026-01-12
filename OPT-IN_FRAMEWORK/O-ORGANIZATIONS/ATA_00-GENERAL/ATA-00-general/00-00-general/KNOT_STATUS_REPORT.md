@@ -46,9 +46,9 @@
 
 | TBD ID | Decision Required | Owner | Deadline | Blocked KNUs | Impact |
 |--------|-------------------|-------|----------|--------------|--------|
-| **TBD-00-015** | Cloud vs on-premises deployment | STK_DATA | 2026-02-28 | KNU-00-00-001-ANA-005; KNU-00-00-001-CM-003 | $145k TCO |
-| **TBD-00-019** | Multi-language requirements | STK_CM | 2026-03-15 | KNU-00-00-002-ANA-003; KNU-00-00-002-PLAN-001 | $3.8M |
-| **TBD-00-020** | Requirements tool selection | STK_SE | 2026-03-01 | KNU-00-00-004-ANA-002 | $400k |
+| **TBD-00-00-001-ANA-002-002** | Cloud vs on-premises deployment | STK_DATA | 2026-02-28 | KNU-00-00-001-ANA-005; KNU-00-00-001-CM-003 | $145k TCO |
+| **TBD-00-00-002-ANA-001-002** | Multi-language requirements | STK_CM | 2026-03-15 | KNU-00-00-002-ANA-003; KNU-00-00-002-PLAN-001 | $3.8M |
+| **TBD-00-00-004-ANA-001-001** | Requirements tool selection | STK_SE | 2026-03-01 | KNU-00-00-004-ANA-002 | $400k |
 
 **⚠️ Decision Status:** All 3 have recommendations in DECISION_LOG.md, pending approval authority sign-off
 
@@ -114,7 +114,7 @@
 | KNU-00-00-002-ANA-001 | ANA | 🔵 GENERATED | MEDIUM | Document Volume Projection - GENERATED ✅ |
 | KNU-00-00-002-CM-001 | CM | ⚪ PLANNED | MEDIUM | Baseline CM process |
 | KNU-00-00-002-PUB-001 | PUB-TRN | 🔵 GENERATED | HIGH | Baseline training material - GENERATED |
-| KNU-00-00-002-PLAN-001 | PLAN | ⚪ PLANNED | MEDIUM | Spawned by TBD-00-004 |
+| KNU-00-00-002-PLAN-001 | PLAN | ⚪ PLANNED | MEDIUM | Spawned by TBD-00-00-001-ICD-001-004 |
 | KNU-00-00-002-TEST-001 | TEST | ⚪ PLANNED | HIGH | Validates ID grammar compliance 🆕 |
 | KNU-00-00-002-CM-002 | CM | ⚪ PLANNED | MEDIUM | ID collision prevention 🆕 |
 | KNU-00-00-002-ANA-002 | ANA | ⚪ PLANNED | MEDIUM | Post-PDR Volume Analysis 🆕 |

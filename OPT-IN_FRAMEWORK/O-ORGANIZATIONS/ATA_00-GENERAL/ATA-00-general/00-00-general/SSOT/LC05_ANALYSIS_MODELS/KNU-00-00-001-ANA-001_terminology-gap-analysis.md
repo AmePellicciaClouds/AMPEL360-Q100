@@ -41,8 +41,8 @@ effort_predicted: 3
 # Modification Tracking
 spawned_by_tbd: null
 triggers_tbds:
-  - "TBD-00-011"
-  - "TBD-00-013"
+  - "TBD-00-00-001-ANA-001-001"
+  - "TBD-00-00-001-ANA-001-003"
 modification_type: "NEW"
 
 # Traceability
@@ -240,7 +240,7 @@ The following are **out of scope** for this analysis:
 
 #### 3.2.3 Recommendations
 
-1. **CRITICAL PRIORITY**: Establish H₂ terminology authority (spawns **[TBD-00-011]** CLASS II)
+1. **CRITICAL PRIORITY**: Establish H₂ terminology authority (spawns **[TBD-00-00-001-ANA-001-001]** CLASS II)
 2. **CREATE** 20 novel H₂-specific terms (Boil-Off Rate, Cryogenic Fuel Tank, etc.)
 3. **ADAPT** 10 standard terms with H₂-specific extensions (Thermal Protection System, Vent and Relief System, etc.)
 4. **ADOPT** 5 standard terms without modification (Pressure Regulator, Fill/Drain Coupling, etc.)
@@ -389,7 +389,7 @@ The following are **out of scope** for this analysis:
 
 This analysis has identified the following uncertainties requiring resolution:
 
-### [TBD-00-011] H₂ Terminology Authority
+### [TBD-00-00-001-ANA-001-001] H₂ Terminology Authority
 
 **Classification:** CLASS II  
 **Description:** Establish authoritative source for H₂ propulsion terminology (SAE E-39 committee vs internal Q100 glossary vs ISO/TR 15916 cross-reference).  
@@ -397,7 +397,7 @@ This analysis has identified the following uncertainties requiring resolution:
 **Resolution Target:** 2026-02-28  
 **Spawns:** KNU-00-00-001-ANA-004 (H₂ Standards Coordination Plan)  
 
-### [TBD-00-013] Terminology Review Cadence
+### [TBD-00-00-001-ANA-001-003] Terminology Review Cadence
 
 **Classification:** CLASS II  
 **Description:** Define review frequency for Program Glossary updates (quarterly vs milestone-based vs continuous).  
@@ -411,14 +411,14 @@ This analysis has identified the following uncertainties requiring resolution:
 
 ### 6.1 Immediate Actions (Within 2 Weeks)
 
-1. **Resolve TBD-00-011** (H₂ Terminology Authority) — CRITICAL for fuel system design
+1. **Resolve TBD-00-00-001-ANA-001-001** (H₂ Terminology Authority) — CRITICAL for fuel system design
 2. **Prioritize H₂ terms** — 35 terms blocking detailed design and safety analysis
 3. **Engage SAE E-39** — Coordinate with Hydrogen Aviation committee for standards alignment
 4. **Draft initial glossary entries** — Focus on 35 CRITICAL terms first
 
 ### 6.2 Short-Term Actions (2-4 Weeks)
 
-1. **Resolve TBD-00-013** (Terminology Review Cadence)
+1. **Resolve TBD-00-00-001-ANA-001-003** (Terminology Review Cadence)
 2. **Generate glossary entries** — All 95 terms with source references
 3. **Coordinate with EASA/FAA** — AI/ML terminology alignment for certification
 4. **Integrate with DPP framework** — Align with KNOT-96-10-001 (DPP Identifier Grammar)
@@ -448,8 +448,8 @@ This analysis has identified the following uncertainties requiring resolution:
 |----------------|--------------|
 | KNU-00-00-001-ICD-001 | Database schema will implement gap-identified terms |
 | KNU-00-00-001-PUB-001 | Glossary DM will publish gap-identified terms |
-| KNU-00-00-001-ANA-004 | H₂ Standards Coordination Plan (spawned by TBD-00-011) |
-| KNU-00-00-001-CM-002 | Glossary Change Control Procedure (spawned by TBD-00-013) |
+| KNU-00-00-001-ANA-004 | H₂ Standards Coordination Plan (spawned by TBD-00-00-001-ANA-001-001) |
+| KNU-00-00-001-CM-002 | Glossary Change Control Procedure (spawned by TBD-00-00-001-ANA-001-003) |
 
 ---
 
