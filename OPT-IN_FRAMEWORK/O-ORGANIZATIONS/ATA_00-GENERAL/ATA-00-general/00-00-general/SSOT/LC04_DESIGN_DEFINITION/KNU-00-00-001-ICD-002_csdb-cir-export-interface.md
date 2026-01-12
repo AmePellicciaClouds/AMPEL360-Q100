@@ -62,19 +62,19 @@ This Interface Control Document specifies the export interface between the termi
 triggers:
   - event: term_added
     action: queue_export
-    delay: 5_minutes
+    delay: "5_minutes"
   
   - event: term_modified
     action: queue_export
-    delay: 5_minutes
+    delay: "5_minutes"
   
   - event: term_approved
     action: immediate_export
-    delay: 0_minutes
+    delay: "0_minutes"
   
   - event: term_deprecated
     action: queue_export
-    delay: 5_minutes
+    delay: "5_minutes"
 ```
 
 **Scheduled Exports:**
