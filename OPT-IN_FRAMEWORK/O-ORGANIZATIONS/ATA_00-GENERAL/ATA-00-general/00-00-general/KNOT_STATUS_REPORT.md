@@ -32,13 +32,25 @@
 
 ✅ **All 7 LC05 ANA documents generated** - Critical analysis phase complete
 
-✅ **2 TBDs resolved** - TBD-00-001 (PostgreSQL version), TBD-00-002 (GraphQL framework)
+✅ **4 TBDs resolved** - TBD-00-001 (PostgreSQL 15), TBD-00-002 (PostGraphile), TBD-00-005 (CIR export), TBD-00-006 (DPP namespace)
 
 ✅ **15 new TBDs discovered** - Analysis phase reveals new uncertainties (expected)
 
-✅ **50.0% overall progress** - 27 of 54 KNUs now in GENERATED status (+7% increase)
+✅ **50.0% overall progress** - 27 of 54 KNUs now in GENERATED status (+2.4% increase)
 
 ✅ **12 new spawned KNUs added** - Systematic TBD resolution process working
+
+### Class I Decision Dependencies
+
+**Critical Path Risk:** 3 Class I TBDs require executive approval to unblock downstream work
+
+| TBD ID | Decision Required | Owner | Deadline | Blocked KNUs | Impact |
+|--------|-------------------|-------|----------|--------------|--------|
+| **TBD-00-015** | Cloud vs on-premises deployment | STK_DATA | 2026-02-28 | KNU-00-00-001-ANA-005; KNU-00-00-001-CM-003 | $145k TCO |
+| **TBD-00-019** | Multi-language requirements | STK_CM | 2026-03-15 | KNU-00-00-002-ANA-003; KNU-00-00-002-PLAN-001 | $3.8M |
+| **TBD-00-020** | Requirements tool selection | STK_SE | 2026-03-01 | KNU-00-00-004-ANA-002 | $400k |
+
+**⚠️ Decision Status:** All 3 have recommendations in DECISION_LOG.md, pending approval authority sign-off
 
 ---
 

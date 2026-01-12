@@ -14,10 +14,10 @@ This document tracks **Class I TBDs** — program-level decisions requiring exec
 
 ## Class I TBD Summary
 
-| TBD ID | Description | Decision Owner | Decision Date Target | Blocked KNUs/KNOTs | Status |
-|--------|-------------|----------------|----------------------|-------------------|--------|
-| **TBD-00-015** | Cloud vs on-premises deployment | STK_DATA | 2026-02-28 | KNU-00-00-001-ANA-005 | 🔴 OPEN |
-| **TBD-00-019** | Multi-language requirements | STK_CM | 2026-03-15 | KNU-00-00-002-ANA-003 | 🔴 OPEN |
+| TBD ID | Description | Decision Owner | Decision Date Target | Blocked KNUs | Status |
+|--------|-------------|----------------|----------------------|--------------|--------|
+| **TBD-00-015** | Cloud vs on-premises deployment | STK_DATA | 2026-02-28 | KNU-00-00-001-ANA-005; KNU-00-00-001-CM-003 | 🔴 OPEN |
+| **TBD-00-019** | Multi-language requirements | STK_CM | 2026-03-15 | KNU-00-00-002-ANA-003; KNU-00-00-002-PLAN-001 | 🔴 OPEN |
 | **TBD-00-020** | Requirements tool selection | STK_SE | 2026-03-01 | KNU-00-00-004-ANA-002 | 🔴 OPEN |
 
 ---
