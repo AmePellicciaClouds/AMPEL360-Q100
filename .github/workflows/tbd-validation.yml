@@ -46,8 +46,25 @@ jobs:
             
             # Extract TBDs from register
             if [ -f "OPT-IN_FRAMEWORK/O-ORGANIZATIONS/ATA_00-GENERAL/ATA-00-general/00-00-general/SSOT/LC01_PROBLEM_STATEMENT/TBD_REGISTER.csv" ]; then
-              cut -d',' -f2 OPT-IN_FRAMEWORK/O-ORGANIZATIONS/ATA_00-GENERAL/ATA-00-general/00-00-general/SSOT/LC01_PROBLEM_STATEMENT/TBD_REGISTER.csv | \
-                grep -E '^TBD-' | sort -u > /tmp/reg_tbds.txt
+              python - << 'PY'
+import csv
+from pathlib import Path
+
+csv_path = Path("OPT-IN_FRAMEWORK/O-ORGANIZATIONS/ATA_00-GENERAL/ATA-00-general/00-00-general/SSOT/LC01_PROBLEM_STATEMENT/TBD_REGISTER.csv")
+tbds = set()
+
+with csv_path.open(newline='') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        if len(row) > 1:
+            value = row[1].strip()
+            if value.startswith("TBD-"):
+                tbds.add(value)
+
+with open("/tmp/reg_tbds.txt", "w") as out:
+    for tbd in sorted(tbds):
+        out.write(f"{tbd}\n")
+PY
               
               # Find unregistered TBDs
               comm -23 /tmp/md_tbds.txt /tmp/reg_tbds.txt > /tmp/unregistered.txt
