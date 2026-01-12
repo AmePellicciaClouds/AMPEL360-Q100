@@ -98,7 +98,7 @@ jobs:
           echo "BREX validation completed for S1000D Data Modules." >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Validated Files" >> $GITHUB_STEP_SUMMARY
-          find OPT-IN_FRAMEWORK -path "*/CSDB/DM/*.XML" -type f -o -path "*/CSDB/DM/*.xml" -type f 2>/dev/null | head -20 | while read f; do
+          find OPT-IN_FRAMEWORK \( -path "*/CSDB/DM/*.XML" -o -path "*/CSDB/DM/*.xml" \) -type f 2>/dev/null | head -20 | while read f; do
             if [ -n "$f" ]; then
               echo "- \`$f\`" >> $GITHUB_STEP_SUMMARY
             fi
