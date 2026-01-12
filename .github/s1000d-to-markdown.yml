@@ -1,0 +1,125 @@
+name: S1000D to Markdown Transformation
+
+on: 
+  push:
+    paths: 
+      - 'OPT-IN_FRAMEWORK/**/PUB/**/CSDB/DM/*. XML'
+  pull_request: 
+    paths: 
+      - 'OPT-IN_FRAMEWORK/**/PUB/**/CSDB/DM/*. XML'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  transform:
+    name: Transform S1000D XML to Markdown
+    runs-on:  ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses:  actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for better diff context
+      
+      - name: Install Saxon XSLT processor
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libsaxonhe-java wget
+          
+          # Download Saxon HE (Home Edition)
+          wget https://sourceforge.net/projects/saxon/files/Saxon-HE/11/Java/SaxonHE11-4J.zip/download -O saxon.zip
+          unzip saxon. zip -d /tmp/saxon
+          echo "SAXON_JAR=/tmp/saxon/saxon-he-11.4.jar" >> $GITHUB_ENV
+      
+      - name: Find and transform S1000D XML files
+        run: |
+          transformed_count=0
+          failed_count=0
+          
+          # Find all S1000D XML files
+          find OPT-IN_FRAMEWORK -path "*/PUB/*/CSDB/DM/*.XML" -type f | while read xml_file; do
+            # Determine paths
+            dir=$(dirname "$xml_file")
+            base=$(basename "$xml_file" .XML)
+            md_file="$dir/$base.md"
+            xslt="$dir/transforms/s1000d-to-markdown.xslt"
+            
+            # Check if XSLT exists, fallback to default
+            if [ ! -f "$xslt" ]; then
+              echo "⚠️  XSLT not found at $xslt, using default"
+              xslt="OPT-IN_FRAMEWORK/O-ORGANIZATIONS/ATA_00-GENERAL/ATA-00-general/00-00-general/PUB/AMM/CSDB/DM/transforms/s1000d-to-markdown.xslt"
+            fi
+            
+            # Check if default XSLT exists
+            if [ ! -f "$xslt" ]; then
+              echo "❌ Default XSLT not found:  $xslt"
+              echo "   Skipping transformation for $xml_file"
+              failed_count=$((failed_count + 1))
+              continue
+            fi
+            
+            # Transform
+            echo "🔄 Transforming:  $xml_file → $md_file"
+            java -jar "$SAXON_JAR" -s:"$xml_file" -xsl:"$xslt" -o:"$md_file"
+            
+            if [ $? -eq 0 ]; then
+              echo "✅ Successfully transformed: $md_file"
+              transformed_count=$((transformed_count + 1))
+              
+              # Add transformation metadata footer
+              echo "" >> "$md_file"
+              echo "---" >> "$md_file"
+              echo "" >> "$md_file"
+              echo "*Generated from S1000D Data Module $(basename "$xml_file")*" >> "$md_file"
+              echo "*XSLT Transformation: $(basename "$xslt")*" >> "$md_file"
+              echo "*Transformation Date: $(date -u +%Y-%m-%d)*" >> "$md_file"
+            else
+              echo "❌ Transformation failed: $xml_file"
+              failed_count=$((failed_count + 1))
+            fi
+          done
+          
+          echo "📊 Transformation Summary:"
+          echo "   ✅ Successful:  $transformed_count"
+          echo "   ❌ Failed: $failed_count"
+          
+          if [ $failed_count -gt 0 ]; then
+            exit 1
+          fi
+      
+      - name: Validate Markdown formatting
+        run: |
+          npm install -g markdownlint-cli
+          find OPT-IN_FRAMEWORK -path "*/PUB/*/CSDB/DM/*. md" -type f -exec markdownlint {} \; || true
+      
+      - name: Validate internal links
+        run: |
+          npm install -g markdown-link-check
+          find OPT-IN_FRAMEWORK -path "*/PUB/*/CSDB/DM/*.md" -type f -exec markdown-link-check --config .github/markdown-link-check-config.json {} \;
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name:  Commit transformed Markdown files
+        if: steps.check_changes.outputs.changes == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 Auto-transform S1000D XML to Markdown"
+          file_pattern: "OPT-IN_FRAMEWORK/**/PUB/**/CSDB/DM/*.md"
+          commit_user_name: "S1000D Transform Bot"
+          commit_user_email: "bot@ampel360.aero"
+          commit_author: "S1000D Transform Bot <bot@ampel360.aero>"
+      
+      - name: Summary
+        run: |
+          echo "## S1000D Transformation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ S1000D XML files successfully transformed to Markdown" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Transformed Files" >> $GITHUB_STEP_SUMMARY
+          find OPT-IN_FRAMEWORK -path "*/PUB/*/CSDB/DM/*. md" -type f -printf "- %p\n" >> $GITHUB_STEP_SUMMARY
