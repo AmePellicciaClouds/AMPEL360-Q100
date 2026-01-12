@@ -32,7 +32,7 @@
 
 ✅ **All 7 LC05 ANA documents generated** - Critical analysis phase complete
 
-✅ **2 TBDs resolved** - TBD-00-00-001-ICD-001-005 (CIR export) and TBD-00-00-001-ICD-001-006 (DPP namespace) resolved
+✅ **4 TBDs resolved** - TBD-00-00-001-ICD-001-001 (PostgreSQL 15), TBD-00-00-001-ICD-001-002 (PostGraphile), TBD-00-00-001-ICD-001-005 (CIR export), and TBD-00-00-001-ICD-001-006 (DPP namespace)
 
 ✅ **15 new TBDs discovered** - Analysis phase reveals new uncertainties (expected)
 
@@ -126,13 +126,6 @@
 
 **Key Completions:**
 - ✅ KNU-00-00-002-ANA-001: Document Volume Projection (1.7M pages, 303 KNOTs)
-| KNU-00-00-002-ICD-001 | ICD | 🔵 GENERATED | HIGH | Baseline ICD - GENERATED ✅ |
-| KNU-00-00-002-ANA-001 | ANA | ⚪ PLANNED | MEDIUM | Baseline analysis |
-| KNU-00-00-002-CM-001 | CM | ⚪ PLANNED | MEDIUM | Baseline CM process |
-| KNU-00-00-002-PUB-001 | PUB-TRN | 🔵 GENERATED | HIGH | Baseline training material - GENERATED |
-| KNU-00-00-002-PLAN-001 | PLAN | ⚪ PLANNED | MEDIUM | Spawned by TBD-00-00-001-ICD-001-004; may spawn new KNOT-00-00-002 (Transla... |
-| KNU-00-00-002-TEST-001 | TEST | ⚪ PLANNED | HIGH | Spawned by TBD-00-00-002-ICD-001-001; validates ID grammar compliance 🆕 |
-| KNU-00-00-002-CM-002 | CM | ⚪ PLANNED | MEDIUM | Spawned by TBD-00-00-002-ICD-001-001; implements CI/CD checks 🆕 |
 
 **Residual Uncertainty:** 80 → **62** (↓ 18 points, 38% reduction total)
 
