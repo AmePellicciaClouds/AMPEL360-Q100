@@ -223,7 +223,7 @@ The following TBDs are currently blocking progress:
 ### Overall Progress by KNOT
 
 ```
-KNOT-00-00-001: █████████████████░░░░░░░░░ 42% (5/12 KNUs)
+KNOT-00-00-001: █████████████████░░░░░░░░░ 38% (5/13 KNUs)
                 Controlled Terminology Foundation
                 
 KNOT-00-00-002: █████████░░░░░░░░░░░░░░░░░ 33% (2/6 KNUs)
