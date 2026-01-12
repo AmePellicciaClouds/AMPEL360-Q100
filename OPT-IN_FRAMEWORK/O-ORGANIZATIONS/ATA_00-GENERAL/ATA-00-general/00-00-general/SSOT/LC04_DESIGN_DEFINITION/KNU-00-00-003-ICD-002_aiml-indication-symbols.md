@@ -11,11 +11,20 @@ Define visual indication symbols for AI/ML-assisted decisions in the AMPEL360 Q1
 | Symbol ID | Name | Visual | Meaning |
 |-----------|------|--------|---------|
 | AI-STAT-001 | AI Active | 🤖 (blue) | AI system providing recommendations |
-| AI-STAT-002 | AI Confidence High | 🤖✓ (green) | >95% confidence in recommendation |
-| AI-STAT-003 | AI Confidence Low | 🤖⚠ (amber) | <80% confidence, human review required |
+| AI-STAT-002 | AI Confidence High | 🤖✓ (green) | ≥95% confidence in recommendation |
+| AI-STAT-003 | AI Confidence Low | 🤖⚠ (amber) | ≤80% confidence, human review required |
 | AI-STAT-004 | AI Degraded | 🤖✗ (red) | AI in fallback mode |
 | AI-STAT-005 | AI Override | 👤 (white) | Human has overridden AI |
 
+**Confidence Thresholds Clarification (AI Status Indicators)**
+
+- Confidence thresholds are defined as follows:
+  - **0%–80% (inclusive):** Display **AI-STAT-003 (AI Confidence Low)**.
+  - **>80%–<95%:** Display **AI-STAT-001 (AI Active)** without additional confidence symbol.
+  - **95%–100% (inclusive):** Display **AI-STAT-002 (AI Confidence High)**.
+- The **80% threshold is inclusive** for low confidence (80% → AI-STAT-003).
+- The **95% threshold is inclusive** for high confidence (95% → AI-STAT-002).
+- No separate "medium confidence" symbol is defined; intermediate confidence (80%–95%) is represented by **AI-STAT-001** alone.
 ### Category 2: OOD (Out-of-Distribution) Indicators
 
 | Symbol ID | Name | Visual | Meaning |
