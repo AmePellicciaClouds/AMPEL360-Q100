@@ -1172,11 +1172,4 @@ psql -U ampel360_admin -d terminology_db -f rollbacks/v1.1.0_rollback. sql
 *✅ Verified: No KNU ID conflicts with existing repository structure (checked 2026-01-11).*
 ```
 
----
 
-## Summary of Changes in I01-R03
-
-| Change | Reason | Impact |
-|--------|--------|--------|
-| KNU-00-00-001-ANA-001 → **ANA-002** | ANA-001 exists in repo (gap analysis) | Spawned by TBD-00-001 |
-| KNU-00-00-001-ANA-002 → **ANA-003** | Shifted up to avoid conflict | Spawne
