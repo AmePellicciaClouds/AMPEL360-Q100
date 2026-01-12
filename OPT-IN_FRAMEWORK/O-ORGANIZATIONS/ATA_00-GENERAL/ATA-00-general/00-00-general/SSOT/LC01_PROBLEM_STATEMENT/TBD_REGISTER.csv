@@ -30,4 +30,4 @@ TBD-28-003,TBD-28-10-005-ICD-001-001,Final boil-off rate target,II,KNU-28-10-005
 TBD-00-024,TBD-00-00-001-CM-001-001,CCB meeting frequency and quorum requirements,II,KNU-00-00-001-CM-001,KNOT-00-00-001,00,00,KNU-00-00-001-PLAN-003,OPEN,2026-01-12,,Spawned by CM-001; requires CCB Charter definition
 TBD-00-025,TBD-00-00-001-CM-001-002,Change request template format,III,KNU-00-00-001-CM-001,KNOT-00-00-001,00,00,,OPEN,2026-01-12,,Inline resolution (use standard CR template)
 TBD-00-026,TBD-00-00-001-CM-002-001,Quorum requirements for review types,III,KNU-00-00-001-CM-002,KNOT-00-00-001,00,00,,OPEN,2026-01-12,,Inline resolution (50% + 1 for CCB; domain lead required for domain review)
-TBD-00-027,TBD-00-00-001-CM-003-001,Cloud provider for offsite backup,II,KNU-00-00-001-CM-003,KNOT-00-00-001,00,00,KNU-00-00-001-ANA-006,OPEN,2026-01-12,,Spawned by CM-003; blocked by TBD-00-00-001-ANA-002-002 (cloud vs on-prem)
+TBD-00-027,TBD-00-00-001-CM-003-001,Cloud provider for offsite backup,II,KNU-00-00-001-CM-003,KNOT-00-00-001,00,00,KNU-00-00-001-ANA-006,OPEN,2026-01-12,,Spawned by CM-003; blocked by decision on cloud vs on-prem (see ANA-002-002)

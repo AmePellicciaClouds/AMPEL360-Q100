@@ -59,7 +59,7 @@ CM Specialist classifies CR:
 Based on category:
 - A: Auto-approve
 - B: Single reviewer (48h SLA)
-- C: CCB meeting (weekly)
+- C: CCB meeting (bi-weekly)
 - D: CCB + Safety review (dedicated session)
 
 ### 4.4 Implementation
@@ -120,7 +120,7 @@ Resolution: Inline (use standard CR template)
 
 | Traced From | Artifact |
 |-------------|----------|
-| TBD-00-00-001-ANA-001-003 | Review cadence TBD |
+| TBD-00-00-001-ANA-001-003 | Review cadence TBD (RESOLVED by this document) |
 | KNOT-00-00-001 | Parent KNOT |
 
 ## 10. Document Control

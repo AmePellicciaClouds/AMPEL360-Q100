@@ -22,8 +22,8 @@ Define procedures for managing unique identifiers across all AMPEL360 Q100 docum
 All IDs are registered in:
 - `KNU_PLAN.csv` — KNUs and KNOTs
 - `TBD_REGISTER.csv` — TBDs
-- `DMC_REGISTER.csv` — S1000D Data Module Codes
-- `REQ_REGISTER.csv` — Requirements
+- `DMC_REGISTER.csv` — S1000D Data Module Codes (TBD: to be created)
+- `REQ_REGISTER.csv` — Requirements (TBD: to be created)
 
 ### 3.2 Allocation Workflow
 

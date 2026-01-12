@@ -22,7 +22,7 @@ TBD-00-00-001-ANA-002-002 (Cloud vs on-prem)
 **Impact:** 4 artifacts blocked
 **Priority:** CLASS I — Requires immediate escalation
 **Owner:** STK_DATA
-**Target Resolution:** 2026-01-31
+**Target Resolution:** 2026-03-31
 
 ---
 
@@ -64,8 +64,8 @@ TBD-00-00-002-ANA-001-002 (Multi-language requirements)
 
 | Blocked Item | Blocked By | Chain Length | Estimated Delay |
 |--------------|------------|--------------|-----------------|
-| KNU-00-00-001-ANA-006 | TBD-00-00-001-ANA-002-002 | 2 | 3 weeks |
-| KNU-00-00-001-TEST-003 | TBD-00-00-001-ANA-002-002 | 3 | 4 weeks |
+| KNU-00-00-001-ANA-006 | TBD-00-00-001-ANA-002-002 | 2 | 8 weeks |
+| KNU-00-00-001-TEST-003 | TBD-00-00-001-ANA-002-002 | 3 | 10 weeks |
 | KNU-00-00-004-ANA-002 | TBD-00-00-004-ANA-001-001 | 1 | 2 weeks |
 | KNU-00-00-002-ANA-003 | TBD-00-00-002-ANA-001-002 | 1 | 2 weeks |
 
