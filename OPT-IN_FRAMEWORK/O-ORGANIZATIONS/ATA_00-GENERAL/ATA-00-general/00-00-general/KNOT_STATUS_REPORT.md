@@ -13,17 +13,17 @@
 |--------|-------|----------|
 | **Total KNOTs** | 6 | — |
 | **Total KNUs** | 42 | — |
-| **GENERATED KNUs** | 19 | 45.2% |
-| **PLANNED KNUs** | 23 | 54.8% |
+| **GENERATED KNUs** | 20 | 47.6% |
+| **PLANNED KNUs** | 22 | 52.4% |
 | **APPROVED KNUs** | 0 | 0.0% |
 | **BLOCKED KNUs** | 0 | 0.0% |
-| **Overall Completion** | 19/42 | 45.2% |
+| **Overall Completion** | 20/42 | 47.6% |
 
 ### Status Distribution
 
 ```
-🔵 GENERATED: 19 ( 45.2%) ████████████████████
-⚪ PLANNED:   23 ( 54.8%) ░░░░░░░░░░░░░░░░░░░░░░░░
+🔵 GENERATED: 20 ( 47.6%) █████████████████████░░░░
+⚪ PLANNED:   22 ( 52.4%) ░░░░░░░░░░░░░░░░░░░░░░░░
 🟢 APPROVED:   0 (  0.0%) 
 🔴 BLOCKED:    0 (  0.0%) 
 ```
@@ -36,7 +36,7 @@
 
 ✅ **6 new TBDs discovered** - Detailed design phase reveals new uncertainties (expected)
 
-✅ **45.2% overall progress** - 19 of 42 KNUs now in GENERATED status (+12% increase)
+✅ **47.6% overall progress** - 20 of 42 KNUs now in GENERATED status (+14% increase)
 
 ✅ **Cross-KNOT integration validated** - KNOT-96-10-001 successfully integrated
 
@@ -295,7 +295,7 @@ The following TBDs were discovered during ICD generation:
 ### Overall Progress by KNOT
 
 ```
-KNOT-00-00-001: █████████████████████░░░░░ 58% (7/12 KNUs) ⬆ +20%
+KNOT-00-00-001: █████████████████████░░░░░ 58% (7/12 KNUs) ⬆ +17%
                 Controlled Terminology Foundation
                 
 KNOT-00-00-002: ███████████░░░░░░░░░░░░░░░ 38% (3/8 KNUs)  ⬆ +5%
@@ -313,7 +313,7 @@ KNOT-00-00-005: █████████████████░░░░�
 KNOT-96-10-001: ████████████████████░░░░░░ 67% (2/3 KNUs)  ⬆ +67%
                 DPP Identifier Grammar (Cross-KNOT)
 
-OVERALL:         █████████████░░░░░░░░░░░░░ 45% (19/42 KNUs) ⬆ +12%
+OVERALL:         █████████████░░░░░░░░░░░░░ 48% (20/42 KNUs) ⬆ +14%
 ```
 
 ### Type Distribution
@@ -339,9 +339,9 @@ OVERALL:         █████████████░░░░░░░░
 - **Total Work Packages (KNUs):** 42
 - **Baseline KNUs:** 24 (57%)
 - **Spawned KNUs (from TBDs):** 18 (43%)
-- **GENERATED:** 19 KNUs (45%)
+- **GENERATED:** 20 KNUs (48%)
 - **Target for Q1 2026:** 28 KNUs (67%)
-- **Current vs Target:** On track (need 9 more by end of Q1)
+- **Current vs Target:** On track (need 8 more by end of Q1)
 
 ### Residual Uncertainty
 
@@ -360,8 +360,8 @@ OVERALL:         █████████████░░░░░░░░
 ### TT Token Status
 
 - **Total TT Pool (6 KNOTs):** 6,480 TT (2,332,800 degrees)
-- **Allocated (GENERATED):** ~2,358 TT (estimated for 19 KNUs, pending final calculation)
-- **Remaining Pool:** ~4,122 TT
+- **Allocated (GENERATED):** ~2,484 TT (estimated for 20 KNUs, pending final calculation)
+- **Remaining Pool:** ~3,996 TT
 - **Distribution Pending:** Awaiting APPROVED status transition
 
 ---
