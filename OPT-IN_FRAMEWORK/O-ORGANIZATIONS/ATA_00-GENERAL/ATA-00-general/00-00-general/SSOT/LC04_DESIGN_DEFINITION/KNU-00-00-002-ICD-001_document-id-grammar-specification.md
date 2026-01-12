@@ -124,7 +124,7 @@ This Interface Control Document specifies the grammar and validation rules for a
 
 **Regular Expression:**
 ```regex
-^DMC-([A-Z0-9]+)-(\d{2})-(\d{2})-(\d)-(\d)-(\d{2})-(\d{2})([A-Z])-(\d{3})([A-Z])-([A-Z])_(\d{3})-(\d{2})_([a-z]{2})-([A-Z]{2})$
+^DMC-([A-Z0-9]{1,8})-(\d{2})-(\d{2})-(\d)-(\d)-(\d{2})-([0-9]{2}[A-Z]?)-([0-9]{3}[A-Z]?)-([A-Z])_(\d{3})-(\d{2})_([a-z]{2})-([A-Z]{2})$
 ```
 
 **Components (S1000D 5.0 Standard):**
