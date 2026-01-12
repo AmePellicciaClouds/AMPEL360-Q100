@@ -296,14 +296,14 @@ ampel:term:acronym:BWB skos:hiddenLabel "blended wing"@en .
 
 ```sql
 -- Extend terms table with DPP mapping
-ALTER TABLE terms ADD COLUMN dpp_type VARCHAR(50);
-ALTER TABLE terms ADD COLUMN dpp_namespace VARCHAR(255) UNIQUE;
-ALTER TABLE terms ADD COLUMN skos_broader VARCHAR(255);
-ALTER TABLE terms ADD COLUMN qudt_alignment VARCHAR(255);
+ALTER TABLE terms ADD COLUMN IF NOT EXISTS dpp_type VARCHAR(50);
+ALTER TABLE terms ADD COLUMN IF NOT EXISTS dpp_namespace VARCHAR(255) UNIQUE;
+ALTER TABLE terms ADD COLUMN IF NOT EXISTS skos_broader VARCHAR(255);
+ALTER TABLE terms ADD COLUMN IF NOT EXISTS qudt_alignment VARCHAR(255);
 
 -- Create index for fast namespace lookups
-CREATE INDEX idx_dpp_namespace ON terms(dpp_namespace);
-CREATE INDEX idx_term_type ON terms(term_type);
+CREATE INDEX IF NOT EXISTS idx_dpp_namespace ON terms(dpp_namespace);
+CREATE INDEX IF NOT EXISTS idx_term_type ON terms(term_type);
 
 -- Update existing terms with DPP mappings
 UPDATE terms
