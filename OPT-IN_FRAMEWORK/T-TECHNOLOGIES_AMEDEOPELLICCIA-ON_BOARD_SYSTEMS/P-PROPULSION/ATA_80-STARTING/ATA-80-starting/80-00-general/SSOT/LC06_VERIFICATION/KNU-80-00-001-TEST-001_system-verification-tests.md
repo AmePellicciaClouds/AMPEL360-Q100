@@ -63,7 +63,6 @@ The AMPEL360-Q100 propulsion system presents unique starting challenges:
 | SAE AS755 | SAE International | Aircraft starter specifications |
 | MIL-STD-704F | US DoD | Aircraft electrical power characteristics |
 | DO-160G | RTCA | Environmental testing |
-| DO-160G | RTCA | Environmental testing |
 
 ## 4. Test Cases
 
