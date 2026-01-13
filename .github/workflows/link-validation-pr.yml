@@ -74,9 +74,10 @@ jobs:
               checked_files=$((checked_files + 1))
               echo "📄 Checking relative links: $md_file"
               
-              # Check relative links (file:// and local paths)
-              if ! markdown-link-check --config .github/markdown-link-check-config.json "$md_file" 2>&1 | tee /tmp/link-check-relative.txt; then
-                if grep -q "FILE\|\.md\|\.\/\|\.\./" /tmp/link-check-relative.txt; then
+              # Check relative links (file:// and local paths) with unique temp file
+              temp_relative=$(mktemp)
+              if ! markdown-link-check --config .github/markdown-link-check-config.json "$md_file" 2>&1 | tee "$temp_relative"; then
+                if grep -q "FILE\|\.md\|\.\/\|\.\./" "$temp_relative"; then
                   echo "   ❌ Relative link errors found"
                   failed_files=$((failed_files + 1))
                   relative_errors=$((relative_errors + 1))
@@ -84,6 +85,7 @@ jobs:
               else
                 echo "   ✅ Relative links valid"
               fi
+              rm -f "$temp_relative"
               echo ""
             fi
           done
@@ -117,9 +119,10 @@ jobs:
               checked_files=$((checked_files + 1))
               echo "📄 Checking external links: $md_file"
               
-              # Check external links (http/https)
-              if ! markdown-link-check --config .github/markdown-link-check-config.json "$md_file" 2>&1 | tee /tmp/link-check-external.txt; then
-                if grep -q "http" /tmp/link-check-external.txt; then
+              # Check external links (http/https) with unique temp file
+              temp_external=$(mktemp)
+              if ! markdown-link-check --config .github/markdown-link-check-config.json "$md_file" 2>&1 | tee "$temp_external"; then
+                if grep -q "http" "$temp_external"; then
                   echo "   ⚠️  External link issues found (non-blocking)"
                   failed_files=$((failed_files + 1))
                   external_errors=$((external_errors + 1))
@@ -127,6 +130,7 @@ jobs:
               else
                 echo "   ✅ External links valid"
               fi
+              rm -f "$temp_external"
               echo ""
             fi
           done

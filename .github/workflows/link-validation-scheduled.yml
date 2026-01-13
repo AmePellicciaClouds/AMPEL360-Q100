@@ -44,18 +44,21 @@ jobs:
               checked_files=$((checked_files + 1))
               echo "📄 Checking: $md_file"
 
-              # Run markdown-link-check
-              if ! markdown-link-check --config .github/markdown-link-check-config.json "$md_file" 2>&1 | tee /tmp/link-check-output.txt; then
+              # Run markdown-link-check with unique temp file
+              temp_output=$(mktemp)
+              if ! markdown-link-check --config .github/markdown-link-check-config.json "$md_file" 2>&1 | tee "$temp_output"; then
                 echo "   ⚠️  Issues found in: $md_file"
                 failed_files=$((failed_files + 1))
                 
                 # Count relative vs external link errors
-                if grep -q "FILE" /tmp/link-check-output.txt; then
+                if grep -q "FILE" "$temp_output"; then
                   relative_errors=$((relative_errors + 1))
                 fi
-                if grep -q "http" /tmp/link-check-output.txt; then
+                if grep -q "http" "$temp_output"; then
                   external_errors=$((external_errors + 1))
                 fi
+              fi
+              rm -f "$temp_output"
               else
                 echo "   ✅ All links valid"
               fi
