@@ -51,10 +51,10 @@ jobs:
                 failed_files=$((failed_files + 1))
                 
                 # Count relative vs external link errors
-                if grep -q "\bFILE\b" "$temp_output"; then
+                if grep -E "\[✖\].*(\bFILE\b|\.md|\.\/|\.\.\/)" "$temp_output" > /dev/null; then
                   relative_errors=$((relative_errors + 1))
                 fi
-                if grep -q "http" "$temp_output"; then
+                if grep -E "\[✖\].*https?://" "$temp_output" > /dev/null; then
                   external_errors=$((external_errors + 1))
                 fi
               else

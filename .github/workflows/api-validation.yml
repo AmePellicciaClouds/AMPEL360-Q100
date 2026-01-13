@@ -74,8 +74,8 @@ jobs:
           if [ -f "$doc_file" ]; then
             echo "✅ Documentation found: $doc_file"
             
-            # Count how many endpoints are documented (using word boundary for accuracy)
-            doc_endpoint_count=$(grep -c '\bGET\b\|\bPOST\b\|\bPUT\b\|\bDELETE\b\|\bPATCH\b' "$doc_file" || echo "0")
+            # Count how many endpoints are documented (using grep -E with word boundaries)
+            doc_endpoint_count=$(grep -cE '^\s*(GET|POST|PUT|DELETE|PATCH)\b' "$doc_file" || echo "0")
             echo "   Endpoints mentioned in docs: $doc_endpoint_count"
           else
             echo "⚠️  Documentation file not found: $doc_file"
