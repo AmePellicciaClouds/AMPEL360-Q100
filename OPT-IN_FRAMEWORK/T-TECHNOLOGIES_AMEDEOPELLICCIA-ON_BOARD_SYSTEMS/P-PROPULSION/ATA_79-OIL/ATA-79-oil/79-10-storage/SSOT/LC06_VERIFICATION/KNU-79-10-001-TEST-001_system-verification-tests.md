@@ -56,7 +56,6 @@ Define comprehensive test procedures to validate that the Oil Storage System mee
 | MIL-PRF-23699 | US DoD | Turbine engine lubricating oil specification |
 | DO-160G | RTCA | Environmental testing |
 | SAE AS8016 | SAE International | Aerospace testing standards |
-| DO-160G | RTCA | Environmental testing |
 
 ## 4. Test Cases
 
