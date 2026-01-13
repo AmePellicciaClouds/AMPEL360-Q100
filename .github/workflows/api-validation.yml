@@ -94,7 +94,8 @@ jobs:
             name=$(echo "$endpoint" | jq -r '.name')
             method=$(echo "$endpoint" | jq -r '.method')
             url=$(echo "$endpoint" | jq -r '.url')
-            expected_status=$(echo "$endpoint" | jq -r '.expectedStatus[]')
+            # Check if expectedStatus array has elements
+            expected_status_count=$(echo "$endpoint" | jq '.expectedStatus | length')
             
             if [ -z "$name" ] || [ "$name" == "null" ]; then
               echo "❌ Endpoint missing name"
@@ -111,7 +112,7 @@ jobs:
               error_count=$((error_count + 1))
             fi
             
-            if [ -z "$expected_status" ]; then
+            if [ "$expected_status_count" == "0" ] || [ "$expected_status_count" == "null" ]; then
               echo "❌ Endpoint '$name' missing expected status codes"
               error_count=$((error_count + 1))
             fi

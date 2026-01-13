@@ -123,7 +123,8 @@ jobs:
               # Check external links (http/https) with unique temp file
               temp_external=$(mktemp)
               if ! markdown-link-check --config .github/markdown-link-check-config.json "$md_file" 2>&1 | tee "$temp_external"; then
-                if grep -q "http" "$temp_external"; then
+                # Look for external link errors (marked with ✖ and containing http/https)
+                if grep -E "\[✖\].*https?://" "$temp_external" > /dev/null; then
                   echo "   ⚠️  External link issues found (non-blocking)"
                   failed_files=$((failed_files + 1))
                   external_errors=$((external_errors + 1))
