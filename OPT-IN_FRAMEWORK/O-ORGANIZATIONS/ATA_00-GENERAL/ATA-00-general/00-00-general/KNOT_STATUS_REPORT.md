@@ -12,31 +12,33 @@
 | Metric | Value | Progress |
 |--------|-------|----------|
 | **Total KNOTs** | 6 | — |
-| **Total KNUs** | 59 | — |
-| **GENERATED KNUs** | 37 | 62.7% |
-| **PLANNED KNUs** | 22 | 37.3% |
+| **Total KNUs** | 60 | — |
+| **GENERATED KNUs** | 38 | 63.3% |
+| **PLANNED KNUs** | 22 | 36.7% |
 | **APPROVED KNUs** | 0 | 0.0% |
 | **BLOCKED KNUs** | 0 | 0.0% |
-| **Overall Completion** | 37/59 | 62.7% |
+| **Overall Completion** | 38/60 | 63.3% |
 
 ### Status Distribution
 
 ```
-🔵 GENERATED: 37 ( 62.7%) ███████████████████████████████░░░░░
-⚪ PLANNED:   22 ( 37.3%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+🔵 GENERATED: 38 ( 63.3%) ███████████████████████████████░░░░░
+⚪ PLANNED:   22 ( 36.7%) ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 🟢 APPROVED:   0 (  0.0%) 
 🔴 BLOCKED:    0 (  0.0%) 
 ```
 
 ### Key Achievements
 
+✅ **ICN Repository Created** - 16 placeholder SVG symbols with S1000D-compliant naming
+
 ✅ **ALL CLASS I and CLASS II TBDs RESOLVED** - 19 TBDs closed in single PR (+16 from previous)
 
 ✅ **All 3 major blocking chains cleared** - Infrastructure, Requirements Tool, Multi-Language decisions made
 
-✅ **6 new KNUs generated** - Major analysis documents created (ANA-005, ANA-003, ANA-002, REQ-002, ICD-002, ANA-006)
+✅ **7 new KNUs generated** - Major analysis documents created (ICD-003, ANA-005, ANA-003, ANA-002, REQ-002, ICD-002, ANA-006)
 
-✅ **62.7% overall progress** - 37 of 59 KNUs now in GENERATED status (+7.5% increase)
+✅ **63.3% overall progress** - 38 of 60 KNUs now in GENERATED status (+0.6% increase)
 
 ✅ **Zero blocking chains remaining** - All critical path obstacles removed
 
@@ -136,12 +138,12 @@
 
 ### KNOT-00-00-003
 
-**Progress:** ████████████████░░░░░░░░░░░░ 56% (5/9 KNUs)
+**Progress:** ███████████████████░░░░░░░░░░ 70% (7/10 KNUs)
 
 | Status | Count | Percentage |
 |--------|-------|------------|
-| 🔵 GENERATED | 5 | 55.6% |
-| ⚪ PLANNED | 4 | 44.4% |
+| 🔵 GENERATED | 6 | 60.0% |
+| ⚪ PLANNED | 4 | 40.0% |
 | 🟢 APPROVED | 0 | 0.0% |
 | 🔴 BLOCKED | 0 | 0.0% |
 
@@ -151,21 +153,23 @@
 |--------|------|--------|----------|-------|
 | KNU-00-00-003-REQ-001 | REQ | 🔵 GENERATED | HIGH | Baseline requirement - GENERATED |
 | KNU-00-00-003-ICD-001 | ICD | 🔵 GENERATED | HIGH | Baseline ICD - GENERATED |
+| KNU-00-00-003-ICD-002 | ICD | 🔵 GENERATED | HIGH | AI/ML Indication Symbols - GENERATED ✅ |
+| KNU-00-00-003-ICD-003 | ICD | 🔵 GENERATED | HIGH | ICN Repository Specification - GENERATED ✅ 🆕 |
 | KNU-00-00-003-ANA-001 | ANA | 🔵 GENERATED | MEDIUM | Warning Standards Gap Analysis - GENERATED ✅ |
 | KNU-00-00-003-CM-001 | CM | ⚪ PLANNED | MEDIUM | Baseline CM index |
 | KNU-00-00-003-PUB-001 | PUB-AMM | 🔵 GENERATED | HIGH | Baseline publication - GENERATED |
-| KNU-00-00-003-ICD-002 | ICD | ⚪ PLANNED | MEDIUM | Symbol Asset Repository 🆕 |
 | KNU-00-00-003-TEST-001 | TEST | ⚪ PLANNED | MEDIUM | Symbol legibility validation 🆕 |
 | KNU-00-00-003-ANA-002 | ANA | ⚪ PLANNED | MEDIUM | Compound Hazard Symbol Study 🆕 |
 | KNU-00-00-003-TEST-002 | TEST | ⚪ PLANNED | HIGH | Symbol Visibility Testing 🆕 |
 
-**Residual Uncertainty:** 75 → **35** (↓ 40 points, 53% reduction total)
+**Residual Uncertainty:** 75 → **30** (↓ 45 points, 60% reduction total)
 
 **Status Change:** 🟡 IN PROGRESS → 🟢 ON TRACK
 
 **Key Completions:**
 - ✅ KNU-00-00-003-ANA-001: Warning Standards Gap Analysis (19 symbol gaps, 5 novel AI/ML symbols)
-- ✅ KNU-00-00-003-ICD-002: AI/ML Indication Symbols (9 symbols defined) 🆕
+- ✅ KNU-00-00-003-ICD-002: AI/ML Indication Symbols (9 symbols defined)
+- ✅ KNU-00-00-003-ICD-003: ICN Repository Specification (16 placeholder symbols, S1000D-compliant) 🆕
 
 ---
 

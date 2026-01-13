@@ -10,13 +10,13 @@ Define visual indication symbols for AI/ML-assisted decisions in the AMPEL360 Q1
 
 ### Category 1: AI Status Indicators
 
-| Symbol ID | Name | Visual (Placeholder) | Meaning |
-|-----------|------|--------|---------|
-| AI-STAT-001 | AI Active | 🤖 (blue) | AI system providing recommendations |
-| AI-STAT-002 | AI Confidence High | 🤖✓ (green) | ≥95% confidence in recommendation |
-| AI-STAT-003 | AI Confidence Low | 🤖⚠ (amber) | ≤80% confidence, human review required |
-| AI-STAT-004 | AI Degraded | 🤖✗ (red) | AI in fallback mode |
-| AI-STAT-005 | AI Override | 👤 (white) | Human has overridden AI |
+| Symbol ID | Name | ICN Reference | Meaning |
+|-----------|------|---------------|---------|
+| AI-STAT-001 | AI Active | [ICN-AMPEL360-S1-00095-0040-001-A](../../PUB/CSDB/ICN/AI-ML/ICN-AMPEL360-S1-00095-0040-001-A.svg) | AI system providing recommendations |
+| AI-STAT-002 | AI Confidence High | [ICN-AMPEL360-S1-00095-0040-002-A](../../PUB/CSDB/ICN/AI-ML/ICN-AMPEL360-S1-00095-0040-002-A.svg) | ≥95% confidence in recommendation |
+| AI-STAT-003 | AI Confidence Low | [ICN-AMPEL360-S1-00095-0040-003-A](../../PUB/CSDB/ICN/AI-ML/ICN-AMPEL360-S1-00095-0040-003-A.svg) | ≤80% confidence, human review required |
+| AI-STAT-004 | AI Degraded | [ICN-AMPEL360-S1-00095-0040-004-A](../../PUB/CSDB/ICN/AI-ML/ICN-AMPEL360-S1-00095-0040-004-A.svg) | AI in fallback mode |
+| AI-STAT-005 | AI Override | [ICN-AMPEL360-S1-00095-0040-005-A](../../PUB/CSDB/ICN/AI-ML/ICN-AMPEL360-S1-00095-0040-005-A.svg) | Human has overridden AI |
 
 **Confidence Thresholds Clarification (AI Status Indicators)**
 
@@ -29,17 +29,17 @@ Define visual indication symbols for AI/ML-assisted decisions in the AMPEL360 Q1
 - No separate "medium confidence" symbol is defined; intermediate confidence (80%–95%) is represented by **AI-STAT-001** alone.
 ### Category 2: OOD (Out-of-Distribution) Indicators
 
-| Symbol ID | Name | Visual (Placeholder) | Meaning |
-|-----------|------|--------|---------|
-| AI-OOD-001 | OOD Detected | ⚠🤖 | Input outside training envelope |
-| AI-OOD-002 | OOD Severe | 🔴🤖 | Significant deviation, manual required |
+| Symbol ID | Name | ICN Reference | Meaning |
+|-----------|------|---------------|---------|
+| AI-OOD-001 | OOD Detected | [ICN-AMPEL360-S1-00095-0040-006-A](../../PUB/CSDB/ICN/AI-ML/ICN-AMPEL360-S1-00095-0040-006-A.svg) | Input outside training envelope |
+| AI-OOD-002 | OOD Severe | [ICN-AMPEL360-S1-00095-0040-007-A](../../PUB/CSDB/ICN/AI-ML/ICN-AMPEL360-S1-00095-0040-007-A.svg) | Significant deviation, manual required |
 
 ### Category 3: Learning Status
 
-| Symbol ID | Name | Visual (Placeholder) | Meaning |
-|-----------|------|--------|---------|
-| AI-LRN-001 | Learning Enabled | 📚 | System is learning from operations |
-| AI-LRN-002 | Learning Frozen | 🔒📚 | Learning disabled (certified config) |
+| Symbol ID | Name | ICN Reference | Meaning |
+|-----------|------|---------------|---------|
+| AI-LRN-001 | Learning Enabled | [ICN-AMPEL360-S1-00095-0040-008-A](../../PUB/CSDB/ICN/AI-ML/ICN-AMPEL360-S1-00095-0040-008-A.svg) | System is learning from operations |
+| AI-LRN-002 | Learning Frozen | [ICN-AMPEL360-S1-00095-0040-009-A](../../PUB/CSDB/ICN/AI-ML/ICN-AMPEL360-S1-00095-0040-009-A.svg) | Learning disabled (certified config) |
 
 ## 3. Display Requirements
 

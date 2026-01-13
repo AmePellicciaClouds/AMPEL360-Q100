@@ -31,3 +31,4 @@ TBD-00-024,TBD-00-00-001-CM-001-001,CCB meeting frequency and quorum requirement
 TBD-00-025,TBD-00-00-001-CM-001-002,Change request template format,III,KNU-00-00-001-CM-001,KNOT-00-00-001,00,00,,OPEN,2026-01-12,,Inline resolution (use standard CR template)
 TBD-00-026,TBD-00-00-001-CM-002-001,Quorum requirements for review types,III,KNU-00-00-001-CM-002,KNOT-00-00-001,00,00,,OPEN,2026-01-12,,Inline resolution (50% + 1 for CCB; domain lead required for domain review)
 TBD-00-027,TBD-00-00-001-CM-003-001,Cloud provider for offsite backup,II,KNU-00-00-001-CM-003,KNOT-00-00-001,00,00,KNU-00-00-001-ANA-006,RESOLVED,2026-01-12,2026-01-12,AWS eu-central-1 (resolved by TBD-00-00-001-ANA-002-002)
+TBD-00-028,TBD-00-00-003-ICD-003-001,Final graphic design by human factors specialist,II,KNU-00-00-003-ICD-003,KNOT-00-00-003,00,03,KNU-00-00-003-PUB-002,OPEN,2026-01-13,,Placeholder SVGs require professional design for certification
