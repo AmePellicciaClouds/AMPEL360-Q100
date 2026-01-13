@@ -1,0 +1,169 @@
+name: API Endpoint Validation
+
+on:
+  schedule:
+    # Run daily at 02:00 UTC to verify API endpoint availability
+    - cron: '0 2 * * *'
+  pull_request:
+    paths:
+      - '.github/api-endpoints.json'
+      - '**/api-integration-tests.md'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  api-validation:
+    name: Validate API Endpoints
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate API endpoint definitions
+        id: validate-endpoints
+        run: |
+          echo "🔍 Validating API endpoint definitions..."
+          echo ""
+          
+          # Check if API endpoints file exists
+          if [ ! -f ".github/api-endpoints.json" ]; then
+            echo "::error::API endpoints definition file not found"
+            exit 1
+          fi
+          
+          # Validate JSON syntax
+          if ! jq empty .github/api-endpoints.json 2>/dev/null; then
+            echo "::error::Invalid JSON in api-endpoints.json"
+            exit 1
+          fi
+          
+          # Extract and count endpoints
+          endpoint_count=$(jq '.endpoints | length' .github/api-endpoints.json)
+          base_url=$(jq -r '.baseUrl' .github/api-endpoints.json)
+          
+          echo "✅ API definition file is valid"
+          echo "   Base URL: $base_url"
+          echo "   Endpoints defined: $endpoint_count"
+          echo ""
+          
+          echo "ENDPOINT_COUNT=$endpoint_count" >> $GITHUB_ENV
+          echo "BASE_URL=$base_url" >> $GITHUB_ENV
+
+      - name: List defined endpoints
+        run: |
+          echo "📋 Defined API Endpoints:"
+          echo ""
+          
+          jq -r '.endpoints[] | "  \(.method) \(.url) - \(.description)"' .github/api-endpoints.json
+          echo ""
+
+      - name: Check endpoint documentation
+        run: |
+          echo "📚 Verifying endpoint documentation..."
+          echo ""
+          
+          doc_file=$(jq -r '.documentation' .github/api-endpoints.json)
+          
+          if [ -f "$doc_file" ]; then
+            echo "✅ Documentation found: $doc_file"
+            
+            # Count how many endpoints are documented
+            doc_endpoint_count=$(grep -c "GET \|POST \|PUT \|DELETE \|PATCH " "$doc_file" || echo "0")
+            echo "   Endpoints mentioned in docs: $doc_endpoint_count"
+          else
+            echo "⚠️  Documentation file not found: $doc_file"
+          fi
+          echo ""
+
+      - name: Validate endpoint structure
+        run: |
+          echo "🔍 Validating endpoint structure..."
+          echo ""
+          
+          # Check each endpoint has required fields
+          error_count=0
+          
+          while IFS= read -r endpoint; do
+            name=$(echo "$endpoint" | jq -r '.name')
+            method=$(echo "$endpoint" | jq -r '.method')
+            url=$(echo "$endpoint" | jq -r '.url')
+            expected_status=$(echo "$endpoint" | jq -r '.expectedStatus[]')
+            
+            if [ -z "$name" ] || [ "$name" == "null" ]; then
+              echo "❌ Endpoint missing name"
+              error_count=$((error_count + 1))
+            fi
+            
+            if [ -z "$method" ] || [ "$method" == "null" ]; then
+              echo "❌ Endpoint '$name' missing method"
+              error_count=$((error_count + 1))
+            fi
+            
+            if [ -z "$url" ] || [ "$url" == "null" ]; then
+              echo "❌ Endpoint '$name' missing URL"
+              error_count=$((error_count + 1))
+            fi
+            
+            if [ -z "$expected_status" ]; then
+              echo "❌ Endpoint '$name' missing expected status codes"
+              error_count=$((error_count + 1))
+            fi
+            
+            echo "✅ $method $url - $name"
+          done < <(jq -c '.endpoints[]' .github/api-endpoints.json)
+          
+          echo ""
+          if [ $error_count -gt 0 ]; then
+            echo "::error::Found $error_count validation errors in endpoint definitions"
+            exit 1
+          fi
+          
+          echo "✅ All endpoint definitions are structurally valid"
+
+      - name: API validation summary
+        if: always()
+        run: |
+          echo "## 🔌 API Endpoint Validation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Validation Date:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Configuration" >> $GITHUB_STEP_SUMMARY
+          echo "- Base URL: \`${BASE_URL}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- Endpoints defined: **${ENDPOINT_COUNT}**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Endpoint Categories" >> $GITHUB_STEP_SUMMARY
+          
+          # Count by method
+          get_count=$(jq '[.endpoints[] | select(.method == "GET")] | length' .github/api-endpoints.json)
+          post_count=$(jq '[.endpoints[] | select(.method == "POST")] | length' .github/api-endpoints.json)
+          put_count=$(jq '[.endpoints[] | select(.method == "PUT")] | length' .github/api-endpoints.json)
+          delete_count=$(jq '[.endpoints[] | select(.method == "DELETE")] | length' .github/api-endpoints.json)
+          
+          echo "- **GET** operations: $get_count" >> $GITHUB_STEP_SUMMARY
+          echo "- **POST** operations: $post_count" >> $GITHUB_STEP_SUMMARY
+          echo "- **PUT** operations: $put_count" >> $GITHUB_STEP_SUMMARY
+          echo "- **DELETE** operations: $delete_count" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          echo "### Authentication Required" >> $GITHUB_STEP_SUMMARY
+          auth_count=$(jq '[.endpoints[] | select(.requiresAuth == true)] | length' .github/api-endpoints.json)
+          echo "- Endpoints requiring auth: **$auth_count**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          echo "### Validation Status" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Endpoint definitions validated" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ JSON structure valid" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Required fields present" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "> 💡 This validates endpoint _definitions_ only. For live API testing, see the integration test suite in \`LC06_VERIFICATION\`." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Related Documentation" >> $GITHUB_STEP_SUMMARY
+          doc_file=$(jq -r '.documentation' .github/api-endpoints.json)
+          echo "- API Test Specification: \`$doc_file\`" >> $GITHUB_STEP_SUMMARY

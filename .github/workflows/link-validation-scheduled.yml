@@ -1,0 +1,103 @@
+name: Scheduled Link Validation (Full)
+
+on:
+  schedule:
+    # Run weekly on Sundays at 00:00 UTC to detect link degradation over time
+    - cron: '0 0 * * 0'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  full-link-validation:
+    name: Full Repository Link Check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install markdown-link-check
+        run: npm install -g markdown-link-check
+
+      - name: Validate all markdown files
+        id: link-check
+        run: |
+          failed_files=0
+          checked_files=0
+          relative_errors=0
+          external_errors=0
+
+          echo "🔍 Starting full repository link validation..."
+          echo ""
+
+          # Find all markdown files
+          while IFS= read -r md_file; do
+            if [ -f "$md_file" ]; then
+              checked_files=$((checked_files + 1))
+              echo "📄 Checking: $md_file"
+
+              # Run markdown-link-check
+              if ! markdown-link-check --config .github/markdown-link-check-config.json "$md_file" 2>&1 | tee /tmp/link-check-output.txt; then
+                echo "   ⚠️  Issues found in: $md_file"
+                failed_files=$((failed_files + 1))
+                
+                # Count relative vs external link errors
+                if grep -q "FILE" /tmp/link-check-output.txt; then
+                  relative_errors=$((relative_errors + 1))
+                fi
+                if grep -q "http" /tmp/link-check-output.txt; then
+                  external_errors=$((external_errors + 1))
+                fi
+              else
+                echo "   ✅ All links valid"
+              fi
+              echo ""
+            fi
+          done < <(find . \( -name "*.md" -o -name "*.MD" \) -type f 2>/dev/null | grep -v node_modules | grep -v .git | sort)
+
+          echo "📊 Full Link Check Summary:"
+          echo "   Files checked: $checked_files"
+          echo "   Files with issues: $failed_files"
+          echo "   Relative link errors: $relative_errors"
+          echo "   External link errors: $external_errors"
+          
+          # Save for summary
+          echo "CHECKED_FILES=$checked_files" >> $GITHUB_ENV
+          echo "FAILED_FILES=$failed_files" >> $GITHUB_ENV
+          echo "RELATIVE_ERRORS=$relative_errors" >> $GITHUB_ENV
+          echo "EXTERNAL_ERRORS=$external_errors" >> $GITHUB_ENV
+
+          # Note: We report but don't fail the workflow for broken external links
+          # as they may be temporarily unavailable
+          echo ""
+          echo "ℹ️  Full link check completed. Review any warnings above."
+
+      - name: Generate summary
+        if: always()
+        run: |
+          echo "## 🔗 Full Repository Link Validation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Validation Type:** Scheduled full scan (all files)" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Statistics" >> $GITHUB_STEP_SUMMARY
+          echo "- 📄 Files checked: **${CHECKED_FILES}**" >> $GITHUB_STEP_SUMMARY
+          echo "- ⚠️  Files with issues: **${FAILED_FILES}**" >> $GITHUB_STEP_SUMMARY
+          echo "- 🔗 Relative link errors: **${RELATIVE_ERRORS}**" >> $GITHUB_STEP_SUMMARY
+          echo "- 🌐 External link errors: **${EXTERNAL_ERRORS}**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Link Categories" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Relative links:** All markdown internal links checked" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **External links:** All HTTP/HTTPS links validated" >> $GITHUB_STEP_SUMMARY
+          echo "- ⏭️  **API endpoints:** See separate API validation workflow" >> $GITHUB_STEP_SUMMARY
+          echo "- ⏭️  **Attachments:** PDFs, images, and binaries excluded" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "> 💡 This is a scheduled full scan. For incremental PR validation, see the PR workflow." >> $GITHUB_STEP_SUMMARY

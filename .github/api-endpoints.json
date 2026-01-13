@@ -1,0 +1,72 @@
+{
+  "endpoints": [
+    {
+      "name": "Get all terms",
+      "method": "GET",
+      "url": "/api/v1/terms",
+      "expectedStatus": [200],
+      "description": "Retrieve list of all terms with default pagination"
+    },
+    {
+      "name": "Get term by ID",
+      "method": "GET",
+      "url": "/api/v1/terms/{id}",
+      "expectedStatus": [200],
+      "description": "Retrieve a single term by its ID"
+    },
+    {
+      "name": "Create term",
+      "method": "POST",
+      "url": "/api/v1/terms",
+      "expectedStatus": [201],
+      "requiresAuth": true,
+      "description": "Create a new term (requires authentication)"
+    },
+    {
+      "name": "Update term",
+      "method": "PUT",
+      "url": "/api/v1/terms/{id}",
+      "expectedStatus": [200],
+      "requiresAuth": true,
+      "description": "Update an existing term (requires authentication)"
+    },
+    {
+      "name": "Delete term",
+      "method": "DELETE",
+      "url": "/api/v1/terms/{id}",
+      "expectedStatus": [204],
+      "requiresAuth": true,
+      "description": "Soft delete a term (requires authentication)"
+    },
+    {
+      "name": "Search terms",
+      "method": "GET",
+      "url": "/api/v1/terms?q={query}",
+      "expectedStatus": [200],
+      "description": "Search terms by query string"
+    },
+    {
+      "name": "Export terms",
+      "method": "GET",
+      "url": "/api/v1/export?format={format}",
+      "expectedStatus": [200],
+      "description": "Export terms in specified format (json, yaml, csv)"
+    },
+    {
+      "name": "Get term versions",
+      "method": "GET",
+      "url": "/api/v1/terms/{id}/versions",
+      "expectedStatus": [200],
+      "description": "Get version history for a term"
+    },
+    {
+      "name": "GraphQL endpoint",
+      "method": "POST",
+      "url": "/graphql",
+      "expectedStatus": [200],
+      "description": "GraphQL API endpoint for complex queries"
+    }
+  ],
+  "baseUrl": "https://api.ampel360.example.com",
+  "documentation": "API endpoints defined in OPT-IN_FRAMEWORK/O-ORGANIZATIONS/ATA_00-GENERAL/ATA-00-general/00-00-general/SSOT/LC06_VERIFICATION/KNU-00-00-001-TEST-005_api-integration-tests.md"
+}

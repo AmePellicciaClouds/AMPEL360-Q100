@@ -1,0 +1,42 @@
+{
+  "ignorePatterns": [
+    {
+      "comment": "Ignore mailto links",
+      "pattern": "^mailto:"
+    },
+    {
+      "comment": "Ignore telephone links",
+      "pattern": "^tel:"
+    },
+    {
+      "comment": "Ignore PDF attachments",
+      "pattern": "\\.pdf$"
+    },
+    {
+      "comment": "Ignore image files",
+      "pattern": "\\.(png|jpg|jpeg|gif|svg|bmp|webp|ico)$"
+    },
+    {
+      "comment": "Ignore archive files",
+      "pattern": "\\.(zip|tar|gz|tgz|bz2|7z|rar)$"
+    },
+    {
+      "comment": "Ignore binary files",
+      "pattern": "\\.(exe|dll|so|dylib|bin)$"
+    }
+  ],
+  "replacementPatterns": [],
+  "httpHeaders": [
+    {
+      "urls": ["https://img.shields.io"],
+      "headers": {
+        "Accept": "image/svg+xml,image/*,*/*"
+      }
+    }
+  ],
+  "timeout": "20s",
+  "retryOn429": true,
+  "retryCount": 3,
+  "fallbackRetryDelay": "30s",
+  "aliveStatusCodes": [200, 206, 301, 302, 307, 308, 403]
+}

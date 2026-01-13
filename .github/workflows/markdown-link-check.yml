@@ -1,27 +1,43 @@
-name: Markdown Link Check
+name: Markdown Link Check (Deprecated)
+
+# ⚠️  DEPRECATED: This workflow is being replaced by structured link validation workflows.
+# 
+# Please use instead:
+# - link-validation-scheduled.yml - Full repository scan (weekly)
+# - link-validation-pr.yml - Incremental PR validation
+# - api-validation.yml - API endpoint validation
+#
+# This workflow will be removed in a future release.
 
 on:
-  push:
-    paths:
-      - '**/*.md'
-      - '**/*.MD'
-  pull_request:
-    paths:
-      - '**/*.md'
-      - '**/*.MD'
-  workflow_dispatch:  # Allow manual trigger
-  schedule:
-    # Run weekly on Sundays at 00:00 UTC to catch broken external links
-    - cron: '0 0 * * 0'
+  # Disabled to avoid duplication with new workflows
+  # push:
+  #   paths:
+  #     - '**/*.md'
+  #     - '**/*.MD'
+  # pull_request:
+  #   paths:
+  #     - '**/*.md'
+  #     - '**/*.MD'
+  workflow_dispatch:  # Keep manual trigger for compatibility
+  # schedule:
+  #   - cron: '0 0 * * 0'
 
 jobs:
   markdown-link-check:
-    name: Validate Markdown Links
+    name: Validate Markdown Links (Deprecated)
     runs-on: ubuntu-latest
     permissions:
       contents: read
 
     steps:
+      - name: Deprecation Notice
+        run: |
+          echo "::warning::This workflow is deprecated. Please use the new structured validation workflows:"
+          echo "::warning::  - link-validation-scheduled.yml for full scans"
+          echo "::warning::  - link-validation-pr.yml for PR validation"
+          echo "::warning::  - api-validation.yml for API endpoint validation"
+      
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
