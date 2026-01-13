@@ -10,4 +10,4 @@
 *.eps filter=lfs diff=lfs merge=lfs -text
 
 # Backup files
-*.bak
+*.bak -diff
