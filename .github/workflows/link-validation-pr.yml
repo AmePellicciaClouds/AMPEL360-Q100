@@ -1,0 +1,192 @@
+name: PR Link Validation (Incremental)
+
+on:
+  pull_request:
+    paths:
+      - '**/*.md'
+      - '**/*.MD'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  pr-link-validation:
+    name: Validate Links in Changed Files
+    runs-on: ubuntu-latest
+    # Only run on pull_request events, not workflow_dispatch
+    if: github.event_name == 'pull_request'
+    permissions:
+      contents: read
+      pull-requests: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Need full history to compare with base
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install markdown-link-check
+        run: npm install -g markdown-link-check
+
+      - name: Get changed markdown files
+        id: changed-files
+        run: |
+          # Get the base branch (usually main or master)
+          BASE_REF="${{ github.event.pull_request.base.ref }}"
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+          
+          echo "Comparing $BASE_SHA...$HEAD_SHA"
+          
+          # Get list of changed markdown files
+          changed_md_files=$(git diff --name-only --diff-filter=ACMR "$BASE_SHA" "$HEAD_SHA" | grep -E '\.(md|MD)$' || true)
+          
+          if [ -z "$changed_md_files" ]; then
+            echo "No markdown files changed in this PR"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "files=" >> $GITHUB_OUTPUT
+          else
+            echo "Changed markdown files:"
+            echo "$changed_md_files"
+            
+            # Convert to space-separated list for processing
+            files_list=$(echo "$changed_md_files" | tr '\n' ' ')
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "files=$files_list" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Validate changed files (relative links)
+        if: steps.changed-files.outputs.has_changes == 'true'
+        id: relative-check
+        run: |
+          failed_files=0
+          checked_files=0
+          relative_errors=0
+
+          echo "🔍 Checking relative links in changed files..."
+          echo ""
+          
+          files="${{ steps.changed-files.outputs.files }}"
+          
+          for md_file in $files; do
+            if [ -f "$md_file" ]; then
+              checked_files=$((checked_files + 1))
+              echo "📄 Checking relative links: $md_file"
+              
+              # Check relative links (file:// and local paths) with unique temp file
+              temp_relative=$(mktemp)
+              if ! markdown-link-check --config .github/markdown-link-check-config.json "$md_file" 2>&1 | tee "$temp_relative"; then
+                # Look for relative link errors (marked with ✖ and containing file paths)
+                if grep -E "\[✖\].*(\bFILE\b|\.md|\.\/|\.\.\/)" "$temp_relative" > /dev/null; then
+                  echo "   ❌ Relative link errors found"
+                  failed_files=$((failed_files + 1))
+                  relative_errors=$((relative_errors + 1))
+                fi
+              else
+                echo "   ✅ Relative links valid"
+              fi
+              rm -f "$temp_relative"
+              echo ""
+            fi
+          done
+          
+          echo "RELATIVE_CHECKED=$checked_files" >> $GITHUB_ENV
+          echo "RELATIVE_FAILED=$failed_files" >> $GITHUB_ENV
+          echo "RELATIVE_ERRORS=$relative_errors" >> $GITHUB_ENV
+          
+          # Fail if relative links are broken (these should always work)
+          if [ $relative_errors -gt 0 ]; then
+            echo "::error::Relative link validation failed. Fix broken internal links."
+            exit 1
+          fi
+
+      - name: Validate changed files (external links)
+        if: steps.changed-files.outputs.has_changes == 'true'
+        id: external-check
+        continue-on-error: true  # Don't fail PR for temporarily unavailable external links
+        run: |
+          failed_files=0
+          checked_files=0
+          external_errors=0
+
+          echo "🔍 Checking external links in changed files..."
+          echo ""
+          
+          files="${{ steps.changed-files.outputs.files }}"
+          
+          for md_file in $files; do
+            if [ -f "$md_file" ]; then
+              checked_files=$((checked_files + 1))
+              echo "📄 Checking external links: $md_file"
+              
+              # Check external links (http/https) with unique temp file
+              temp_external=$(mktemp)
+              if ! markdown-link-check --config .github/markdown-link-check-config.json "$md_file" 2>&1 | tee "$temp_external"; then
+                # Look for external link errors (marked with ✖ and containing http/https)
+                if grep -E "\[✖\].*https?://" "$temp_external" > /dev/null; then
+                  echo "   ⚠️  External link issues found (non-blocking)"
+                  failed_files=$((failed_files + 1))
+                  external_errors=$((external_errors + 1))
+                fi
+              else
+                echo "   ✅ External links valid"
+              fi
+              rm -f "$temp_external"
+              echo ""
+            fi
+          done
+          
+          echo "EXTERNAL_CHECKED=$checked_files" >> $GITHUB_ENV
+          echo "EXTERNAL_FAILED=$failed_files" >> $GITHUB_ENV
+          echo "EXTERNAL_ERRORS=$external_errors" >> $GITHUB_ENV
+
+      - name: Generate PR summary
+        if: always()
+        run: |
+          echo "## 🔗 PR Link Validation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Validation Type:** Incremental (changed files only)" >> $GITHUB_STEP_SUMMARY
+          echo "**PR:** #${{ github.event.pull_request.number }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ steps.changed-files.outputs.has_changes }}" == "true" ]; then
+            echo "### Changed Files Validated" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            echo "${{ steps.changed-files.outputs.files }}" | tr ' ' '\n' >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            echo "### Validation Results" >> $GITHUB_STEP_SUMMARY
+            echo "#### Relative Links (Repository Internal)" >> $GITHUB_STEP_SUMMARY
+            echo "- Files checked: **${RELATIVE_CHECKED:-0}**" >> $GITHUB_STEP_SUMMARY
+            echo "- Errors found: **${RELATIVE_ERRORS:-0}**" >> $GITHUB_STEP_SUMMARY
+            if [ "${RELATIVE_ERRORS:-0}" -gt 0 ]; then
+              echo "- Status: ❌ **FAILED** - Fix required before merge" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "- Status: ✅ **PASSED**" >> $GITHUB_STEP_SUMMARY
+            fi
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            echo "#### External Links (HTTP/HTTPS)" >> $GITHUB_STEP_SUMMARY
+            echo "- Files checked: **${EXTERNAL_CHECKED:-0}**" >> $GITHUB_STEP_SUMMARY
+            echo "- Issues found: **${EXTERNAL_ERRORS:-0}**" >> $GITHUB_STEP_SUMMARY
+            if [ "${EXTERNAL_ERRORS:-0}" -gt 0 ]; then
+              echo "- Status: ⚠️  **WARNING** - Review recommended but non-blocking" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "- Status: ✅ **PASSED**" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "✅ No markdown files changed in this PR" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Link Category Policy" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Relative links:** Always validated (blocking)" >> $GITHUB_STEP_SUMMARY
+          echo "- ⚠️  **External links:** Validated but non-blocking" >> $GITHUB_STEP_SUMMARY
+          echo "- ⏭️  **API endpoints:** Validated separately" >> $GITHUB_STEP_SUMMARY
+          echo "- ⏭️  **Attachments:** Excluded (PDFs, images, binaries)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "> 💡 Full repository scan runs weekly. See scheduled workflow for comprehensive validation." >> $GITHUB_STEP_SUMMARY
