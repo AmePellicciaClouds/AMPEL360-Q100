@@ -19,13 +19,13 @@ ICN-AMPEL360-S1-CCCSS-SSSS-NNN-V.ext
 | ICN | Literal | Information Control Number prefix | ICN |
 | AMPEL360 | Literal | Aircraft model identifier | AMPEL360 |
 | S1 | Literal | System code (S1 = aircraft) | S1 |
-| CCC | \d{3} | ATA Chapter (000-099) | 095 |
-| SS | \d{2} | ATA Section (00-99) | 40 |
-| SSSS | \d{4} | Subsection/Subject (0000-9999) | 0040 |
+| CCCSS | \d{5} | ATA Chapter + Section (concatenated) | 00095 (ATA 95-40) |
+| SSSS | \d{4} | Subject/Subsection code (0000-9999) | 0040 |
 | NNN | \d{3} | Sequence number (001-999) | 001 |
 | V | [A-Z] | Variant (A=original, B,C...=revisions) | A |
 | ext | string | File extension | svg, png |
 
+**Note:** The `CCCSS` component is a single 5-digit numeric field that encodes the ATA Chapter (`CCC`) and Section (`SS`) together. For example, ATA Chapter 95 and Section 40 are represented as `00095`, as used in `ICN-AMPEL360-S1-00095-0040-001-A.svg`.
 ### 2.3 Examples
 
 | ICN | Description |
