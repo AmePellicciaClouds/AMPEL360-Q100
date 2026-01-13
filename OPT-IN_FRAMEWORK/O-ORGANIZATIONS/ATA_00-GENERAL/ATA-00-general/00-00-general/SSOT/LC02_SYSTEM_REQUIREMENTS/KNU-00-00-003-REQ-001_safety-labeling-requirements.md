@@ -73,7 +73,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 
 ### 3.1 General Safety Labeling Requirements
 
-#### REQ-SAF-001: Safety Message Hierarchy
+#### REQ-AMPEL-00-00-02-SAF-001:
+**Old ID:** REQ-SAF-001   Safety Message Hierarchy
 **Requirement:** All safety messages shall be classified into one of three levels, in descending order of severity:
 
 | Level | Signal Word | Criteria |
@@ -89,7 +90,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 | Verification | Review |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-002: Severity Mapping
+#### REQ-AMPEL-00-00-02-SAF-002:
+**Old ID:** REQ-SAF-002   Severity Mapping
 **Requirement:** Safety message levels shall map to SAE ARP4761 severity classifications:
 
 | ARP4761 Severity | Safety Level | Color Code |
@@ -107,7 +109,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 | Verification | Review |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-003: Consistent Formatting
+#### REQ-AMPEL-00-00-02-SAF-003:
+**Old ID:** REQ-SAF-003   Consistent Formatting
 **Requirement:** All safety messages of the same level shall use identical formatting throughout program documentation, regardless of publication type or ATA chapter.
 
 | Attribute | Value |
@@ -117,7 +120,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 | Verification | Inspection |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-004: Proximity Placement
+#### REQ-AMPEL-00-00-02-SAF-004:
+**Old ID:** REQ-SAF-004   Proximity Placement
 **Requirement:** Safety messages shall appear immediately before the step or information to which they apply; they shall not be grouped at the beginning or end of a procedure unless they apply to the entire procedure.
 
 | Attribute | Value |
@@ -127,7 +131,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 | Verification | Review |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-005: Language Clarity
+#### REQ-AMPEL-00-00-02-SAF-005:
+**Old ID:** REQ-SAF-005   Language Clarity
 **Requirement:** Safety message text shall:
 - Use active voice and imperative mood
 - State the hazard, the consequence, and the avoidance action
@@ -145,7 +150,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 
 ### 3.2 WARNING Requirements
 
-#### REQ-SAF-010: WARNING Format
+#### REQ-AMPEL-00-00-02-SAF-010:
+**Old ID:** REQ-SAF-010   WARNING Format
 **Requirement:** WARNING messages shall include:
 
 | Element | Requirement |
@@ -163,7 +169,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 | Verification | Inspection |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-011: WARNING Color Specification
+#### REQ-AMPEL-00-00-02-SAF-011:
+**Old ID:** REQ-SAF-011   WARNING Color Specification
 **Requirement:** WARNING elements shall use the following colors:
 
 | Element | Color | Specification |
@@ -181,7 +188,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 | Verification | Inspection |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-012: WARNING Minimum Size
+#### REQ-AMPEL-00-00-02-SAF-012:
+**Old ID:** REQ-SAF-012   WARNING Minimum Size
 **Requirement:** WARNING messages in printed documentation shall have:
 - Signal word minimum height: 4.8mm (12pt)
 - Body text minimum height: 2.5mm (7pt)
@@ -198,7 +206,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 
 ### 3.3 CAUTION Requirements
 
-#### REQ-SAF-020: CAUTION Format
+#### REQ-AMPEL-00-00-02-SAF-020:
+**Old ID:** REQ-SAF-020   CAUTION Format
 **Requirement:** CAUTION messages shall include:
 
 | Element | Requirement |
@@ -216,7 +225,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 | Verification | Inspection |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-021: CAUTION Color Specification
+#### REQ-AMPEL-00-00-02-SAF-021:
+**Old ID:** REQ-SAF-021   CAUTION Color Specification
 **Requirement:** CAUTION elements shall use the following colors:
 
 | Element | Color | Specification |
@@ -238,7 +248,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 
 ### 3.4 NOTE Requirements
 
-#### REQ-SAF-030: NOTE Format
+#### REQ-AMPEL-00-00-02-SAF-030:
+**Old ID:** REQ-SAF-030   NOTE Format
 **Requirement:** NOTE messages shall include:
 
 | Element | Requirement |
@@ -256,7 +267,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 | Verification | Inspection |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-031: NOTE Color Specification
+#### REQ-AMPEL-00-00-02-SAF-031:
+**Old ID:** REQ-SAF-031   NOTE Color Specification
 **Requirement:** NOTE elements shall use the following colors:
 
 | Element | Color | Specification |
@@ -278,7 +290,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 
 ### 3.5 H₂-Specific Hazard Symbols
 
-#### REQ-SAF-040: Cryogenic Hazard Symbol
+#### REQ-AMPEL-00-00-02-SAF-040:
+**Old ID:** REQ-SAF-040   Cryogenic Hazard Symbol
 **Requirement:** Cryogenic hazards (LH₂ at -253°C) shall use a composite symbol:
 
 | Element | Description |
@@ -300,7 +313,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 | Verification | Review |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-041: Flammable Gas Hazard Symbol
+#### REQ-AMPEL-00-00-02-SAF-041:
+**Old ID:** REQ-SAF-041   Flammable Gas Hazard Symbol
 **Requirement:** Hydrogen flammability hazards shall use:
 
 | Element | Description |
@@ -322,7 +336,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 | Verification | Review |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-042: Asphyxiation Hazard Symbol
+#### REQ-AMPEL-00-00-02-SAF-042:
+**Old ID:** REQ-SAF-042   Asphyxiation Hazard Symbol
 **Requirement:** Oxygen displacement hazards shall use:
 
 | Element | Description |
@@ -344,7 +359,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 | Verification | Review |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-043: High Voltage Hazard Symbol
+#### REQ-AMPEL-00-00-02-SAF-043:
+**Old ID:** REQ-SAF-043   High Voltage Hazard Symbol
 **Requirement:** Electrical hazards ≥50V DC or ≥30V AC RMS shall use:
 
 | Element | Description |
@@ -362,7 +378,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 | Verification | Review |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-044: Pressure Hazard Symbol
+#### REQ-AMPEL-00-00-02-SAF-044:
+**Old ID:** REQ-SAF-044   Pressure Hazard Symbol
 **Requirement:** High-pressure system hazards (>10 bar) shall use:
 
 | Element | Description |
@@ -383,7 +400,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 | Verification | Review |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-045: Composite Hazard Symbols
+#### REQ-AMPEL-00-00-02-SAF-045:
+**Old ID:** REQ-SAF-045   Composite Hazard Symbols
 **Requirement:** Where multiple hazards coexist, composite or grouped symbols shall be used:
 
 | Combination | Treatment |
@@ -408,7 +426,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 
 ### 3.6 AI/ML Decision Indication
 
-#### REQ-SAF-050: AI/ML Output Indication
+#### REQ-AMPEL-00-00-02-SAF-050:
+**Old ID:** REQ-SAF-050   AI/ML Output Indication
 **Requirement:** When a procedure or display presents information derived from AI/ML inference, an indicator shall be provided:
 
 | Element | Description |
@@ -424,7 +443,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 | Verification | Review |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-051: AI Confidence Indication
+#### REQ-AMPEL-00-00-02-SAF-051:
+**Old ID:** REQ-SAF-051   AI Confidence Indication
 **Requirement:** Where AI/ML outputs include confidence or uncertainty measures, these shall be displayed:
 
 | Confidence Level | Indication |
@@ -440,7 +460,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 | Verification | Review |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-052: AI Override Indication
+#### REQ-AMPEL-00-00-02-SAF-052:
+**Old ID:** REQ-SAF-052   AI Override Indication
 **Requirement:** When an AI/ML system recommendation is overridden by crew action, documentation and displays shall indicate:
 - That override occurred
 - Who/what initiated the override
@@ -453,7 +474,8 @@ The Q100 hydrogen-hybrid electric architecture introduces hazard categories with
 | Verification | Review |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-053: AI Limitation Warnings
+#### REQ-AMPEL-00-00-02-SAF-053:
+**Old ID:** REQ-SAF-053   AI Limitation Warnings
 **Requirement:** AI/ML systems operating outside their validated operational design domain (ODD) shall trigger a dedicated WARNING:
 
 ```
@@ -474,7 +496,8 @@ procedures in [reference].
 
 ### 3.7 S1000D Integration Requirements
 
-#### REQ-SAF-060: S1000D Warning Markup
+#### REQ-AMPEL-00-00-02-SAF-060:
+**Old ID:** REQ-SAF-060   S1000D Warning Markup
 **Requirement:** WARNING messages in S1000D Data Modules shall use the `<warning>` element with appropriate `warningType` attribute:
 
 ```xml
@@ -492,7 +515,8 @@ procedures in [reference].
 | Verification | BREX+CI |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-061: S1000D Caution Markup
+#### REQ-AMPEL-00-00-02-SAF-061:
+**Old ID:** REQ-SAF-061   S1000D Caution Markup
 **Requirement:** CAUTION messages in S1000D Data Modules shall use the `<caution>` element:
 
 ```xml
@@ -510,7 +534,8 @@ procedures in [reference].
 | Verification | BREX+CI |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-062: S1000D Note Markup
+#### REQ-AMPEL-00-00-02-SAF-062:
+**Old ID:** REQ-SAF-062   S1000D Note Markup
 **Requirement:** NOTE messages in S1000D Data Modules shall use the `<note>` element:
 
 ```xml
@@ -528,7 +553,8 @@ procedures in [reference].
 | Verification | BREX+CI |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-063: BREX Rules for Safety Messages
+#### REQ-AMPEL-00-00-02-SAF-063:
+**Old ID:** REQ-SAF-063   BREX Rules for Safety Messages
 **Requirement:** The program BREX shall define validation rules for:
 - Required elements within WARNING/CAUTION/NOTE
 - Prohibited nesting of safety messages
@@ -547,7 +573,8 @@ procedures in [reference].
 
 ### 3.8 Hazard Classification Requirements
 
-#### REQ-SAF-070: Hazard Category Registry
+#### REQ-AMPEL-00-00-02-SAF-070:
+**Old ID:** REQ-SAF-070   Hazard Category Registry
 **Requirement:** The program shall maintain a registry of hazard categories with:
 
 | Field | Description |
@@ -567,7 +594,8 @@ procedures in [reference].
 | Downstream | KNU-00-00-003-ICD-001 |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-071: Hazard-to-Symbol Mapping
+#### REQ-AMPEL-00-00-02-SAF-071:
+**Old ID:** REQ-SAF-071   Hazard-to-Symbol Mapping
 **Requirement:** Each hazard category shall map to exactly one primary symbol; variations shall be documented in the symbol library.
 
 | Attribute | Value |
@@ -578,7 +606,8 @@ procedures in [reference].
 | Downstream | KNU-00-00-003-ICD-001 |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-072: New Hazard Approval Process
+#### REQ-AMPEL-00-00-02-SAF-072:
+**Old ID:** REQ-SAF-072   New Hazard Approval Process
 **Requirement:** Introduction of new hazard categories or symbols shall require:
 - Safety assessment per ARP4761
 - Symbol design per ISO 3864-1
@@ -598,7 +627,8 @@ procedures in [reference].
 
 ### 3.9 Physical Placard Requirements
 
-#### REQ-SAF-080: Placard-to-Documentation Alignment
+#### REQ-AMPEL-00-00-02-SAF-080:
+**Old ID:** REQ-SAF-080   Placard-to-Documentation Alignment
 **Requirement:** Safety messages on physical aircraft placards shall use identical symbols and signal words as the corresponding documentation.
 
 | Attribute | Value |
@@ -608,7 +638,8 @@ procedures in [reference].
 | Verification | Inspection |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-081: Placard Durability Requirements
+#### REQ-AMPEL-00-00-02-SAF-081:
+**Old ID:** REQ-SAF-081   Placard Durability Requirements
 **Requirement:** Physical placards in hazardous environments shall meet:
 
 | Environment | Requirement |
@@ -625,7 +656,8 @@ procedures in [reference].
 | Verification | Test |
 | Parent | KNOT-00-00-003 |
 
-#### REQ-SAF-082: Multi-Language Placards
+#### REQ-AMPEL-00-00-02-SAF-082:
+**Old ID:** REQ-SAF-082   Multi-Language Placards
 **Requirement:** Physical placards in crew-accessible areas shall include:
 - English (primary)
 - Symbols (universal)
@@ -711,12 +743,12 @@ procedures in [reference].
 | REQ-SAF-021 | Inspection | STK_PUB | Color specification |
 | REQ-SAF-030 | Inspection | STK_PUB | NOTE format check |
 | REQ-SAF-031 | Inspection | STK_PUB | Color specification |
-| REQ-SAF-040–044 | Review | STK_SAF | Symbol library review |
+| REQ-AMPEL-00-00-02-SAF-040–044 | Review | STK_SAF | Symbol library review |
 | REQ-SAF-045 | Review | STK_SAF | Composite rules |
-| REQ-SAF-050–053 | Review | STK_AI | AI indication review |
-| REQ-SAF-060–063 | BREX+CI | STK_PUB | S1000D validation |
-| REQ-SAF-070–072 | Review | STK_SAF | Registry completeness |
-| REQ-SAF-080–082 | Inspection/Test | STK_SAF | Placard verification |
+| REQ-AMPEL-00-00-02-SAF-050–053 | Review | STK_AI | AI indication review |
+| REQ-AMPEL-00-00-02-SAF-060–063 | BREX+CI | STK_PUB | S1000D validation |
+| REQ-AMPEL-00-00-02-SAF-070–072 | Review | STK_SAF | Registry completeness |
+| REQ-AMPEL-00-00-02-SAF-080–082 | Inspection/Test | STK_SAF | Placard verification |
 
 ---
 

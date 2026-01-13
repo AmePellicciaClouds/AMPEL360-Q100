@@ -71,7 +71,8 @@ This requirements document follows the structure:
 
 ### 3.1 General Requirements
 
-#### REQ-GLO-001: Glossary Existence
+#### REQ-AMPEL-00-00-02-SE-001:
+**Old ID:** REQ-GLO-001   Glossary Existence
 **Requirement:** The program shall maintain a single, authoritative glossary containing all Q100-specific terminology.
 
 | Attribute | Value |
@@ -81,7 +82,8 @@ This requirements document follows the structure:
 | Verification | Inspection |
 | Parent | KNOT-00-00-001 |
 
-#### REQ-GLO-002: Glossary Authority
+#### REQ-AMPEL-00-00-02-SE-002:
+**Old ID:** REQ-GLO-002   Glossary Authority
 **Requirement:** The Program Glossary shall be the authoritative source for all Q100-specific term definitions; conflicting definitions in other documents shall be considered non-conforming.
 
 | Attribute | Value |
@@ -91,7 +93,8 @@ This requirements document follows the structure:
 | Verification | Review |
 | Parent | KNOT-00-00-001 |
 
-#### REQ-GLO-003: Glossary Accessibility
+#### REQ-AMPEL-00-00-02-SE-003:
+**Old ID:** REQ-GLO-003   Glossary Accessibility
 **Requirement:** The Program Glossary shall be accessible to all program stakeholders without specialized tooling.
 
 | Attribute | Value |
@@ -101,7 +104,8 @@ This requirements document follows the structure:
 | Verification | Demonstration |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-GLO-004: Glossary Language
+#### REQ-AMPEL-00-00-02-SE-004:
+**Old ID:** REQ-GLO-004   Glossary Language
 **Requirement:** The Program Glossary shall be authored in English (US) as the primary language.
 
 | Attribute | Value |
@@ -115,7 +119,8 @@ This requirements document follows the structure:
 
 ### 3.2 Content Requirements — Term Categories
 
-#### REQ-GLO-010: BWB Configuration Terms
+#### REQ-AMPEL-00-00-02-SE-010:
+**Old ID:** REQ-GLO-010   BWB Configuration Terms
 **Requirement:** The glossary shall define all terms specific to the Blended Wing Body configuration, including but not limited to:
 
 | Term Category | Example Terms |
@@ -133,7 +138,8 @@ This requirements document follows the structure:
 | Acceptance | ≥40 BWB-specific terms defined |
 | Parent | KNOT-00-00-001 |
 
-#### REQ-GLO-011: Hydrogen Propulsion Terms
+#### REQ-AMPEL-00-00-02-SE-011:
+**Old ID:** REQ-GLO-011   Hydrogen Propulsion Terms
 **Requirement:** The glossary shall define all terms specific to hydrogen propulsion and cryogenic storage, including but not limited to:
 
 | Term Category | Example Terms |
@@ -151,7 +157,8 @@ This requirements document follows the structure:
 | Acceptance | ≥60 H₂-specific terms defined |
 | Parent | KNOT-00-00-001 |
 
-#### REQ-GLO-012: Neural Systems Terms
+#### REQ-AMPEL-00-00-02-SE-012:
+**Old ID:** REQ-GLO-012   Neural Systems Terms
 **Requirement:** The glossary shall define all terms specific to AI/ML and neural network systems, including but not limited to:
 
 | Term Category | Example Terms |
@@ -169,7 +176,8 @@ This requirements document follows the structure:
 | Acceptance | ≥50 AI/ML-specific terms defined |
 | Parent | KNOT-00-00-001 |
 
-#### REQ-GLO-013: Circularity and DPP Terms
+#### REQ-AMPEL-00-00-02-SE-013:
+**Old ID:** REQ-GLO-013   Circularity and DPP Terms
 **Requirement:** The glossary shall define all terms specific to circularity, sustainability, and Digital Product Passport, including but not limited to:
 
 | Term Category | Example Terms |
@@ -187,7 +195,8 @@ This requirements document follows the structure:
 | Acceptance | ≥30 circularity/DPP terms defined |
 | Parent | KNOT-00-00-001 |
 
-#### REQ-GLO-014: OPT-IN Framework Terms
+#### REQ-AMPEL-00-00-02-SE-014:
+**Old ID:** REQ-GLO-014   OPT-IN Framework Terms
 **Requirement:** The glossary shall define all terms specific to the OPT-IN framework and AMPEL360 methodology, including but not limited to:
 
 | Term Category | Example Terms |
@@ -205,7 +214,8 @@ This requirements document follows the structure:
 | Acceptance | ≥40 OPT-IN terms defined |
 | Parent | KNOT-00-00-001 |
 
-#### REQ-GLO-015: Distributed Electric Propulsion Terms
+#### REQ-AMPEL-00-00-02-SE-015:
+**Old ID:** REQ-GLO-015   Distributed Electric Propulsion Terms
 **Requirement:** The glossary shall define all terms specific to distributed electric propulsion, including but not limited to:
 
 | Term Category | Example Terms |
@@ -227,7 +237,8 @@ This requirements document follows the structure:
 
 ### 3.3 Structure Requirements — Entry Format
 
-#### REQ-GLO-020: Term Entry Structure
+#### REQ-AMPEL-00-00-02-SE-020:
+**Old ID:** REQ-GLO-020   Term Entry Structure
 **Requirement:** Each glossary entry shall contain, at minimum:
 
 | Field | Description | Required |
@@ -248,7 +259,8 @@ This requirements document follows the structure:
 | Verification | Inspection |
 | Parent | KNOT-00-00-001 |
 
-#### REQ-GLO-021: Definition Quality
+#### REQ-AMPEL-00-00-02-SE-021:
+**Old ID:** REQ-GLO-021   Definition Quality
 **Requirement:** Each definition shall:
 - Be written in a single, complete sentence
 - Avoid circular definitions (term shall not appear in its own definition)
@@ -262,7 +274,8 @@ This requirements document follows the structure:
 | Verification | Review |
 | Parent | KNOT-00-00-001 |
 
-#### REQ-GLO-022: Abbreviation Uniqueness
+#### REQ-AMPEL-00-00-02-SE-022:
+**Old ID:** REQ-GLO-022   Abbreviation Uniqueness
 **Requirement:** Each abbreviation shall be unique within the glossary; if an abbreviation has multiple meanings in different domains, each shall be a separate entry with domain qualifier.
 
 | Attribute | Value |
@@ -272,7 +285,8 @@ This requirements document follows the structure:
 | Verification | Inspection (automated check) |
 | Parent | KNOT-00-00-001 |
 
-#### REQ-GLO-023: Alphabetical Organization
+#### REQ-AMPEL-00-00-02-SE-023:
+**Old ID:** REQ-GLO-023   Alphabetical Organization
 **Requirement:** The glossary shall be organized alphabetically by term, with a separate section for abbreviations.
 
 | Attribute | Value |
@@ -286,7 +300,8 @@ This requirements document follows the structure:
 
 ### 3.4 Source Requirements — References
 
-#### REQ-GLO-030: Source Citation
+#### REQ-AMPEL-00-00-02-SE-030:
+**Old ID:** REQ-GLO-030   Source Citation
 **Requirement:** Each term shall cite its authoritative source using the following hierarchy:
 
 | Priority | Source Type | Example |
@@ -304,7 +319,8 @@ This requirements document follows the structure:
 | Verification | Review |
 | Parent | KNOT-00-00-001 |
 
-#### REQ-GLO-031: Program-Defined Terms
+#### REQ-AMPEL-00-00-02-SE-031:
+**Old ID:** REQ-GLO-031   Program-Defined Terms
 **Requirement:** Terms defined by the program (Source = "AMPEL360 Program Office") shall include:
 - Rationale for why existing standards do not provide an adequate definition
 - Date of definition approval
@@ -317,7 +333,8 @@ This requirements document follows the structure:
 | Verification | Review |
 | Parent | KNOT-00-00-001 |
 
-#### REQ-GLO-032: Source Conflict Resolution
+#### REQ-AMPEL-00-00-02-SE-032:
+**Old ID:** REQ-GLO-032   Source Conflict Resolution
 **Requirement:** Where multiple sources define the same term differently, the glossary shall:
 - Select one definition as authoritative
 - Document the selection rationale
@@ -334,7 +351,8 @@ This requirements document follows the structure:
 
 ### 3.5 Integration Requirements
 
-#### REQ-GLO-040: CSDB Publication
+#### REQ-AMPEL-00-00-02-SE-040:
+**Old ID:** REQ-GLO-040   CSDB Publication
 **Requirement:** The glossary shall be published as an S1000D Data Module (DM) in the CSDB with:
 - DMC following program conventions
 - BREX-compliant structure
@@ -348,7 +366,8 @@ This requirements document follows the structure:
 | Downstream | KNU-00-00-001-PUB-001 |
 | Parent | KNOT-00-00-001 |
 
-#### REQ-GLO-041: Machine-Readable Format
+#### REQ-AMPEL-00-00-02-SE-041:
+**Old ID:** REQ-GLO-041   Machine-Readable Format
 **Requirement:** The glossary shall be available in a machine-readable format (CSV, JSON, or YAML) in addition to the human-readable DM.
 
 | Attribute | Value |
@@ -358,7 +377,8 @@ This requirements document follows the structure:
 | Verification | Inspection |
 | Parent | KNOT-00-00-001 |
 
-#### REQ-GLO-042: Cross-Reference Links
+#### REQ-AMPEL-00-00-02-SE-042:
+**Old ID:** REQ-GLO-042   Cross-Reference Links
 **Requirement:** Glossary terms appearing in other program documents shall be hyperlinked to the glossary entry (where the publication format supports hyperlinks).
 
 | Attribute | Value |
@@ -372,7 +392,8 @@ This requirements document follows the structure:
 
 ### 3.6 Governance Requirements
 
-#### REQ-GLO-050: Change Control
+#### REQ-AMPEL-00-00-02-SE-050:
+**Old ID:** REQ-GLO-050   Change Control
 **Requirement:** Changes to the glossary shall follow the program change control process (LC08), including:
 - Change request documentation
 - Impact assessment
@@ -387,7 +408,8 @@ This requirements document follows the structure:
 | Downstream | KNU-00-00-001-CM-001 |
 | Parent | KNOT-00-00-001 |
 
-#### REQ-GLO-051: Version Identification
+#### REQ-AMPEL-00-00-02-SE-051:
+**Old ID:** REQ-GLO-051   Version Identification
 **Requirement:** Each glossary release shall have a unique version identifier following program conventions.
 
 | Attribute | Value |
@@ -397,7 +419,8 @@ This requirements document follows the structure:
 | Verification | Inspection |
 | Parent | KNOT-00-00-002 |
 
-#### REQ-GLO-052: Deprecation Policy
+#### REQ-AMPEL-00-00-02-SE-052:
+**Old ID:** REQ-GLO-052   Deprecation Policy
 **Requirement:** Terms that are superseded or removed shall be marked as deprecated (not deleted) with:
 - Deprecation date
 - Reason for deprecation
@@ -411,7 +434,8 @@ This requirements document follows the structure:
 | Verification | Review |
 | Parent | KNOT-00-00-001 |
 
-#### REQ-GLO-053: Review Cycle
+#### REQ-AMPEL-00-00-02-SE-053:
+**Old ID:** REQ-GLO-053   Review Cycle
 **Requirement:** The glossary shall be reviewed for completeness and accuracy at each major program milestone.
 
 | Attribute | Value |
