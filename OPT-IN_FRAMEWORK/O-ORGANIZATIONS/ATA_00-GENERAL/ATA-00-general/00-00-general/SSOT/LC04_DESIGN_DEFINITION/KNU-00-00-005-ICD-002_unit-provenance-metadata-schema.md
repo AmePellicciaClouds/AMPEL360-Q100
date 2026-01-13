@@ -126,8 +126,8 @@ This ICD directly satisfies **REQ-005-005** from KNU-00-00-005-REQ-001 and resol
     },
     "canonical_unit": {
       "type": "string",
-      "description": "SI unit symbol (e.g., 'Pa', 'm', 'kg', 'K')",
-      "pattern": "^[A-Za-z°µ⋅/²³]+$"
+      "description": "SI unit symbol (e.g., 'Pa', 'm', 'kg', 'K', 'm³', 'kg⋅m⁻²⋅s⁻²')",
+      "pattern": "^[A-Za-z0-9°µ⋅·/²³⁻¹⁴⁵⁶⁷⁸⁹⁰₀₁₂₃₄₅₆₇₈₉\\-%]+$"
     },
     "primary_value": {
       "type": "number",
@@ -360,16 +360,25 @@ def validate_consistency(data: dict, conversion_db: dict) -> list[str]:
     canonical_unit = data.get('canonical_unit')
     primary_unit = data.get('primary_unit')
     
-    # Convert primary to canonical and compare
-    expected_canonical = convert(primary, primary_unit, canonical_unit, conversion_db)
+    # Skip if missing required values
+    if any(v is None for v in [canonical, primary, canonical_unit, primary_unit]):
+        return errors  # Missing values handled by required field validation
     
-    # Allow 0.01% tolerance for floating-point precision
-    tolerance = abs(expected_canonical) * 0.0001
-    if abs(canonical - expected_canonical) > tolerance:
-        errors.append(
-            f"Inconsistent values: canonical={canonical} {canonical_unit}, "
-            f"primary={primary} {primary_unit} converts to {expected_canonical}"
-        )
+    try:
+        # Convert primary to canonical and compare
+        expected_canonical = convert(primary, primary_unit, canonical_unit, conversion_db)
+        
+        # Allow 0.01% tolerance for floating-point precision
+        tolerance = abs(expected_canonical) * 0.0001 if expected_canonical != 0 else 0.0001
+        if abs(canonical - expected_canonical) > tolerance:
+            errors.append(
+                f"Inconsistent values: canonical={canonical} {canonical_unit}, "
+                f"primary={primary} {primary_unit} converts to {expected_canonical}"
+            )
+    except (KeyError, ValueError) as e:
+        errors.append(f"Conversion error: {e}")
+    except TypeError as e:
+        errors.append(f"Type error during conversion: {e}")
     
     return errors
 ```
@@ -401,14 +410,14 @@ class UnitProvenanceExtractor:
             "canonical_unit": "Pa",
             "primary_value": 3.0,
             "primary_unit": "bar",
-            "domain": "fluid_systems"
+            "domain": "pressure_systems"
           }
         
         OUTPUT:
           {
             "canonical": {"value": 300000, "unit": "Pa"},
             "primary": {"value": 3.0, "unit": "bar"},
-            "domain": "fluid_systems",
+            "domain": "pressure_systems",
             "valid": True,
             "errors": []
           }
@@ -660,7 +669,8 @@ def main():
         with open(yaml_file) as f:
             data = yaml.safe_load(f)
         
-        if data and 'canonical_value' in str(data):
+        # Check if data contains unit provenance metadata
+        if isinstance(data, dict) and 'canonical_value' in data:
             try:
                 validate_recursive(data, schema)
             except ValidationError as e:
