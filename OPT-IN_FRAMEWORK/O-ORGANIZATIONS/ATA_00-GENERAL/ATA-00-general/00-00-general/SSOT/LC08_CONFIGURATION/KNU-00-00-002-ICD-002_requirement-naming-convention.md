@@ -113,8 +113,10 @@ REQ-SUPP-71-00-02-SE-001     # Engine OEM constraint
 All requirement IDs SHALL match this regex:
 
 ```regex
-^REQ-([A-Z]{2,6})-(CROSS|[0-9]{2}-[0-9]{2})-(CROSS|[0-9]{2})-([A-Z]{2,4})-([0-9]{3})$
+^REQ-([A-Z0-9]{2,6})-(CROSS|[0-9]{2}-[0-9]{2})-(CROSS|[0-9]{2})-([A-Z]{2,4})-([0-9]{3})$
 ```
+
+**Note:** ORIGIN codes may contain uppercase letters and digits (e.g., S1000D), but must be 2-6 characters.
 
 CI/CD validation script: `.github/workflows/validate_req_ids.py`
 
