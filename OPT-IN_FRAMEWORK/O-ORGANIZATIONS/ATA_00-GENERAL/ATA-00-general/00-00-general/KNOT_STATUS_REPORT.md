@@ -137,12 +137,12 @@
 
 ### KNOT-00-00-003
 
-**Progress:** ████████████████░░░░░░░░░░░░ 56% (5/9 KNUs)
+**Progress:** ███████████████████░░░░░░░░░░ 60% (6/10 KNUs)
 
 | Status | Count | Percentage |
 |--------|-------|------------|
-| 🔵 GENERATED | 5 | 55.6% |
-| ⚪ PLANNED | 4 | 44.4% |
+| 🔵 GENERATED | 6 | 60.0% |
+| ⚪ PLANNED | 4 | 40.0% |
 | 🟢 APPROVED | 0 | 0.0% |
 | 🔴 BLOCKED | 0 | 0.0% |
 
@@ -152,21 +152,23 @@
 |--------|------|--------|----------|-------|
 | KNU-00-00-003-REQ-001 | REQ | 🔵 GENERATED | HIGH | Baseline requirement - GENERATED |
 | KNU-00-00-003-ICD-001 | ICD | 🔵 GENERATED | HIGH | Baseline ICD - GENERATED |
+| KNU-00-00-003-ICD-002 | ICD | 🔵 GENERATED | HIGH | AI/ML Indication Symbols - GENERATED ✅ |
+| KNU-00-00-003-ICD-003 | ICD | 🔵 GENERATED | HIGH | ICN Repository Specification - GENERATED ✅ 🆕 |
 | KNU-00-00-003-ANA-001 | ANA | 🔵 GENERATED | MEDIUM | Warning Standards Gap Analysis - GENERATED ✅ |
 | KNU-00-00-003-CM-001 | CM | ⚪ PLANNED | MEDIUM | Baseline CM index |
 | KNU-00-00-003-PUB-001 | PUB-AMM | 🔵 GENERATED | HIGH | Baseline publication - GENERATED |
-| KNU-00-00-003-ICD-002 | ICD | ⚪ PLANNED | MEDIUM | Symbol Asset Repository 🆕 |
 | KNU-00-00-003-TEST-001 | TEST | ⚪ PLANNED | MEDIUM | Symbol legibility validation 🆕 |
 | KNU-00-00-003-ANA-002 | ANA | ⚪ PLANNED | MEDIUM | Compound Hazard Symbol Study 🆕 |
 | KNU-00-00-003-TEST-002 | TEST | ⚪ PLANNED | HIGH | Symbol Visibility Testing 🆕 |
 
-**Residual Uncertainty:** 75 → **35** (↓ 40 points, 53% reduction total)
+**Residual Uncertainty:** 75 → **30** (↓ 45 points, 60% reduction total)
 
 **Status Change:** 🟡 IN PROGRESS → 🟢 ON TRACK
 
 **Key Completions:**
 - ✅ KNU-00-00-003-ANA-001: Warning Standards Gap Analysis (19 symbol gaps, 5 novel AI/ML symbols)
-- ✅ KNU-00-00-003-ICD-002: AI/ML Indication Symbols (9 symbols defined) 🆕
+- ✅ KNU-00-00-003-ICD-002: AI/ML Indication Symbols (9 symbols defined)
+- ✅ KNU-00-00-003-ICD-003: ICN Repository Specification (16 placeholder symbols, S1000D-compliant) 🆕
 
 ---
 
