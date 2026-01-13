@@ -199,11 +199,11 @@ The SSOT stores **canonical SI values** with **metadata tags** indicating:
 ```json
 {
   "parameter": "cruise_speed",
-  "canonical_value": 77.2,
+  "canonical_value": 77.17,
   "canonical_unit": "m/s",
   "primary_unit": "kt",
   "primary_value": 150,
-  "domain": "flight_operations",
+  "domain": "auto_flight",
   "ata_chapter": "22"
 }
 ```
