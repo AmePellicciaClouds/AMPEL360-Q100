@@ -69,7 +69,8 @@ The cross-reference system shall adhere to these principles established in [KNOT
 
 ### 3.1 Reference Syntax Requirements
 
-#### REQ-XRF-001: URI Scheme Definition
+#### REQ-AMPEL-00-00-04-SE-001:
+**Old ID:** REQ-XRF-001   URI Scheme Definition
 **Requirement:** The program shall define a URI scheme for internal references following the pattern:
 
 ```
@@ -94,7 +95,8 @@ ampel360://<axis>/<ata-path>/<lc-or-pub>/<artifact-id>[#<anchor>]
 | Verification | Inspection |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-002: Relative Path References
+#### REQ-AMPEL-00-00-04-SE-002:
+**Old ID:** REQ-XRF-002   Relative Path References
 **Requirement:** Within the repository, references shall use relative paths from the referencing document:
 
 ```markdown
@@ -109,7 +111,8 @@ ampel360://<axis>/<ata-path>/<lc-or-pub>/<artifact-id>[#<anchor>]
 | Verification | Inspection |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-003: Anchor Syntax
+#### REQ-AMPEL-00-00-04-SE-003:
+**Old ID:** REQ-XRF-003   Anchor Syntax
 **Requirement:** Section anchors shall follow the pattern:
 
 ```
@@ -132,7 +135,8 @@ ampel360://<axis>/<ata-path>/<lc-or-pub>/<artifact-id>[#<anchor>]
 | Verification | Inspection |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-004: External Reference Format
+#### REQ-AMPEL-00-00-04-SE-004:
+**Old ID:** REQ-XRF-004   External Reference Format
 **Requirement:** References to external documents shall use the format:
 
 ```
@@ -155,7 +159,8 @@ ampel360://<axis>/<ata-path>/<lc-or-pub>/<artifact-id>[#<anchor>]
 
 ### 3.2 Trace Link Types
 
-#### REQ-XRF-010: Trace Link Classification
+#### REQ-AMPEL-00-00-04-SE-010:
+**Old ID:** REQ-XRF-010   Trace Link Classification
 **Requirement:** The program shall classify trace links into the following types:
 
 | Link Type | Code | Semantics | Example |
@@ -177,7 +182,8 @@ ampel360://<axis>/<ata-path>/<lc-or-pub>/<artifact-id>[#<anchor>]
 | Verification | Review |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-011: Bidirectional Link Requirement
+#### REQ-AMPEL-00-00-04-SE-011:
+**Old ID:** REQ-XRF-011   Bidirectional Link Requirement
 **Requirement:** Every trace link shall be navigable in both directions:
 - Forward: Source → Target
 - Backward: Target → Source
@@ -191,7 +197,8 @@ The system shall maintain inverse relationships automatically or through documen
 | Verification | Inspection |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-012: Link Cardinality
+#### REQ-AMPEL-00-00-04-SE-012:
+**Old ID:** REQ-XRF-012   Link Cardinality
 **Requirement:** Trace links shall support the following cardinalities:
 
 | Cardinality | Description | Validation |
@@ -212,7 +219,8 @@ The system shall maintain inverse relationships automatically or through documen
 
 ### 3.3 Certification Traceability Requirements
 
-#### REQ-XRF-020: Certification Evidence Chain
+#### REQ-AMPEL-00-00-04-SE-020:
+**Old ID:** REQ-XRF-020   Certification Evidence Chain
 **Requirement:** The traceability system shall support the certification evidence chain:
 
 ```
@@ -236,7 +244,8 @@ Certification Evidence Package
 | Verification | Review |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-021: Means of Compliance Mapping
+#### REQ-AMPEL-00-00-04-SE-021:
+**Old ID:** REQ-XRF-021   Means of Compliance Mapping
 **Requirement:** Each certification requirement (CS-25, Part 25) shall trace to:
 - Means of Compliance (MOC) method
 - Responsible ATA chapter(s)
@@ -250,7 +259,8 @@ Certification Evidence Package
 | Verification | Review |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-022: Safety Assessment Traceability
+#### REQ-AMPEL-00-00-04-SE-022:
+**Old ID:** REQ-XRF-022   Safety Assessment Traceability
 **Requirement:** Safety-derived requirements (from FHA, PSSA, SSA per ARP4761) shall trace to:
 - Source hazard/failure condition
 - Safety objective (probability target)
@@ -264,7 +274,8 @@ Certification Evidence Package
 | Verification | Review |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-023: Software Traceability (DO-178C)
+#### REQ-AMPEL-00-00-04-SE-023:
+**Old ID:** REQ-XRF-023   Software Traceability (DO-178C)
 **Requirement:** For DAL A/B/C software, traceability shall include:
 
 | Trace Path | DO-178C Table | Required For |
@@ -282,7 +293,8 @@ Certification Evidence Package
 | Verification | Review |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-024: Hardware Traceability (DO-254)
+#### REQ-AMPEL-00-00-04-SE-024:
+**Old ID:** REQ-XRF-024   Hardware Traceability (DO-254)
 **Requirement:** For DAL A/B hardware, traceability shall include:
 
 | Trace Path | Required For |
@@ -302,7 +314,8 @@ Certification Evidence Package
 
 ### 3.4 Trace Matrix Requirements
 
-#### REQ-XRF-030: Trace Matrix Structure
+#### REQ-AMPEL-00-00-04-SE-030:
+**Old ID:** REQ-XRF-030   Trace Matrix Structure
 **Requirement:** Each ATA section shall maintain a trace matrix with the following structure:
 
 | Column | Description |
@@ -323,7 +336,8 @@ Certification Evidence Package
 | Verification | Inspection |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-031: Trace Matrix Location
+#### REQ-AMPEL-00-00-04-SE-031:
+**Old ID:** REQ-XRF-031   Trace Matrix Location
 **Requirement:** Trace matrices shall be located at:
 - Section level: `xx-yy-zz/SSOT/TRACE_MATRIX.csv`
 - Chapter level: `ATA_XX/TRACE_MATRIX.csv` (consolidated)
@@ -336,7 +350,8 @@ Certification Evidence Package
 | Verification | Inspection |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-032: Coverage Metrics
+#### REQ-AMPEL-00-00-04-SE-032:
+**Old ID:** REQ-XRF-032   Coverage Metrics
 **Requirement:** Trace matrices shall support calculation of:
 
 | Metric | Definition |
@@ -358,7 +373,8 @@ Certification Evidence Package
 
 ### 3.5 KNOT/KNU Traceability
 
-#### REQ-XRF-040: KNOT-to-KNU Traceability
+#### REQ-AMPEL-00-00-04-SE-040:
+**Old ID:** REQ-XRF-040   KNOT-to-KNU Traceability
 **Requirement:** Every KNU shall trace to exactly one parent KNOT via the `DERIVES` link type:
 
 ```
@@ -377,7 +393,8 @@ KNOT-XX-YY-ZZ-NNN
 | Verification | Inspection |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-041: KNU Cross-References
+#### REQ-AMPEL-00-00-04-SE-041:
+**Old ID:** REQ-XRF-041   KNU Cross-References
 **Requirement:** KNUs may reference other KNUs via:
 - `DEPENDS` — Required input from another KNU
 - `REFS` — Informational reference
@@ -390,7 +407,8 @@ KNOT-XX-YY-ZZ-NNN
 | Verification | Review |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-042: KNOT Spillover Traceability
+#### REQ-AMPEL-00-00-04-SE-042:
+**Old ID:** REQ-XRF-042   KNOT Spillover Traceability
 **Requirement:** KNUs that contribute to multiple KNOTs (spillover effect) shall document:
 - Primary KNOT (parent)
 - Adjacent KNOTs (spillover targets)
@@ -407,7 +425,8 @@ KNOT-XX-YY-ZZ-NNN
 
 ### 3.6 Lifecycle Traceability
 
-#### REQ-XRF-050: LC Category Trace Flow
+#### REQ-AMPEL-00-00-04-SE-050:
+**Old ID:** REQ-XRF-050   LC Category Trace Flow
 **Requirement:** The traceability system shall enforce the standard lifecycle trace flow:
 
 ```
@@ -431,7 +450,8 @@ LC08 (Configuration) → PUB (Publications)
 | Verification | Review |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-051: Cross-LC Traceability
+#### REQ-AMPEL-00-00-04-SE-051:
+**Old ID:** REQ-XRF-051   Cross-LC Traceability
 **Requirement:** Artifacts in different lifecycle categories shall maintain explicit trace links:
 
 | From LC | To LC | Link Type | Purpose |
@@ -455,7 +475,8 @@ LC08 (Configuration) → PUB (Publications)
 
 ### 3.7 Publication Traceability
 
-#### REQ-XRF-060: SSOT-to-PUB Traceability
+#### REQ-AMPEL-00-00-04-SE-060:
+**Old ID:** REQ-XRF-060   SSOT-to-PUB Traceability
 **Requirement:** Every S1000D Data Module (DM) in the CSDB shall trace to its source SSOT artifact(s):
 
 ```xml
@@ -472,7 +493,8 @@ LC08 (Configuration) → PUB (Publications)
 | Verification | BREX+CI |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-061: DM Cross-References
+#### REQ-AMPEL-00-00-04-SE-061:
+**Old ID:** REQ-XRF-061   DM Cross-References
 **Requirement:** S1000D Data Modules shall use `<dmRef>` elements for internal cross-references following the program DMC conventions:
 
 ```xml
@@ -500,7 +522,8 @@ LC08 (Configuration) → PUB (Publications)
 | Verification | BREX+CI |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-062: Applicability Traceability
+#### REQ-AMPEL-00-00-04-SE-062:
+**Old ID:** REQ-XRF-062   Applicability Traceability
 **Requirement:** Publication applicability (ACT/PCT/CCT) shall trace to configuration effectivity in LC08:
 
 | Applicability Type | Source |
@@ -520,7 +543,8 @@ LC08 (Configuration) → PUB (Publications)
 
 ### 3.8 Validation and Integrity Requirements
 
-#### REQ-XRF-070: Link Integrity Validation
+#### REQ-AMPEL-00-00-04-SE-070:
+**Old ID:** REQ-XRF-070   Link Integrity Validation
 **Requirement:** The CI pipeline shall validate link integrity by checking:
 
 | Check | Description | Severity |
@@ -538,7 +562,8 @@ LC08 (Configuration) → PUB (Publications)
 | Verification | Test |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-071: Suspect Link Management
+#### REQ-AMPEL-00-00-04-SE-071:
+**Old ID:** REQ-XRF-071   Suspect Link Management
 **Requirement:** When a referenced artifact changes, all incoming links shall be marked SUSPECT until reviewed:
 
 | Trigger | Action |
@@ -555,7 +580,8 @@ LC08 (Configuration) → PUB (Publications)
 | Verification | Review |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-072: Orphan Detection
+#### REQ-AMPEL-00-00-04-SE-072:
+**Old ID:** REQ-XRF-072   Orphan Detection
 **Requirement:** The system shall detect and report orphan artifacts:
 
 | Orphan Type | Definition | Action |
@@ -571,7 +597,8 @@ LC08 (Configuration) → PUB (Publications)
 | Verification | Inspection |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-073: Coverage Thresholds
+#### REQ-AMPEL-00-00-04-SE-073:
+**Old ID:** REQ-XRF-073   Coverage Thresholds
 **Requirement:** The following coverage thresholds shall be enforced:
 
 | Metric | Minimum | Gate |
@@ -592,7 +619,8 @@ LC08 (Configuration) → PUB (Publications)
 
 ### 3.9 Human-Readable Navigation
 
-#### REQ-XRF-080: README Navigation Links
+#### REQ-AMPEL-00-00-04-SE-080:
+**Old ID:** REQ-XRF-080   README Navigation Links
 **Requirement:** Every README.md shall include navigation links to:
 - Parent folder/section
 - Sibling sections
@@ -606,7 +634,8 @@ LC08 (Configuration) → PUB (Publications)
 | Verification | Inspection |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-081: Index Files
+#### REQ-AMPEL-00-00-04-SE-081:
+**Old ID:** REQ-XRF-081   Index Files
 **Requirement:** Each axis and chapter shall maintain an `00_INDEX.md` file with:
 - Quick-reference tables
 - Hyperlinked artifact lists
@@ -620,7 +649,8 @@ LC08 (Configuration) → PUB (Publications)
 | Verification | Inspection |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-082: Mermaid Diagrams
+#### REQ-AMPEL-00-00-04-SE-082:
+**Old ID:** REQ-XRF-082   Mermaid Diagrams
 **Requirement:** Complex trace relationships should be visualized using Mermaid diagrams embedded in README files:
 
 ```markdown
@@ -640,7 +670,8 @@ graph TD
 | Verification | Inspection |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-083: Breadcrumb Convention
+#### REQ-AMPEL-00-00-04-SE-083:
+**Old ID:** REQ-XRF-083   Breadcrumb Convention
 **Requirement:** Document headers shall include breadcrumb navigation:
 
 ```markdown
@@ -658,7 +689,8 @@ graph TD
 
 ### 3.10 Automation Support Requirements
 
-#### REQ-XRF-090: Machine-Readable Link Format
+#### REQ-AMPEL-00-00-04-SE-090:
+**Old ID:** REQ-XRF-090   Machine-Readable Link Format
 **Requirement:** In addition to Markdown links, a machine-readable link registry shall be maintained in CSV or YAML format:
 
 ```yaml
@@ -677,7 +709,8 @@ links:
 | Verification | Inspection |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-091: CI Validation Workflow
+#### REQ-AMPEL-00-00-04-SE-091:
+**Old ID:** REQ-XRF-091   CI Validation Workflow
 **Requirement:** The CI pipeline shall include a link validation step that:
 - Parses all Markdown links
 - Validates target existence
@@ -692,7 +725,8 @@ links:
 | Verification | Test |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-XRF-092: Impact Analysis Support
+#### REQ-AMPEL-00-00-04-SE-092:
+**Old ID:** REQ-XRF-092   Impact Analysis Support
 **Requirement:** The traceability system shall support impact analysis queries:
 - "What depends on artifact X?"
 - "What does artifact X depend on?"
@@ -771,16 +805,16 @@ links:
 
 | REQ ID | Method | Responsible | Evidence |
 |--------|--------|-------------|----------|
-| REQ-XRF-001–004 | Inspection | STK_DATA | Syntax specification |
-| REQ-XRF-010–012 | Review | STK_DATA | Link type registry |
-| REQ-XRF-020–024 | Review | STK_CERT | Certification mapping |
-| REQ-XRF-030–032 | Inspection | STK_DATA | Matrix templates |
-| REQ-XRF-040–042 | Inspection | STK_CM | KNOT/KNU links |
-| REQ-XRF-050–051 | Review | STK_SE | LC flow validation |
-| REQ-XRF-060–062 | BREX+CI | STK_PUB | DM references |
-| REQ-XRF-070–073 | Test | STK_DATA | CI validation |
-| REQ-XRF-080–083 | Inspection | STK_CM | README review |
-| REQ-XRF-090–092 | Demonstration | STK_DATA | Automation demo |
+| REQ-AMPEL-00-00-04-SE-001–004 | Inspection | STK_DATA | Syntax specification |
+| REQ-AMPEL-00-00-04-SE-010–012 | Review | STK_DATA | Link type registry |
+| REQ-AMPEL-00-00-04-SE-020–024 | Review | STK_CERT | Certification mapping |
+| REQ-AMPEL-00-00-04-SE-030–032 | Inspection | STK_DATA | Matrix templates |
+| REQ-AMPEL-00-00-04-SE-040–042 | Inspection | STK_CM | KNOT/KNU links |
+| REQ-AMPEL-00-00-04-SE-050–051 | Review | STK_SE | LC flow validation |
+| REQ-AMPEL-00-00-04-SE-060–062 | BREX+CI | STK_PUB | DM references |
+| REQ-AMPEL-00-00-04-SE-070–073 | Test | STK_DATA | CI validation |
+| REQ-AMPEL-00-00-04-SE-080–083 | Inspection | STK_CM | README review |
+| REQ-AMPEL-00-00-04-SE-090–092 | Demonstration | STK_DATA | Automation demo |
 
 ---
 

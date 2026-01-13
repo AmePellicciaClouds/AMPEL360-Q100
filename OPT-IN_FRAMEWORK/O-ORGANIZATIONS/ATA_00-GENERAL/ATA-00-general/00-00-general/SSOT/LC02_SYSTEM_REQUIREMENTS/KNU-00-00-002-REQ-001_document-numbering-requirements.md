@@ -66,7 +66,8 @@ The ID scheme shall adhere to these principles:
 
 ### 3.1 General ID Requirements
 
-#### REQ-DOC-001: Unique Identification
+#### REQ-AMPEL-00-00-02-SE-001:
+**Old ID:** REQ-DOC-001   Unique Identification
 **Requirement:** Every artifact in the AMPEL360 Q100 program shall have a unique identifier that remains stable throughout the artifact's lifecycle.
 
 | Attribute | Value |
@@ -76,7 +77,8 @@ The ID scheme shall adhere to these principles:
 | Verification | Inspection (uniqueness check) |
 | Parent | KNOT-00-00-002 |
 
-#### REQ-DOC-002: ID Immutability
+#### REQ-AMPEL-00-00-02-SE-002:
+**Old ID:** REQ-DOC-002   ID Immutability
 **Requirement:** Once assigned, an artifact ID shall not be reused for any other artifact, even after the original artifact is retired or deleted.
 
 | Attribute | Value |
@@ -86,7 +88,8 @@ The ID scheme shall adhere to these principles:
 | Verification | Review |
 | Parent | KNOT-00-00-002 |
 
-#### REQ-DOC-003: Human-Readable Format
+#### REQ-AMPEL-00-00-02-SE-003:
+**Old ID:** REQ-DOC-003   Human-Readable Format
 **Requirement:** All IDs shall be human-readable and interpretable without specialized tooling or lookup tables.
 
 | Attribute | Value |
@@ -96,7 +99,8 @@ The ID scheme shall adhere to these principles:
 | Verification | Demonstration |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-DOC-004: Machine-Parseable Format
+#### REQ-AMPEL-00-00-02-SE-004:
+**Old ID:** REQ-DOC-004   Machine-Parseable Format
 **Requirement:** All IDs shall be parseable by regular expressions to extract structural components (axis, ATA, section, type, sequence).
 
 | Attribute | Value |
@@ -106,7 +110,8 @@ The ID scheme shall adhere to these principles:
 | Verification | Test (regex extraction) |
 | Parent | KNOT-00-00-002 |
 
-#### REQ-DOC-005: Character Set
+#### REQ-AMPEL-00-00-02-SE-005:
+**Old ID:** REQ-DOC-005   Character Set
 **Requirement:** IDs shall use only ASCII alphanumeric characters (A-Z, a-z, 0-9) plus hyphen (-) and underscore (_) as separators.
 
 | Attribute | Value |
@@ -120,7 +125,8 @@ The ID scheme shall adhere to these principles:
 
 ### 3.2 ATA Address Requirements
 
-#### REQ-DOC-010: ATA Address Structure
+#### REQ-AMPEL-00-00-02-SE-010:
+**Old ID:** REQ-DOC-010   ATA Address Structure
 **Requirement:** The ATA address shall follow the hierarchical structure:
 
 ```
@@ -141,7 +147,8 @@ ATA-CC-SS-SU-SB
 | Verification | Inspection |
 | Parent | KNOT-00-00-002 |
 
-#### REQ-DOC-011: ATA Chapter Range
+#### REQ-AMPEL-00-00-02-SE-011:
+**Old ID:** REQ-DOC-011   ATA Chapter Range
 **Requirement:** Valid ATA chapter numbers shall be:
 - 00–05: O-ORGANIZATIONS
 - 06–12: P-PROGRAMS  
@@ -157,7 +164,8 @@ ATA-CC-SS-SU-SB
 | Verification | Inspection |
 | Parent | KNOT-00-00-002 |
 
-#### REQ-DOC-012: Reserved Sections
+#### REQ-AMPEL-00-00-02-SE-012:
+**Old ID:** REQ-DOC-012   Reserved Sections
 **Requirement:** Section 90 (xx-90) shall be reserved for tables, schemas, and indices within each ATA chapter.
 
 | Attribute | Value |
@@ -171,7 +179,8 @@ ATA-CC-SS-SU-SB
 
 ### 3.3 KNU ID Requirements
 
-#### REQ-DOC-020: KNU ID Structure
+#### REQ-AMPEL-00-00-02-SE-020:
+**Old ID:** REQ-DOC-020   KNU ID Structure
 **Requirement:** Knowledge Unit identifiers shall follow the structure:
 
 ```
@@ -195,7 +204,8 @@ KNU-CC-SS-NNN-TYP-SSS
 | Verification | Inspection |
 | Parent | KNOT-00-00-002 |
 
-#### REQ-DOC-021: KNU Type Codes
+#### REQ-AMPEL-00-00-02-SE-021:
+**Old ID:** REQ-DOC-021   KNU Type Codes
 **Requirement:** Valid KNU type codes shall be:
 
 | Code | Full Name | Artifact Class | Target LC |
@@ -225,7 +235,8 @@ KNU-CC-SS-NNN-TYP-SSS
 | Verification | Inspection |
 | Parent | KNOT-00-00-002 |
 
-#### REQ-DOC-022: KNU ID Uniqueness Scope
+#### REQ-AMPEL-00-00-02-SE-022:
+**Old ID:** REQ-DOC-022   KNU ID Uniqueness Scope
 **Requirement:** KNU IDs shall be unique within the entire program (global scope), not just within a KNOT or section.
 
 | Attribute | Value |
@@ -239,7 +250,8 @@ KNU-CC-SS-NNN-TYP-SSS
 
 ### 3.4 KNOT ID Requirements
 
-#### REQ-DOC-030: KNOT ID Structure
+#### REQ-AMPEL-00-00-02-SE-030:
+**Old ID:** REQ-DOC-030   KNOT ID Structure
 **Requirement:** Known Unknown (KNOT) identifiers shall follow the structure:
 
 ```
@@ -261,7 +273,8 @@ KNOT-CC-SS-SU-NNN
 | Verification | Inspection |
 | Parent | KNOT-00-00-002 |
 
-#### REQ-DOC-031: KNOT Sequence Assignment
+#### REQ-AMPEL-00-00-02-SE-031:
+**Old ID:** REQ-DOC-031   KNOT Sequence Assignment
 **Requirement:** KNOT sequence numbers shall be assigned in order of creation within each ATA subject and shall not be reused.
 
 | Attribute | Value |
@@ -275,7 +288,8 @@ KNOT-CC-SS-SU-NNN
 
 ### 3.5 Version and Revision Requirements
 
-#### REQ-DOC-040: Version-Revision Structure
+#### REQ-AMPEL-00-00-08-CM-040:
+**Old ID:** REQ-DOC-040   Version-Revision Structure
 **Requirement:** Document versions shall follow the structure:
 
 ```
@@ -298,7 +312,8 @@ Ixx-Ryy
 | Verification | Inspection |
 | Parent | KNOT-00-00-002 |
 
-#### REQ-DOC-041: Issue Increment Criteria
+#### REQ-AMPEL-00-00-08-CM-041:
+**Old ID:** REQ-DOC-041   Issue Increment Criteria
 **Requirement:** The issue number (Ixx) shall increment when:
 - Document scope changes significantly
 - Document is re-baselined for a new program phase
@@ -312,7 +327,8 @@ Ixx-Ryy
 | Verification | Review |
 | Parent | KNOT-00-00-002 |
 
-#### REQ-DOC-042: Revision Increment Criteria
+#### REQ-AMPEL-00-00-08-CM-042:
+**Old ID:** REQ-DOC-042   Revision Increment Criteria
 **Requirement:** The revision number (Ryy) shall increment for:
 - Content corrections
 - Clarifications
@@ -326,7 +342,8 @@ Ixx-Ryy
 | Verification | Review |
 | Parent | KNOT-00-00-002 |
 
-#### REQ-DOC-043: Version Reset on Issue
+#### REQ-AMPEL-00-00-08-CM-043:
+**Old ID:** REQ-DOC-043   Version Reset on Issue
 **Requirement:** When the issue number increments, the revision number shall reset to 01.
 
 | Attribute | Value |
@@ -336,7 +353,8 @@ Ixx-Ryy
 | Verification | Inspection |
 | Parent | KNOT-00-00-002 |
 
-#### REQ-DOC-044: Draft Marking
+#### REQ-AMPEL-00-00-08-CM-044:
+**Old ID:** REQ-DOC-044   Draft Marking
 **Requirement:** Documents not yet approved shall include "DRAFT" status in the header; draft versions may use revision suffix "-DRAFTn" (e.g., `I01-R01-DRAFT1`).
 
 | Attribute | Value |
@@ -350,7 +368,8 @@ Ixx-Ryy
 
 ### 3.6 Folder Naming Requirements
 
-#### REQ-DOC-050: Folder Naming Convention
+#### REQ-AMPEL-00-00-08-CM-050:
+**Old ID:** REQ-DOC-050   Folder Naming Convention
 **Requirement:** Folder names shall follow the pattern:
 
 | Level | Pattern | Example |
@@ -370,7 +389,8 @@ Ixx-Ryy
 | Verification | Inspection |
 | Parent | KNOT-00-00-002 |
 
-#### REQ-DOC-051: Lowercase Path Segments
+#### REQ-AMPEL-00-00-08-CM-051:
+**Old ID:** REQ-DOC-051   Lowercase Path Segments
 **Requirement:** ATA path segments (below `ATA_CC-NAME/`) shall use lowercase with hyphens as word separators.
 
 | Attribute | Value |
@@ -380,7 +400,8 @@ Ixx-Ryy
 | Verification | Inspection |
 | Parent | KNOT-00-00-002 |
 
-#### REQ-DOC-052: No Spaces in Paths
+#### REQ-AMPEL-00-00-08-CM-052:
+**Old ID:** REQ-DOC-052   No Spaces in Paths
 **Requirement:** Folder and file names shall not contain spaces; underscores or hyphens shall be used as word separators.
 
 | Attribute | Value |
@@ -394,7 +415,8 @@ Ixx-Ryy
 
 ### 3.7 File Naming Requirements
 
-#### REQ-DOC-060: SSOT File Naming
+#### REQ-AMPEL-00-00-08-CM-060:
+**Old ID:** REQ-DOC-060   SSOT File Naming
 **Requirement:** SSOT artifact files shall be named:
 
 ```
@@ -416,7 +438,8 @@ KNU-ID_short-title.ext
 | Verification | Inspection |
 | Parent | KNOT-00-00-002 |
 
-#### REQ-DOC-061: LC01 Standard Files
+#### REQ-AMPEL-00-00-08-CM-061:
+**Old ID:** REQ-DOC-061   LC01 Standard Files
 **Requirement:** LC01_PROBLEM_STATEMENT folders shall contain these standard files:
 
 | File | Required | Description |
@@ -436,7 +459,8 @@ KNU-ID_short-title.ext
 | Verification | Inspection |
 | Parent | KNOT-00-00-002 |
 
-#### REQ-DOC-062: Supporting File Naming
+#### REQ-AMPEL-00-00-08-CM-062:
+**Old ID:** REQ-DOC-062   Supporting File Naming
 **Requirement:** Supporting files (matrices, logs, indices) shall include the parent KNU ID or descriptive prefix:
 
 ```
@@ -458,7 +482,8 @@ KNU-ID_suffix.ext
 
 ### 3.8 Cross-Reference URI Requirements
 
-#### REQ-DOC-070: Internal URI Scheme
+#### REQ-AMPEL-00-00-04-SE-070:
+**Old ID:** REQ-DOC-070   Internal URI Scheme
 **Requirement:** Internal cross-references shall use relative paths from the referencing document:
 
 ```
@@ -473,7 +498,8 @@ KNU-ID_suffix.ext
 | Verification | Inspection |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-DOC-071: Anchor Naming
+#### REQ-AMPEL-00-00-04-SE-071:
+**Old ID:** REQ-DOC-071   Anchor Naming
 **Requirement:** Section anchors shall use lowercase with hyphens, matching the heading text:
 
 | Heading | Anchor |
@@ -488,7 +514,8 @@ KNU-ID_suffix.ext
 | Verification | Inspection |
 | Parent | KNOT-00-00-004 |
 
-#### REQ-DOC-072: External Reference Format
+#### REQ-AMPEL-00-00-04-SE-072:
+**Old ID:** REQ-DOC-072   External Reference Format
 **Requirement:** References to external documents shall include:
 - Document identifier
 - Version (if applicable)
@@ -508,7 +535,8 @@ KNU-ID_suffix.ext
 
 ### 3.9 S1000D Integration Requirements
 
-#### REQ-DOC-080: DMC Alignment
+#### REQ-AMPEL-00-00-CROSS-PUB-080:
+**Old ID:** REQ-DOC-080   DMC Alignment
 **Requirement:** S1000D Data Module Codes (DMC) shall align with the ATA address where applicable:
 
 | DMC Component | Mapping |
@@ -525,7 +553,8 @@ KNU-ID_suffix.ext
 | Verification | Review |
 | Parent | KNOT-00-00-002 |
 
-#### REQ-DOC-081: CSDB Folder Structure
+#### REQ-AMPEL-00-00-CROSS-PUB-081:
+**Old ID:** REQ-DOC-081   CSDB Folder Structure
 **Requirement:** CSDB folders shall follow the S1000D component structure:
 
 ```
