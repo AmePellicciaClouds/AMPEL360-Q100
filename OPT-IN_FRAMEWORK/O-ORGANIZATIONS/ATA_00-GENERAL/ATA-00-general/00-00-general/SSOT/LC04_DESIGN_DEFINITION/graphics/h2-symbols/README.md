@@ -27,7 +27,7 @@ This directory contains design guidelines and specifications for hydrogen-specif
 - **Cryogenic:** Cyan (#00CCFF) - represents cold/ice
 - **Flammable:** Red/Orange (#FF3300) - standard fire hazard
 - **Pressure:** Yellow (#FFAA00) - caution/warning
-- **Asphyxiation:** Purple/Gray - breathing hazard
+- **Asphyxiation:** Purple/Gray (#9966CC) - breathing hazard
 
 ### Shape Standards
 - **Triangle:** Warning (general hazard)
