@@ -547,7 +547,7 @@ CHECK (term_type = 'FORMULA' AND formula_notation IS NOT NULL)
 
 #### 5.4.1 UNIT
 
-#### REQ-AMPEL-00-00-02-SE-214:
+#### REQ-AMPEL-00-00-02-SE-212:
 **Old ID:** REQ-TT-030   Unit Definition
 
 **Requirement:** A term shall be classified as UNIT if it represents a standard of measurement. 
@@ -584,7 +584,7 @@ CHECK (term_type = 'UNIT' AND conversion_factor > 0)
 
 #### 5.4.2 QUANTITY
 
-#### REQ-AMPEL-00-00-02-SE-215:
+#### REQ-AMPEL-00-00-02-SE-213:
 **Old ID:** REQ-TT-031   Quantity Definition
 
 **Requirement:** A term shall be classified as QUANTITY if it represents a measurable property or attribute.
@@ -619,7 +619,7 @@ CHECK (term_type = 'QUANTITY' AND ARRAY_LENGTH(typical_units, 1) >= 1)
 
 #### 5.4.3 CONCEPT
 
-#### REQ-AMPEL-00-00-02-SE-216:
+#### REQ-AMPEL-00-00-02-SE-214:
 **Old ID:** REQ-TT-032   Concept Definition
 
 **Requirement:** A term shall be classified as CONCEPT if it represents an abstract idea, principle, or methodology not fitting other categories.
@@ -677,7 +677,7 @@ CHECK (term_type = 'CONCEPT' AND conceptual_domain IS NOT NULL)
 
 ### 7.1 S1000D Integration
 
-#### REQ-AMPEL-00-00-02-SE-040:
+#### REQ-AMPEL-00-00-02-SE-215:
 **Old ID:** REQ-TT-040   S1000D Mapping
 
 **Requirement:** Each term type shall map to equivalent S1000D information code types where applicable.
@@ -702,7 +702,7 @@ CHECK (term_type = 'CONCEPT' AND conceptual_domain IS NOT NULL)
 
 ### 7.2 DPP Integration
 
-#### REQ-AMPEL-00-00-02-SE-041:
+#### REQ-AMPEL-00-00-02-SE-216:
 **Old ID:** REQ-TT-041   DPP Namespace Mapping
 
 **Requirement:** Each term type shall have a corresponding DPP namespace identifier pattern.
@@ -760,7 +760,7 @@ DEFAULT → NOUN
 
 ### 9.1 Validation Test Cases
 
-#### REQ-AMPEL-00-00-02-SE-050:
+#### REQ-AMPEL-00-00-02-SE-217:
 **Old ID:** REQ-TT-050   Test Coverage
 
 **Requirement:** The term type taxonomy shall be validated with at least 10 representative examples per type.
