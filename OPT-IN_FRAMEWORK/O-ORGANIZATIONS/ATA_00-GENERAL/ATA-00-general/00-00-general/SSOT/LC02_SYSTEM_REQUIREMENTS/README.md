@@ -22,13 +22,59 @@ This folder contains **system-level requirements** artifacts for ATA 00-00 (Gene
 | KNU-00-00-002-REQ-001 | Document Numbering Requirements | KNOT-00-00-002 | PLANNED |
 | KNU-00-00-003-REQ-001 | Safety Labeling Requirements | KNOT-00-00-003 | PLANNED |
 | KNU-00-00-004-REQ-001 | Cross-Reference System Requirements | KNOT-00-00-004 | PLANNED |
-| KNU-00-00-005-REQ-001 | Unit System Requirements | KNOT-00-00-005 | PLANNED |
+| [KNU-00-00-005-REQ-001](./KNU-00-00-005-REQ-001_unit-system-requirements.md) | Unit System Requirements | KNOT-00-00-005 | REVIEWED |
 
 ---
 
-## 3. Requirements Summary
+## 3. KNU ID Naming Convention
 
-### 3.1 KNU-00-00-001-REQ-001 — Program Glossary Requirements
+The KNU ID follows the normalized grammar that includes the full ATA subject hierarchy:
+
+```
+KNU-AA-SS-NNN-LCXX-SU-SB-SX-DESCRIPTION
+    │  │   │    │   │  │  │      │
+    │  │   │    │   │  │  │      └── Human-readable description
+    │  │   │    │   │  │  └───────── Sub-sub-subject (finest level)
+    │  │   │    │   │  └──────────── Sub-subject
+    │  │   │    │   └─────────────── Subject
+    │  │   │    └──────────────────── Lifecycle category (LC01-LC14)
+    │  │   └───────────────────────── KNOT sequence number
+    │  └───────────────────────────── ATA Section (from KNOT)
+    └──────────────────────────────── ATA Chapter (from KNOT)
+```
+
+**Example:**
+- Legacy ID: `KNU-00-00-005-REQ-001` (file naming)
+- Normalized ID: `KNU-00-00-005-LC02-00-00-00-SYSTEM_GENERAL_REQ` (full hierarchy)
+
+The legacy ID is used for file naming for backward compatibility, while the normalized ID provides full ATA subject hierarchy and lifecycle binding for traceability.
+
+---
+
+## 4. Derivation Metadata
+
+Each KNU artifact has a corresponding `_derivation.yaml` file that documents **why the KNU exists** and its traceability lineage. See the [_derivation.schema.yaml](../LC04_DESIGN_DEFINITION/_derivation.schema.yaml) for the schema specification.
+
+### Example Structure
+
+```
+LC02_SYSTEM_REQUIREMENTS/
+├── KNU-00-00-005-REQ-001_unit-system-requirements.md    # Artifact content
+├── KNU-00-00-005-REQ-001_derivation.yaml                # Derivation metadata
+└── KNU-00-00-005-REQ-001_requirements-matrix.csv        # Requirements matrix
+```
+
+The `_derivation.yaml` includes:
+- **derivation_lineage**: Parent KNOT, derivation type, and rationale
+- **lifecycle_binding**: Explicit LC category (LC01-LC14)
+- **tbd_resolution**: Collocated TBD resolution with evidence locations
+- **node_task_reference**: Downstream action tracking with status
+
+---
+
+## 5. Requirements Summary
+
+### 5.1 KNU-00-00-001-REQ-001 — Program Glossary Requirements
 
 Defines requirements for the authoritative Q100 terminology glossary:
 
@@ -48,9 +94,9 @@ Defines requirements for the authoritative Q100 terminology glossary:
 
 ---
 
-## 4. Traceability
+## 6. Traceability
 
-### 4.1 Upstream (from LC01)
+### 6.1 Upstream (from LC01)
 
 ```
 LC01_PROBLEM_STATEMENT/
@@ -61,7 +107,7 @@ LC01_PROBLEM_STATEMENT/
 └── KNOT-00-00-005 → KNU-00-00-005-REQ-001
 ```
 
-### 4.2 Downstream (to LC04, LC05, PUB)
+### 6.2 Downstream (to LC04, LC05, PUB)
 
 ```
 LC02_SYSTEM_REQUIREMENTS/
@@ -75,7 +121,7 @@ LC02_SYSTEM_REQUIREMENTS/
 
 ---
 
-## 5. Verification Approach
+## 7. Verification Approach
 
 | Method | Application |
 |--------|-------------|
@@ -86,11 +132,11 @@ LC02_SYSTEM_REQUIREMENTS/
 
 ---
 
-## 6. Navigation
+## 8. Navigation
 
 - ↑ [00-00-general Section](../)
 - ← [LC01_PROBLEM_STATEMENT](../LC01_PROBLEM_STATEMENT/)
-- → [LC04_DESIGN_DEFINITION](../LC04_DESIGN_DEFINITION/) *(planned)*
+- → [LC04_DESIGN_DEFINITION](../LC04_DESIGN_DEFINITION/)
 - → [PUB/AMM/CSDB](../../PUB/AMM/CSDB/) *(planned)*
 
 ---

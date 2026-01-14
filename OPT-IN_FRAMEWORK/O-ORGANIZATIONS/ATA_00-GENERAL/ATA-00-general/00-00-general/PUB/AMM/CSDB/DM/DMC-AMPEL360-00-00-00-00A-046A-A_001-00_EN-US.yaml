@@ -2,6 +2,7 @@
 # KNU ARTIFACT METADATA
 # ═══════════════════════════════════════════════════════════════════════════════
 knu_id: "KNU-00-00-005-PUB-001"
+normalized_id: "KNU-00-00-005-LC11-00-00-00-UNIT_CONV_REF_DM"
 knot_id: "KNOT-00-00-005"
 title: "Unit Conversion Reference DM"
 knu_type: "PUB-AMM"
@@ -9,7 +10,13 @@ artifact_class: "CSDB"
 lifecycle_category: "LC11"
 rec: "LC11"
 ata_reference: "00-00"
-ata_address: "ATA-00-00-00-00"
+ata_address:
+  chapter: "00"
+  section: "00"
+  subject: "00"
+  sub_subject: "00"
+  sub_sub_subject: "00"
+  full_address: "00-00-00-00-00"
 expected_location: "../../PUB/AMM/CSDB/DM/"
 status: "GENERATED"
 version: "001-00"
