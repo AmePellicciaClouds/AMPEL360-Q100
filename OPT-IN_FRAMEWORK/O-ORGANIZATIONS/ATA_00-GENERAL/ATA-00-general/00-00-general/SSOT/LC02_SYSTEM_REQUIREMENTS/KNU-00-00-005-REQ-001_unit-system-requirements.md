@@ -3,6 +3,7 @@
 # KNU ARTIFACT METADATA
 # ═══════════════════════════════════════════════════════════════════════════════
 knu_id: "KNU-00-00-005-REQ-001"
+normalized_id: "KNU-00-00-005-LC02-00-00-00-SYSTEM_GENERAL_REQ"
 knot_id: "KNOT-00-00-005"
 title: "Unit System Requirements"
 knu_type: "REQ"
@@ -10,7 +11,13 @@ artifact_class: "SSOT"
 lifecycle_category: "LC02"
 rec: "LC02"
 ata_reference: "00-00"
-ata_address: "ATA-00-00-00-00"
+ata_address:
+  chapter: "00"
+  section: "00"
+  subject: "00"
+  sub_subject: "00"
+  sub_sub_subject: "00"
+  full_address: "00-00-00-00-00"
 expected_location: "../LC02_SYSTEM_REQUIREMENTS/"
 status: "REVIEWED"
 version: "I01-R03"

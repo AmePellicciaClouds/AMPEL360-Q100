@@ -26,7 +26,32 @@ This folder contains **system-level requirements** artifacts for ATA 00-00 (Gene
 
 ---
 
-## 3. Derivation Metadata
+## 3. KNU ID Naming Convention
+
+The KNU ID follows the normalized grammar that includes the full ATA subject hierarchy:
+
+```
+KNU-AA-SS-NNN-LCXX-SU-SB-SX-DESCRIPTION
+    │  │   │    │   │  │  │      │
+    │  │   │    │   │  │  │      └── Human-readable description
+    │  │   │    │   │  │  └───────── Sub-sub-subject (finest level)
+    │  │   │    │   │  └──────────── Sub-subject
+    │  │   │    │   └─────────────── Subject
+    │  │   │    └──────────────────── Lifecycle category (LC01-LC14, PUB)
+    │  │   └───────────────────────── KNOT sequence number
+    │  └───────────────────────────── ATA Section (from KNOT)
+    └──────────────────────────────── ATA Chapter (from KNOT)
+```
+
+**Example:**
+- Legacy ID: `KNU-00-00-005-REQ-001` (file naming)
+- Normalized ID: `KNU-00-00-005-LC02-00-00-00-SYSTEM_GENERAL_REQ` (full hierarchy)
+
+The legacy ID is used for file naming for backward compatibility, while the normalized ID provides full ATA subject hierarchy and lifecycle binding for traceability.
+
+---
+
+## 4. Derivation Metadata
 
 Each KNU artifact has a corresponding `_derivation.yaml` file that documents **why the KNU exists** and its traceability lineage. See the [_derivation.schema.yaml](../LC04_DESIGN_DEFINITION/_derivation.schema.yaml) for the schema specification.
 
@@ -47,9 +72,9 @@ The `_derivation.yaml` includes:
 
 ---
 
-## 4. Requirements Summary
+## 5. Requirements Summary
 
-### 4.1 KNU-00-00-001-REQ-001 — Program Glossary Requirements
+### 5.1 KNU-00-00-001-REQ-001 — Program Glossary Requirements
 
 Defines requirements for the authoritative Q100 terminology glossary:
 
@@ -69,9 +94,9 @@ Defines requirements for the authoritative Q100 terminology glossary:
 
 ---
 
-## 5. Traceability
+## 6. Traceability
 
-### 5.1 Upstream (from LC01)
+### 6.1 Upstream (from LC01)
 
 ```
 LC01_PROBLEM_STATEMENT/
@@ -82,7 +107,7 @@ LC01_PROBLEM_STATEMENT/
 └── KNOT-00-00-005 → KNU-00-00-005-REQ-001
 ```
 
-### 5.2 Downstream (to LC04, LC05, PUB)
+### 6.2 Downstream (to LC04, LC05, PUB)
 
 ```
 LC02_SYSTEM_REQUIREMENTS/
@@ -96,7 +121,7 @@ LC02_SYSTEM_REQUIREMENTS/
 
 ---
 
-## 6. Verification Approach
+## 7. Verification Approach
 
 | Method | Application |
 |--------|-------------|
@@ -107,7 +132,7 @@ LC02_SYSTEM_REQUIREMENTS/
 
 ---
 
-## 7. Navigation
+## 8. Navigation
 
 - ↑ [00-00-general Section](../)
 - ← [LC01_PROBLEM_STATEMENT](../LC01_PROBLEM_STATEMENT/)

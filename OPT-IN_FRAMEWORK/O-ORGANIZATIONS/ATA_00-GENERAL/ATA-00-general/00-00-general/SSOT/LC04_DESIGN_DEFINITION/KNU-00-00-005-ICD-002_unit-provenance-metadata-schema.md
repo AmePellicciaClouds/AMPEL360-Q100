@@ -1,5 +1,6 @@
 ---
 knu_id: KNU-00-00-005-ICD-002
+normalized_id: "KNU-00-00-005-LC04-00-00-00-UNIT_PROV_META_ICD"
 knot_id: KNOT-00-00-005
 title: Unit Provenance Metadata Schema
 type: ICD
@@ -14,8 +15,13 @@ contributors:
 due_date: 2026-03-15
 priority: HIGH
 lifecycle_stage: LC04_DESIGN_DEFINITION
-ata_chapter: "00"
-ata_section: "00"
+ata_address:
+  chapter: "00"
+  section: "00"
+  subject: "00"
+  sub_subject: "00"
+  sub_sub_subject: "00"
+  full_address: "00-00-00-00-00"
 program: AMPEL360 Q100 BWB Hydrogen-Hybrid Aircraft
 version: I001-R00
 date_created: 2026-01-13
