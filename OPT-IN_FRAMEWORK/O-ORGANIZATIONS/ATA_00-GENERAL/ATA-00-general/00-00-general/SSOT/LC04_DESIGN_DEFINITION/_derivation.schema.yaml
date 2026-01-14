@@ -5,11 +5,26 @@
 #          "Why does this KNU exist?" and establish explicit traceability lineage.
 #
 # This schema implements the OPT-IN Framework Normalization Model:
-#   - KNOT ID: KNOT-XX-XX-NNN (unchanged, no suffix)
-#   - KNU ID: KNU_NNN_LCXX_DOMAIN_TYPE (lifecycle binding, no redundant ATA)
+#   - KNOT ID: KNOT-AA-SS-NNN (Chapter-Section-Sequence, unchanged)
+#   - KNU ID: KNU-AA-SS-NNN-LCXX-SU-SB-SX-DESCRIPTION
+#             │  │   │    │   │  │  │      │
+#             │  │   │    │   │  │  │      └── Human-readable description
+#             │  │   │    │   │  │  └───────── Sub-sub-subject (finest level)
+#             │  │   │    │   │  └──────────── Sub-subject
+#             │  │   │    │   └─────────────── Subject
+#             │  │   │    └──────────────────── Lifecycle category (LC01-LC14, PUB)
+#             │  │   └───────────────────────── KNOT sequence number
+#             │  └───────────────────────────── ATA Section (from KNOT)
+#             └──────────────────────────────── ATA Chapter (from KNOT)
 #   - TBD: Collocated with derivation metadata (folder-based lineage)
 #   - Execution: KNT_UTC_timestamp/ (immutable, timestamped folders)
 #   - Downstream: NODE_TASK_REFERENCE/ (explicit action tracking)
+#
+# The KNU adds 3 levels of granularity beyond KNOT:
+#   - Subject (SU): First level within section
+#   - Sub-subject (SB): Second level within subject
+#   - Sub-sub-subject (SX): Finest level within sub-subject
+# This maps directly to S1000D DMC: DMC-AMPEL360-AA-SS-SU-SB-SX-...
 #
 # Version: 1.0.0
 # Last Updated: 2026-01-14
@@ -42,14 +57,19 @@ properties:
     examples: ["1.0.0"]
 
   # ─────────────────────────────────────────────────────────────────────────────
-  # KNU Identity (Proposed Normalized Format)
+  # KNU Identity (Full ATA Subject Hierarchy)
   # ─────────────────────────────────────────────────────────────────────────────
   knu_id:
     type: object
-    description: "KNU identifier with lifecycle binding"
+    description: |
+      KNU identifier with full ATA subject hierarchy and lifecycle binding.
+      Format: KNU-AA-SS-NNN-LCXX-SU-SB-SX-DESCRIPTION
+      The KNU adds 3 levels of granularity beyond KNOT for precise artifact location
+      and direct S1000D DMC mapping.
     required:
       - legacy_id
       - normalized_id
+      - ata_address
     properties:
       legacy_id:
         type: string
@@ -59,14 +79,67 @@ properties:
       normalized_id:
         type: string
         description: |
-          Proposed normalized KNU ID format with lifecycle binding:
-          KNU_{KNOT_SEQ}_{LIFECYCLE}_{DOMAIN}_{TYPE}
-        pattern: "^KNU_\\d{3}_LC\\d{2}_[A-Z_]+$"
-        examples: ["KNU_005_LC02_UNIT_SYS_REQ"]
+          Normalized KNU ID format with full ATA hierarchy and lifecycle binding:
+          KNU-AA-SS-NNN-LCXX-SU-SB-SX-DESCRIPTION
+          Where:
+            AA = ATA Chapter (from KNOT)
+            SS = ATA Section (from KNOT)
+            NNN = KNOT sequence number
+            LCXX = Lifecycle category (LC01-LC14, PUB)
+            SU = Subject (2 digits)
+            SB = Sub-subject (2 digits)
+            SX = Sub-sub-subject (2 digits)
+            DESCRIPTION = Human-readable description (UPPER_SNAKE_CASE)
+        pattern: "^KNU-\\d{2}-\\d{2}-\\d{3}-LC\\d{2}-\\d{2}-\\d{2}-\\d{2}-[A-Z_]+$"
+        examples: ["KNU-00-00-005-LC02-00-00-00-SYSTEM_GENERAL_REQ"]
+      ata_address:
+        type: object
+        description: "Full ATA breakdown address (Chapter-Section-Subject-SubSubject-SubSubSubject)"
+        required:
+          - chapter
+          - section
+          - subject
+          - sub_subject
+          - sub_sub_subject
+        properties:
+          chapter:
+            type: string
+            description: "ATA Chapter (2 digits)"
+            pattern: "^\\d{2}$"
+            examples: ["00", "28"]
+          section:
+            type: string
+            description: "ATA Section (2 digits)"
+            pattern: "^\\d{2}$"
+            examples: ["00", "10"]
+          subject:
+            type: string
+            description: "Subject within section (2 digits)"
+            pattern: "^\\d{2}$"
+            examples: ["00", "10", "20"]
+          sub_subject:
+            type: string
+            description: "Sub-subject within subject (2 digits)"
+            pattern: "^\\d{2}$"
+            examples: ["00", "10"]
+          sub_sub_subject:
+            type: string
+            description: "Sub-sub-subject, finest granularity (2 digits)"
+            pattern: "^\\d{2}$"
+            examples: ["00"]
+          full_address:
+            type: string
+            description: "Complete ATA address as dash-separated string"
+            pattern: "^\\d{2}-\\d{2}-\\d{2}-\\d{2}-\\d{2}$"
+            examples: ["00-00-00-00-00", "28-10-10-00-00"]
       title:
         type: string
         description: "Human-readable KNU title"
         examples: ["Unit System Requirements"]
+      dmc_mapping:
+        type: string
+        description: "Corresponding S1000D Data Module Code (DMC)"
+        examples: ["DMC-AMPEL360-00-00-00-00-00-00A-001A-A"]
 
   # ─────────────────────────────────────────────────────────────────────────────
   # Derivation Lineage (Answers: "Why does this KNU exist?")
@@ -391,8 +464,16 @@ examples:
   - schema_version: "1.0.0"
     knu_id:
       legacy_id: "KNU-00-00-005-REQ-001"
-      normalized_id: "KNU_005_LC02_UNIT_SYS_REQ"
+      normalized_id: "KNU-00-00-005-LC02-00-00-00-SYSTEM_GENERAL_REQ"
+      ata_address:
+        chapter: "00"
+        section: "00"
+        subject: "00"
+        sub_subject: "00"
+        sub_sub_subject: "00"
+        full_address: "00-00-00-00-00"
       title: "Unit System Requirements"
+      dmc_mapping: "DMC-AMPEL360-00-00-00-00-00-00A-001A-A"
     derivation_lineage:
       parent_knot:
         knot_id: "KNOT-00-00-005"
@@ -407,5 +488,35 @@ examples:
       artifact_class: "SSOT"
     creation_record:
       created_utc: "2026-01-12T14:30:00Z"
+      created_by: "STK_SE"
+      baseline_version: "I01-R01"
+  
+  # Example: H₂-specific unit KNU with subject granularity
+  - schema_version: "1.0.0"
+    knu_id:
+      legacy_id: "KNU-00-00-005-REQ-002"
+      normalized_id: "KNU-00-00-005-LC02-20-00-00-H2_SPECIFIC_UNITS"
+      ata_address:
+        chapter: "00"
+        section: "00"
+        subject: "20"
+        sub_subject: "00"
+        sub_sub_subject: "00"
+        full_address: "00-00-20-00-00"
+      title: "H₂-Specific Unit Requirements"
+    derivation_lineage:
+      parent_knot:
+        knot_id: "KNOT-00-00-005"
+        sequence_number: 5
+        title: "Unit Systems and Conversions"
+      derivation_type: "BASELINE"
+      rationale: "Define H₂-specific units for mass flow, energy density, and cryogenic parameters"
+    lifecycle_binding:
+      lifecycle_category: "LC02"
+      rec: "LC02_SYSTEM_REQUIREMENTS"
+      artifact_type: "REQ"
+      artifact_class: "SSOT"
+    creation_record:
+      created_utc: "2026-01-12T15:00:00Z"
       created_by: "STK_SE"
       baseline_version: "I01-R01"

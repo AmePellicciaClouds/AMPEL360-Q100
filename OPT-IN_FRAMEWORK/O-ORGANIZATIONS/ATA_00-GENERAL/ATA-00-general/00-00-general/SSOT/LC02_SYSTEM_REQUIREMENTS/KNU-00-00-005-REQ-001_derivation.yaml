@@ -9,12 +9,20 @@
 schema_version: "1.0.0"
 
 # ─────────────────────────────────────────────────────────────────────────────
-# KNU Identity
+# KNU Identity (Full ATA Subject Hierarchy)
 # ─────────────────────────────────────────────────────────────────────────────
 knu_id:
   legacy_id: "KNU-00-00-005-REQ-001"
-  normalized_id: "KNU_005_LC02_UNIT_SYS_REQ"
+  normalized_id: "KNU-00-00-005-LC02-00-00-00-SYSTEM_GENERAL_REQ"
+  ata_address:
+    chapter: "00"        # ATA Chapter (from KNOT)
+    section: "00"        # ATA Section (from KNOT)
+    subject: "00"        # Subject: General
+    sub_subject: "00"    # Sub-subject: General
+    sub_sub_subject: "00" # Sub-sub-subject: General
+    full_address: "00-00-00-00-00"
   title: "Unit System Requirements"
+  dmc_mapping: "DMC-AMPEL360-00-00-00-00-00-00A-005A-A"
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Derivation Lineage (Answers: "Why does this KNU exist?")

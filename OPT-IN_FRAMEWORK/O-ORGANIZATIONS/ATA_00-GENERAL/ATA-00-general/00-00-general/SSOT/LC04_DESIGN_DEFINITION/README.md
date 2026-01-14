@@ -29,10 +29,32 @@ It implements the OPT-IN Framework Normalization Model:
 | Aspect | Current Model | Proposed Model | Implementation |
 |--------|---------------|----------------|----------------|
 | KNOT ID | `KNOT-00-00-005` | `KNOT-00-00-005` | Unchanged |
-| KNU ID | `KNU-00-00-005-REQ-001` | `KNU_005_LC02_UNIT_SYS_REQ` | +lifecycle binding, -redundant ATA |
+| KNU ID | `KNU-00-00-005-REQ-001` | `KNU-00-00-005-LC02-00-00-00-SYSTEM_GENERAL_REQ` | +lifecycle binding, +subject hierarchy |
 | TBD | CSV register (separate) | `_derivation.yaml` with TBD section | +collocated lineage |
 | Execution | Implicit (file version) | `creation_record.created_utc` | +immutable timestamp |
 | Downstream | README links | `node_task_reference` section | +explicit action tracking |
+
+#### KNU ID Grammar
+
+The normalized KNU ID includes the full ATA subject hierarchy for precise artifact location and S1000D DMC mapping:
+
+```
+KNU-AA-SS-NNN-LCXX-SU-SB-SX-DESCRIPTION
+    │  │   │    │   │  │  │      │
+    │  │   │    │   │  │  │      └── Human-readable description
+    │  │   │    │   │  │  └───────── Sub-sub-subject (finest level)
+    │  │   │    │   │  └──────────── Sub-subject
+    │  │   │    │   └─────────────── Subject
+    │  │   │    └──────────────────── Lifecycle category (LC01-LC14, PUB)
+    │  │   └───────────────────────── KNOT sequence number
+    │  └───────────────────────────── ATA Section (from KNOT)
+    └──────────────────────────────── ATA Chapter (from KNOT)
+```
+
+**The KNU adds 3 levels of granularity beyond KNOT:**
+- Subject (SU): First level within section
+- Sub-subject (SB): Second level within subject  
+- Sub-sub-subject (SX): Finest level for precise artifact location
 
 #### Key Sections in `_derivation.yaml`
 
