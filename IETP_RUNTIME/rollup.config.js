@@ -16,7 +16,13 @@ export default {
       sourcemap: true,
     },
   ],
-  external: ['react', 'react-dom'],
+  external: [
+    'react', 
+    'react-dom', 
+    'react-markdown', 
+    'remark-gfm', 
+    'rehype-raw'
+  ],
   plugins: [
     resolve(),
     commonjs(),

@@ -1,6 +1,6 @@
 # IETP Runtime Integration
 
-This directory contains the IETP (Interactive Electronic Technical Publication) Runtime configuration for ATA 25-10 Flight Compartment.
+This directory contains the IETP (Interactive Electronic Technical Publication) Runtime configuration for ATA 11-00 Placards and Markings - General.
 
 ## Runtime Location
 
@@ -56,8 +56,8 @@ IETP configuration for this section can be customized in `config.json`:
 
 ```json
 {
-  "section": "ATA-25-10",
-  "title": "Flight Compartment",
+  "section": "ATA-11-00",
+  "title": "Placards and Markings - General",
   "mediaPath": "../ICN/",
   "features": {
     "autoplay": "muted",

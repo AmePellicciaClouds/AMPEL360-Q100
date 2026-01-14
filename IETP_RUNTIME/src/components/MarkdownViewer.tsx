@@ -19,6 +19,19 @@ export interface MarkdownViewerProps {
   components?: Record<string, React.ComponentType<any>>;
 }
 
+interface CustomElementProps {
+  [key: string]: string | boolean | undefined;
+  children?: React.ReactNode;
+}
+
+// Helper function to parse string booleans safely
+const parseBoolean = (value: string | boolean | undefined, defaultValue = false): boolean => {
+  if (typeof value === 'boolean') return value;
+  if (typeof value !== 'string') return defaultValue;
+  const normalized = value.toLowerCase().trim();
+  return normalized === 'true' || normalized === '1' || normalized === 'yes';
+};
+
 /**
  * MarkdownViewer Component
  * 
@@ -57,68 +70,69 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
   // Default component mappings for markdown
   const defaultComponents = {
     // Custom IETP components
-    mediaembed: (props: any) => {
+    mediaembed: (props: CustomElementProps) => {
       const { src, type, title, autoplay, controls, loop, width, height, responsive, poster } = props;
       return (
         <MediaEmbed
-          src={src}
+          src={src as string}
           type={type as 'video' | 'audio'}
-          title={title}
+          title={title as string}
           autoplay={autoplay as 'on' | 'off' | 'muted'}
-          controls={controls !== 'false'}
-          loop={loop === 'true'}
-          width={width}
-          height={height}
-          responsive={responsive !== 'false'}
-          poster={poster}
+          controls={parseBoolean(controls, true)}
+          loop={parseBoolean(loop, false)}
+          width={width as string}
+          height={height as string}
+          responsive={parseBoolean(responsive, true)}
+          poster={poster as string}
         />
       );
     },
-    tooltip: (props: any) => {
-      const { content, position, children } = props;
+    tooltip: (props: CustomElementProps) => {
+      const { content: tooltipContent, position, children } = props;
       return (
-        <Tooltip content={content} position={position}>
+        <Tooltip content={tooltipContent as string} position={position as any}>
           {children}
         </Tooltip>
       );
     },
-    popup: (props: any) => {
+    popup: (props: CustomElementProps) => {
       const { title, width, trigger, children } = props;
       return (
         <Popup
           trigger={trigger || <button>Open</button>}
-          title={title}
-          width={width}
+          title={title as string}
+          width={width as string}
         >
           {children}
         </Popup>
       );
     },
-    collapsiblesection: (props: any) => {
+    collapsiblesection: (props: CustomElementProps) => {
       const { title, defaultexpanded, children } = props;
       return (
         <CollapsibleSection
-          title={title}
-          defaultExpanded={defaultexpanded === 'true'}
+          title={title as string}
+          defaultExpanded={parseBoolean(defaultexpanded, false)}
         >
           {children}
         </CollapsibleSection>
       );
     },
     // Enhanced standard markdown elements
-    a: (props: any) => {
+    a: (props: CustomElementProps) => {
       const { href, children } = props;
-      const type = href?.startsWith('#') ? 'internal' : 
-                   href?.startsWith('http') ? 'external' : 'document';
+      const hrefStr = href as string;
+      const type = hrefStr?.startsWith('#') ? 'internal' : 
+                   hrefStr?.startsWith('http') ? 'external' : 'document';
       return (
-        <DynamicLink href={href} type={type}>
+        <DynamicLink href={hrefStr} type={type}>
           {children}
         </DynamicLink>
       );
     },
     // Code blocks with syntax highlighting placeholder
-    code: (props: any) => {
-      const { inline, className, children } = props;
+    code: (props: CustomElementProps) => {
+      const { inline, className: codeClassName, children } = props;
       if (inline) {
         return (
           <code
@@ -145,12 +159,12 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
             fontSize: '0.9em',
           }}
         >
-          <code className={className}>{children}</code>
+          <code className={codeClassName as string}>{children}</code>
         </pre>
       );
     },
     // Tables
-    table: (props: any) => (
+    table: (props: CustomElementProps) => (
       <div style={{ overflowX: 'auto', marginBottom: '16px' }}>
         <table
           style={{
@@ -162,7 +176,7 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
         />
       </div>
     ),
-    th: (props: any) => (
+    th: (props: CustomElementProps) => (
       <th
         style={{
           backgroundColor: '#f9fafb',
@@ -174,7 +188,7 @@ export const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
         {...props}
       />
     ),
-    td: (props: any) => (
+    td: (props: CustomElementProps) => (
       <td
         style={{
           padding: '12px',
