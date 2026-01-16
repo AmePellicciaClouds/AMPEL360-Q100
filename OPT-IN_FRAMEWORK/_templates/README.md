@@ -35,15 +35,22 @@ _templates/
 
 ## Usage
 
+**Note:** For on-board systems (T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS), chapters are organized under domain-specific subdirectories:
+- ATA 28 (Fuel): `C2-CIRCULAR_CRYOGENIC_CELLS/`
+- ATA 71 (Power Plant): `P-PROPULSION/`
+- ATA 95 (AI/ML): `I2-INTELLIGENCE/`
+
+These chapters already exist in their proper locations. The scaffold script is primarily for creating new chapters in other axes or domains.
+
 To create a new ATA chapter structure:
 
 ```bash
 python scaffold_chapter.py --chapter XX --title "Chapter Title" --axis AXIS_NAME
 ```
 
-Example:
+Example for a new chapter:
 ```bash
-python scaffold_chapter.py --chapter 28 --title "Fuel" --axis T-TECHNOLOGIES
+python scaffold_chapter.py --chapter 85 --title "Fuel Cell Infrastructure" --axis I-INFRASTRUCTURES
 ```
 
 This will:

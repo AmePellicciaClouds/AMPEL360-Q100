@@ -130,14 +130,14 @@ OPT-IN_FRAMEWORK/
 
 ## Priority Chapters
 
-The following chapters have been scaffolded with domain-specific configurations:
+The following chapters have existing structures in their proper subdomain locations:
 
-| Chapter | Title | Axis | Status | Rationale |
-|---------|-------|------|--------|-----------|
-| **ATA 28** | Fuel | T-TECHNOLOGIES | ✅ Scaffolded | LH₂ storage, critical H₂ terminology |
-| **ATA 71** | Power Plant | T-TECHNOLOGIES | ✅ Scaffolded | Fuel cell stacks, electric motors |
-| **ATA 95** | AI/ML | T-TECHNOLOGIES | ✅ Scaffolded | Novel Q100 extension, learning assurance |
-| **ATA 96** | DPP | N-NEURAL_NETWORKS | ✅ Scaffolded | Digital Product Passport integration |
+| Chapter | Title | Correct Path | Status | Rationale |
+|---------|-------|--------------|--------|-----------|
+| **ATA 28** | Fuel | `T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS/C2-CIRCULAR_CRYOGENIC_CELLS/` | ✅ Existing | LH₂ storage, critical H₂ terminology |
+| **ATA 71** | Power Plant | `T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS/P-PROPULSION/` | ✅ Existing | Fuel cell stacks, electric motors |
+| **ATA 95** | AI/ML | `T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS/I2-INTELLIGENCE/` | ✅ Existing | Novel Q100 extension, learning assurance |
+| **ATA 96** | DPP | `N-NEURAL_NETWORKS/ATA_96-TRACEABILITY_DPP_LEDGER/` | ✅ Existing | Digital Product Passport integration |
 
 ### Additional Priority Chapters (Future)
 

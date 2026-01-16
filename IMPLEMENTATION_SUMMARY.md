@@ -34,17 +34,18 @@ Scale the existing ATA-00-00 (GENESIS → SSOT → LLM ENGINE METADATA LAYER →
 | **ATA_CHAPTER_SCALING_FRAMEWORK.md** | 12.8 KB | Framework overview with architecture and best practices |
 | **TOTAL** | **48 KB** | **Complete documentation suite** |
 
-### 3. Priority Chapters Scaffolded
+### 3. Priority Chapters - Existing Structures
 
-| Chapter | Title | Axis | Files | Status |
-|---------|-------|------|-------|--------|
-| **ATA 28** | Fuel | T-TECHNOLOGIES | 14 | ✅ Scaffolded |
-| **ATA 71** | Power Plant | T-TECHNOLOGIES | 14 | ✅ Scaffolded |
-| **ATA 95** | AI/ML | T-TECHNOLOGIES | 14 | ✅ Scaffolded |
-| **ATA 96** | DPP/Traceability | N-NEURAL_NETWORKS | 14 | ✅ Scaffolded |
-| **TOTAL** | — | — | **56 files** | **4 chapters ready** |
+These chapters already exist with proper subdomain organization:
 
-Each chapter includes:
+| Chapter | Title | Correct Location | Status |
+|---------|-------|-----------------|--------|
+| **ATA 28** | Fuel | `T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS/C2-CIRCULAR_CRYOGENIC_CELLS/` | ✅ Existing |
+| **ATA 71** | Power Plant | `T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS/P-PROPULSION/` | ✅ Existing |
+| **ATA 95** | AI/ML | `T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS/I2-INTELLIGENCE/` | ✅ Existing |
+| **ATA 96** | DPP/Traceability | `N-NEURAL_NETWORKS/ATA_96-TRACEABILITY_DPP_LEDGER/` | ✅ Existing |
+
+Each existing chapter structure includes:
 - ✅ GENESIS layer (O-KNOT, Y-KNOT, KNOT) with domain-specific configurations
 - ✅ SSOT layer (LC01 with TOKENOMICS, KNOTS, KNU_PLAN, TBD_REGISTER)
 - ✅ PUB layer (AMM CSDB data module + XSLT transform)
@@ -151,9 +152,11 @@ jobs:
 
 ## Chapter-Specific Configurations
 
-### ATA 28 (Fuel) - T-TECHNOLOGIES
+### ATA 28 (Fuel) - T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS/C2-CIRCULAR_CRYOGENIC_CELLS
 
 **Domain:** LH₂ storage, cryogenic handling, H₂ terminology
+
+**Location:** `OPT-IN_FRAMEWORK/T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS/C2-CIRCULAR_CRYOGENIC_CELLS/ATA_28-FUEL/`
 
 **Configuration:**
 - Total TT: 500 (high complexity due to novel H₂ systems)
@@ -162,9 +165,11 @@ jobs:
 - HITL: Auto-accept threshold 0.90 (higher bar for safety)
 - Effectivity: Fuel type (LH2, LH2+BATTERY)
 
-### ATA 71 (Power Plant) - T-TECHNOLOGIES
+### ATA 71 (Power Plant) - T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS/P-PROPULSION
 
 **Domain:** Fuel cell stacks, electric motors, power electronics
+
+**Location:** `OPT-IN_FRAMEWORK/T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS/P-PROPULSION/ATA_71-POWER_PLANT/`
 
 **Configuration:**
 - Total TT: 450 (medium-high complexity)
@@ -173,9 +178,11 @@ jobs:
 - Dependencies: Heavy dependency on ATA 28 (Fuel)
 - Effectivity: Propulsion type (FUEL_CELL_PRIMARY, FUEL_CELL_HYBRID)
 
-### ATA 95 (AI/ML) - T-TECHNOLOGIES
+### ATA 95 (AI/ML) - T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS/I2-INTELLIGENCE
 
 **Domain:** Learning assurance, AI certification, model versioning
+
+**Location:** `OPT-IN_FRAMEWORK/T-TECHNOLOGIES_AMEDEOPELLICCIA-ON_BOARD_SYSTEMS/I2-INTELLIGENCE/ATA_95-AI_ML_MODELS/`
 
 **Configuration:**
 - Total TT: 600 (highest complexity - novel regulatory domain)
@@ -187,6 +194,8 @@ jobs:
 ### ATA 96 (DPP/Traceability) - N-NEURAL_NETWORKS
 
 **Domain:** Digital Product Passport, blockchain traceability
+
+**Location:** `OPT-IN_FRAMEWORK/N-NEURAL_NETWORKS/ATA_96-TRACEABILITY_DPP_LEDGER/`
 
 **Configuration:**
 - Total TT: 400 (medium complexity)
