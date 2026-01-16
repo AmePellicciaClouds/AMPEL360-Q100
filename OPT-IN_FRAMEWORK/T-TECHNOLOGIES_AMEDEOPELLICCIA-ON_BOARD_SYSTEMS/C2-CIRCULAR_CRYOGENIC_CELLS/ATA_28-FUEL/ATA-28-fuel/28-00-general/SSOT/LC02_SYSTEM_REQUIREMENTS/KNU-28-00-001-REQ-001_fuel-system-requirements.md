@@ -200,7 +200,7 @@ The fuel system shall enable safe, efficient, and reliable storage, distribution
 
 | Term | Definition |
 |------|------------|
-| LH₂ | Liquid Hydrogen (cryogenic fuel stored at ~20 K) |
+| LH₂ | Liquid Hydrogen (cryogenic fuel stored at 14K-25K) |
 | C2 Technology | Circular Cryogenic Cell - advanced insulation and storage system |
 | Boil-Off | Natural evaporation of LH₂ due to heat ingress |
 | MLW | Maximum Landing Weight |
