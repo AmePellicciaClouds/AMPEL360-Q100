@@ -311,7 +311,7 @@ The AMPEL360 Q100 Fuel System consists of:
 
 #### REQ-AMPEL-28-00-02-SAF-201: H₂ Leak Detection
 **Old ID:** REQ-FUEL-201  
-**Requirement:** The fuel system shall provide continuous hydrogen leak detection capability with alarm activation at **≤25% of Lower Flammability Limit (LFL)**, equivalent to **1% H₂ by volume** in air.
+**Requirement:** The fuel system shall provide continuous hydrogen leak detection capability with alarm activation at **1% H₂ by volume** in air (**25% of the 4% Lower Flammability Limit (LFL)**).
 
 | Attribute | Value |
 |-----------|-------|
