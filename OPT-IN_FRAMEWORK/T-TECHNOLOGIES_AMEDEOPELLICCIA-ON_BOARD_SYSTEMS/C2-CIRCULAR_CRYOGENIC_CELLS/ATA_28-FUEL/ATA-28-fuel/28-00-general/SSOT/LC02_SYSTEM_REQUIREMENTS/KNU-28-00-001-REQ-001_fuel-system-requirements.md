@@ -17,7 +17,7 @@ ata_address:
   subject: "00"
   sub_subject: "00"
   sub_sub_subject: "00"
-  full_address: "28-00-00-00-00"
+  full_address: "28-00"
 expected_location: "../LC02_SYSTEM_REQUIREMENTS/"
 status: "DRAFT"
 version: "I01-R01"
