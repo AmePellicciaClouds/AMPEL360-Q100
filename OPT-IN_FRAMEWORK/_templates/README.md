@@ -32,7 +32,7 @@ _templates/
 │   ├── LC02_SYSTEM_REQUIREMENTS/      # System requirements
 │   ├── LC03_DESIGN_MODELS/            # Design models
 │   ├── LC04_ANALYSIS_MODELS/          # Analysis models
-│   ├── LC05_INTEGRATION_TESTING_V6V/  # Integration testing
+│   ├── LC05_INTEGRATION_TESTING_VandV/  # Integration testing & V&V
 │   ├── LC06_QUALITY/                  # Quality assurance
 │   ├── LC07_SAFETY_AND_SECURITY/      # Safety & security
 │   ├── LC08_CERTIFICATION_FIRST_FLIGHT/ # Certification
@@ -182,7 +182,7 @@ The scaffold script creates:
 │   ├── LC02_SYSTEM_REQUIREMENTS/
 │   ├── LC03_DESIGN_MODELS/
 │   ├── LC04_ANALYSIS_MODELS/
-│   ├── LC05_INTEGRATION_TESTING_V6V/
+│   ├── LC05_INTEGRATION_TESTING_VandV/
 │   ├── LC06_QUALITY/
 │   ├── LC07_SAFETY_AND_SECURITY/
 │   ├── LC08_CERTIFICATION_FIRST_FLIGHT/
