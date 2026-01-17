@@ -4,7 +4,7 @@ ata: 28-10
 domain: ATA_28_FUEL
 subsystem: LH2_STORAGE
 lifecycle_phase: LC02_SYSTEM_REQUIREMENTS
-knot: K02_REQUIREMENTS_CAPTURE
+knot: KNOT-28-10-001
 owner_aor: STK_SE
 status: DRAFT
 issue_rev: I01-R01
@@ -342,11 +342,17 @@ KNU-28-00-001-REQ-001 → KNU-28-10-001-REQ-001 *(allocation + rationale)*
 ---
 
 ## 8. Open TBD List (Controlled)
-- [TBD] Set P-28-10-QDOT-MAX based on thermal budget allocation and insulation architecture
-- [TBD] Set P-28-10-BOG-MAX based on economics + mission readiness + ground constraints
-- [TBD] Define P-28-10-HOLD-TGT and ambient envelope (hot-day/cold-soak)
-- [TBD] Define P-28-10-P-MIN / P-28-10-P-MAX / P-28-10-P-RELIEF from design + safety
-- [TBD] Define recovery topology selection (buffer-only vs re-liquefaction vs reuse path)
+Complete list of TBD parameters from Section 4 requiring resolution:
+
+- [TBD] **P-28-10-QDOT-MAX** — Set max allowable net heat leak based on thermal budget allocation and insulation architecture
+- [TBD] **P-28-10-BOG-MAX** — Set max allowable boil-off rate based on economics + mission readiness + ground constraints
+- [TBD] **P-28-10-HOLD-TGT** — Define minimum ground hold time and ambient envelope (hot-day/cold-soak)
+- [TBD] **P-28-10-P-MIN** — Define minimum allowable tank pressure from design + safety analysis
+- [TBD] **P-28-10-P-MAX** — Define maximum allowable tank pressure (normal ops) from design + safety analysis
+- [TBD] **P-28-10-P-RELIEF** — Define relief/overpressure threshold from safety analysis
+- [TBD] **P-28-10-REC-EFF** — Define minimum BOG capture/recovery efficiency based on recovery topology selection
+- [TBD] **P-28-10-LEAK-THR** — Define leak detection threshold (H₂ concentration or rate) from sensor selection and safety analysis
+- [TBD] **P-28-10-VAC-LEAK** — Define vacuum jacket degradation limit from maintenance interval definition
 
 ---
 
