@@ -265,7 +265,7 @@ The storage subsystem **shall** provide LH₂ supply interface compatibility to 
 ---
 
 **REQ-28-10-051** — *Electrical interface (if active recovery used)*  
-If active recovery / conditioning is used, the subsystem **shall** interface with ATA 24 power within allocated power envelope and shall enter safe state under undervoltage/overvoltage conditions.  
+If active recovery / conditioning is used, the subsystem **shall** interface with ATA 24 power within allocated power envelope and shall enter safe state under under-voltage/over-voltage conditions.  
 **Verification:** Analysis + Test.  
 **Acceptance:** Power envelope compliance and safe transitions.  
 **KNU-TYPE:** ANA, TST, ICD  
