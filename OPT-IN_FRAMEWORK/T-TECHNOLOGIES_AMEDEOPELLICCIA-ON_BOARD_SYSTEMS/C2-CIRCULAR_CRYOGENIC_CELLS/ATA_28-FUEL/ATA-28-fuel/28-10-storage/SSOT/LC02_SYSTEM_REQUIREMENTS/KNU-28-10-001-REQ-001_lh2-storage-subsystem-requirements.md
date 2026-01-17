@@ -60,7 +60,7 @@ Applies to the LH₂ storage assembly including:
 These parameters shall be baselined via trade study + safety/certification analysis.
 
 | Parameter ID | Description | Unit | Initial Value |
-|---|---:|---:|---|
+|:---|:---|:---:|:---:|
 | P-28-10-QDOT-MAX | Max allowable net heat leak into stored LH₂ (steady-state) | W | TBD |
 | P-28-10-BOG-MAX | Max allowable boil-off rate in hold condition | % mass/day | TBD |
 | P-28-10-HOLD-TGT | Minimum ground hold time without top-up or operational disruption | h | TBD |
