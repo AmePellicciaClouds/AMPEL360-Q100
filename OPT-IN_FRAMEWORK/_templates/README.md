@@ -10,14 +10,14 @@ Every ATA chapter implements the same three knowledge bases:
 |----------------|---------|-------------------|
 | **GENESIS/** | KNOT-driven uncertainty + decisions | KNOTs, decision logs, trade studies |
 | **SSOT/** | Authoritative engineering truth (LC01-LC14) | KNUs (REQ/ICD/ANA/TST), RTM links |
-| **PUBS/** | Publication-grade outputs (CSDB/DMC) | S1000D data modules, IETP packaging |
+| **PUBS/** | Publication-grade outputs with runtime IETP delivery | CSDB, IETP_RUNTIME, ASIT, EXPORTS |
 
 ## Template Structure
 
 ```
 _templates/
 ├── README.md                          # This file
-├── scaffold_chapter.py                # Scaffolding automation script (v1.1.0)
+├── scaffold_chapter.py                # Scaffolding automation script (v1.2.0)
 │
 ├── GENESIS_TEMPLATE/                  # Uncertainty space templates
 │   ├── KNOT/                          # Knowledge node framing
@@ -31,7 +31,7 @@ _templates/
 │   ├── LC01_PROBLEM_STATEMENT/        # Problem definition, TOKENOMICS
 │   ├── LC02_SYSTEM_REQUIREMENTS/      # System requirements
 │   ├── LC03_DESIGN_MODELS/            # Design models
-│   ├── LC04_ANALYSIS_MODELS/          # Analysis models (formerly LC04_DESIGN_DEFINITION)
+│   ├── LC04_ANALYSIS_MODELS/          # Analysis models
 │   ├── LC05_INTEGRATION_TESTING_V6V/  # Integration testing
 │   ├── LC06_QUALITY/                  # Quality assurance
 │   ├── LC07_SAFETY_AND_SECURITY/      # Safety & security
@@ -45,8 +45,49 @@ _templates/
 │
 ├── PUBS_TEMPLATE/                     # Publication outputs templates
 │   ├── CSDB/                          # S1000D Common Source Database
-│   ├── DMC/                           # Data Module Code index
+│   │   ├── DM/                        # Data Modules
+│   │   ├── DMC/                       # Data Module Codes
+│   │   ├── ICN/                       # Illustrations
+│   │   ├── PM/                        # Publication Modules
+│   │   ├── COMREF/                    # Common References
+│   │   └── BREX/                      # Business Rules
+│   │
+│   ├── IETP_RUNTIME/                  # Runtime delivery layer
+│   │   ├── ASIT/                      # App-Builder + Orchestration + UI Intelligence
+│   │   │   ├── APP_BUILDER/
+│   │   │   ├── ORCHESTRATION/
+│   │   │   ├── UI_CONFIG/
+│   │   │   ├── USER_MODELS/
+│   │   │   ├── CONTENT_ROUTING/
+│   │   │   ├── POLICY_GATES/
+│   │   │   ├── TELEMETRY/
+│   │   │   └── CONNECTORS/
+│   │   │
+│   │   ├── MODULES/                   # Publication Modules (runtime)
+│   │   │   ├── PM_CORE/
+│   │   │   ├── PM_MAINTENANCE/
+│   │   │   ├── PM_OPERATIONAL/
+│   │   │   ├── PM_TRAINING/
+│   │   │   └── PM_CUSTOM/
+│   │   │
+│   │   ├── PACKAGES/                  # Deployable Packages
+│   │   │   ├── PKG_BASELINE/
+│   │   │   ├── PKG_OPERATOR/
+│   │   │   ├── PKG_MRO/
+│   │   │   ├── PKG_LINE_MAINT/
+│   │   │   ├── PKG_HEAVY_MAINT/
+│   │   │   └── PKG_REGULATORY/
+│   │   │
+│   │   ├── RUNTIME_SCHEMA/
+│   │   ├── DELIVERY/
+│   │   ├── BUILDS/
+│   │   └── QA/
+│   │
 │   └── EXPORTS/                       # Export configurations
+│       ├── PDF/
+│       ├── HTML/
+│       ├── IETP/
+│       └── DATA_DROPS/
 │
 ├── BOOTSTRAP_PACK/                    # Chapter initialization templates
 │   ├── README.md.template             # Chapter README
@@ -54,6 +95,41 @@ _templates/
 │
 └── PUB_TEMPLATE/                      # (Legacy) AMM/TRN structure
     └── AMM/                           # Retained for compatibility
+```
+
+## PUBS Layer Evolution
+
+The PUBS layer has evolved from static CSDB outputs to **runtime-ready IETP delivery**:
+
+- **CSDB** remains the S1000D authoritative publication content (canonical source)
+- **IETP_RUNTIME** provides packaging + orchestration + delivery capabilities
+- **ASIT** (Aircraft Standard Information Transponder) acts as the app-builder + meta-intelligence layer
+
+### ASIT Capabilities
+
+ASIT transforms static publications into adaptive, user-configured IETP experiences:
+
+| Component | Purpose |
+|-----------|---------|
+| APP_BUILDER | Generates IETP apps from package definitions |
+| ORCHESTRATION | Content assembly logic (modules, roles, aircraft config) |
+| UI_CONFIG | Role-based UI, layout, widgets, themes |
+| USER_MODELS | Operator/MRO/engineer personas and privileges |
+| CONTENT_ROUTING | Configuration-based content delivery |
+| POLICY_GATES | Safety/regulatory gates for content access |
+| TELEMETRY | Usage analytics and navigation patterns |
+| CONNECTORS | Links to SSOT trace data, parts catalogs, maintenance records |
+
+### Deployable Packages
+
+Each package (`PKG_*`) contains a standardized build recipe:
+
+```
+PKG_BASELINE/
+├── package.manifest.yaml    # Package metadata and dependencies
+├── content.selection.yaml   # Content set selection rules
+├── ui.profile.yaml          # Role-based UI configuration
+└── modules.enabled.yaml     # Feature module configuration
 ```
 
 ## Usage
@@ -85,7 +161,7 @@ The scaffold script creates:
 1. **Complete folder structure** following canonical triple knowledge-base spine
 2. **GENESIS layer** with O-KNOT, Y-KNOT, KNOT, DECISIONS, TRADE_STUDIES
 3. **SSOT layer** with all LC01-LC14 lifecycle folders
-4. **PUBS layer** with CSDB, DMC, EXPORTS
+4. **PUBS layer** with CSDB, IETP_RUNTIME (ASIT, MODULES, PACKAGES), EXPORTS
 5. **README.md** with chapter overview and quick start
 6. **00_INDEX.md** with comprehensive artifact index
 
@@ -118,9 +194,28 @@ The scaffold script creates:
 │   └── LC14_RETIREMENT_CIRCULARITY/
 │
 ├── PUBS/                             # Publications
-│   ├── CSDB/                         # S1000D configuration
-│   ├── DMC/                          # Data module index
-│   └── EXPORTS/                      # Export configuration
+│   ├── CSDB/                         # S1000D authoritative content
+│   │   ├── DMC/                      # Data module codes
+│   │   ├── DM/                       # Data modules
+│   │   ├── ICN/                      # Illustrations
+│   │   ├── PM/                       # Publication modules
+│   │   ├── COMREF/                   # Common references
+│   │   └── BREX/                     # Business rules
+│   │
+│   ├── IETP_RUNTIME/                 # Runtime delivery layer
+│   │   ├── ASIT/                     # App-builder + intelligence
+│   │   ├── MODULES/                  # Publication modules (PM_*)
+│   │   ├── PACKAGES/                 # Deployable packages (PKG_*)
+│   │   ├── RUNTIME_SCHEMA/           # Schema definitions
+│   │   ├── DELIVERY/                 # Delivery channels
+│   │   ├── BUILDS/                   # Build artifacts
+│   │   └── QA/                       # Quality assurance
+│   │
+│   └── EXPORTS/                      # Export formats
+│       ├── PDF/
+│       ├── HTML/
+│       ├── IETP/
+│       └── DATA_DROPS/
 │
 ├── README.md                         # Chapter overview
 └── 00_INDEX.md                       # Knowledge base index
@@ -138,9 +233,11 @@ The scaffold script creates:
    - Populate `KNU_PLAN.csv` with planned artifacts
    - Track unknowns in `TBD_REGISTER.csv`
 
-3. **Set up publications**
+3. **Set up publications with IETP_RUNTIME**
    - Review `PUBS/CSDB/csdb_config.yaml`
-   - Configure export formats in `PUBS/EXPORTS/export_config.yaml`
+   - Configure packages in `PUBS/IETP_RUNTIME/PACKAGES/PKG_BASELINE/`
+   - Set up ASIT orchestration in `PUBS/IETP_RUNTIME/ASIT/`
+   - Configure export formats in `PUBS/EXPORTS/`
 
 ## Priority Chapters
 

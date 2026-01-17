@@ -8,13 +8,13 @@ This script automates the creation of the canonical "triple knowledge-base spine
 The canonical structure for every ATA chapter:
 1. GENESIS/ - KNOT-driven uncertainty + decisions
 2. SSOT/ - Authoritative engineering truth (LC01-LC14)
-3. PUBS/ - Publication-grade customer/maintenance outputs (CSDB/DMC)
+3. PUBS/ - Publication-grade customer/maintenance outputs with IETP_RUNTIME + ASIT
 
 Usage:
     python scaffold_chapter.py --chapter 28 --title "Fuel" --axis T-TECHNOLOGIES
 
 Author: AMPEL360 Program Office
-Version: 1.1.0
+Version: 1.2.0
 Date: 2026-01-17
 """
 
@@ -237,10 +237,56 @@ def create_directory_structure(base_path, chapter, section, config, dry_run=Fals
         "SSOT/LC12_SUPPORT_SERVICES",
         "SSOT/LC13_MRO_SUSTAINMENT",
         "SSOT/LC14_RETIREMENT_CIRCULARITY",
-        # PUBS structure (Publication-grade outputs)
-        "PUBS/CSDB",
-        "PUBS/DMC",
-        "PUBS/EXPORTS"
+        # PUBS structure (Publication-grade outputs with IETP_RUNTIME + ASIT)
+        # CSDB - S1000D authoritative publication content
+        "PUBS/CSDB/DMC",
+        "PUBS/CSDB/DM",
+        "PUBS/CSDB/ICN",
+        "PUBS/CSDB/PM",
+        "PUBS/CSDB/COMREF",
+        "PUBS/CSDB/BREX",
+        # IETP_RUNTIME - runtime delivery and app logic
+        "PUBS/IETP_RUNTIME/ASIT/APP_BUILDER",
+        "PUBS/IETP_RUNTIME/ASIT/ORCHESTRATION",
+        "PUBS/IETP_RUNTIME/ASIT/UI_CONFIG",
+        "PUBS/IETP_RUNTIME/ASIT/USER_MODELS",
+        "PUBS/IETP_RUNTIME/ASIT/CONTENT_ROUTING",
+        "PUBS/IETP_RUNTIME/ASIT/POLICY_GATES",
+        "PUBS/IETP_RUNTIME/ASIT/TELEMETRY",
+        "PUBS/IETP_RUNTIME/ASIT/CONNECTORS",
+        "PUBS/IETP_RUNTIME/MODULES/PM_CORE",
+        "PUBS/IETP_RUNTIME/MODULES/PM_MAINTENANCE",
+        "PUBS/IETP_RUNTIME/MODULES/PM_OPERATIONAL",
+        "PUBS/IETP_RUNTIME/MODULES/PM_TRAINING",
+        "PUBS/IETP_RUNTIME/MODULES/PM_CUSTOM",
+        "PUBS/IETP_RUNTIME/PACKAGES/PKG_BASELINE",
+        "PUBS/IETP_RUNTIME/PACKAGES/PKG_OPERATOR",
+        "PUBS/IETP_RUNTIME/PACKAGES/PKG_MRO",
+        "PUBS/IETP_RUNTIME/PACKAGES/PKG_LINE_MAINT",
+        "PUBS/IETP_RUNTIME/PACKAGES/PKG_HEAVY_MAINT",
+        "PUBS/IETP_RUNTIME/PACKAGES/PKG_REGULATORY",
+        "PUBS/IETP_RUNTIME/RUNTIME_SCHEMA/CONTENT_MODEL",
+        "PUBS/IETP_RUNTIME/RUNTIME_SCHEMA/UI_SCHEMA",
+        "PUBS/IETP_RUNTIME/RUNTIME_SCHEMA/PERMISSIONS",
+        "PUBS/IETP_RUNTIME/RUNTIME_SCHEMA/EVENTS",
+        "PUBS/IETP_RUNTIME/RUNTIME_SCHEMA/VALIDATION",
+        "PUBS/IETP_RUNTIME/DELIVERY/WEB",
+        "PUBS/IETP_RUNTIME/DELIVERY/MOBILE",
+        "PUBS/IETP_RUNTIME/DELIVERY/OFFLINE",
+        "PUBS/IETP_RUNTIME/DELIVERY/ONBOARD",
+        "PUBS/IETP_RUNTIME/DELIVERY/GSE",
+        "PUBS/IETP_RUNTIME/BUILDS/MANIFESTS",
+        "PUBS/IETP_RUNTIME/BUILDS/INDEXES",
+        "PUBS/IETP_RUNTIME/BUILDS/RELEASES",
+        "PUBS/IETP_RUNTIME/QA/VALIDATION_REPORTS",
+        "PUBS/IETP_RUNTIME/QA/LINK_CHECKS",
+        "PUBS/IETP_RUNTIME/QA/CONSISTENCY_AUDITS",
+        "PUBS/IETP_RUNTIME/QA/EXPORT_EVIDENCE",
+        # EXPORTS - publication output formats
+        "PUBS/EXPORTS/PDF",
+        "PUBS/EXPORTS/HTML",
+        "PUBS/EXPORTS/IETP",
+        "PUBS/EXPORTS/DATA_DROPS"
     ]
     
     if dry_run:
@@ -375,8 +421,8 @@ def scaffold_ssot(chapter_path, chapter, section, config, template_dir, dry_run=
 
 
 def scaffold_pubs(chapter_path, chapter, section, config, template_dir, dry_run=False):
-    """Scaffold PUBS layer files (canonical triple knowledge-base spine)."""
-    print("\n=== Scaffolding PUBS Layer ===")
+    """Scaffold PUBS layer files with IETP_RUNTIME + ASIT support."""
+    print("\n=== Scaffolding PUBS Layer (with IETP_RUNTIME + ASIT) ===")
     
     # CSDB configuration
     process_template_file(
@@ -385,10 +431,10 @@ def scaffold_pubs(chapter_path, chapter, section, config, template_dir, dry_run=
         chapter, section, config, dry_run
     )
     
-    # DMC index
+    # DMC index (under CSDB/DMC)
     process_template_file(
-        template_dir / "PUBS_TEMPLATE" / "DMC" / "dmc_index.yaml.template",
-        chapter_path / "PUBS" / "DMC" / "dmc_index.yaml",
+        template_dir / "PUBS_TEMPLATE" / "CSDB" / "DMC" / "dmc_index.yaml.template",
+        chapter_path / "PUBS" / "CSDB" / "DMC" / "dmc_index.yaml",
         chapter, section, config, dry_run
     )
     
@@ -398,6 +444,41 @@ def scaffold_pubs(chapter_path, chapter, section, config, template_dir, dry_run=
         chapter_path / "PUBS" / "EXPORTS" / "export_config.yaml",
         chapter, section, config, dry_run
     )
+    
+    # IETP_RUNTIME Package templates (PKG_BASELINE)
+    pkg_templates = [
+        "package.manifest.yaml.template",
+        "content.selection.yaml.template",
+        "ui.profile.yaml.template",
+        "modules.enabled.yaml.template"
+    ]
+    
+    for pkg_template in pkg_templates:
+        template_file = template_dir / "PUBS_TEMPLATE" / "IETP_RUNTIME" / "PACKAGES" / pkg_template
+        if template_file.exists():
+            process_template_file(
+                template_file,
+                chapter_path / "PUBS" / "IETP_RUNTIME" / "PACKAGES" / "PKG_BASELINE" / pkg_template.replace(".template", ""),
+                chapter, section, config, dry_run
+            )
+    
+    # ASIT orchestration configuration
+    asit_template = template_dir / "PUBS_TEMPLATE" / "IETP_RUNTIME" / "ASIT" / "asit_orchestration.yaml.template"
+    if asit_template.exists():
+        process_template_file(
+            asit_template,
+            chapter_path / "PUBS" / "IETP_RUNTIME" / "ASIT" / "ORCHESTRATION" / "asit_orchestration.yaml",
+            chapter, section, config, dry_run
+        )
+    
+    # ASIT policy gates
+    policy_template = template_dir / "PUBS_TEMPLATE" / "IETP_RUNTIME" / "ASIT" / "policy_gates.yaml.template"
+    if policy_template.exists():
+        process_template_file(
+            policy_template,
+            chapter_path / "PUBS" / "IETP_RUNTIME" / "ASIT" / "POLICY_GATES" / "policy_gates.yaml",
+            chapter, section, config, dry_run
+        )
 
 
 def create_readme_and_index(chapter_path, chapter, section, config, template_dir, dry_run=False):
@@ -431,8 +512,8 @@ def main():
     config = get_chapter_config(chapter, args.title, args.axis)
     
     print(f"\n{'='*70}")
-    print(f"ATA Chapter Scaffolding Tool v1.1.0")
-    print(f"Canonical Triple Knowledge-Base Spine")
+    print(f"ATA Chapter Scaffolding Tool v1.2.0")
+    print(f"Canonical Triple Knowledge-Base Spine + IETP_RUNTIME + ASIT")
     print(f"{'='*70}")
     print(f"Chapter: ATA {chapter} - {config['title']}")
     print(f"Axis: {config['axis']}")
