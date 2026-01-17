@@ -310,7 +310,17 @@ A KNOT is **CLOSED** when:
 
 ## OPT-IN Framework (5-Axis Topology)
 
-The OPT-IN Framework organizes all 79 ATA chapters across five axes:
+The OPT-IN Framework organizes all 79 ATA chapters across five axes. Each ATA chapters is build on 3 main knowledge bases: GENESIS/KNOTS + SSOT/LC/KNU + PUB/CSDB/DMC
+
+```
+├── ATA_NN-SYSTEM/
+│   └── ATA-NN-00-general/
+│       └── 00-00-general/
+│           ├── GENESIS/
+│           ├── SSOT/
+│           └── PUBS/
+
+```
 
 ```
 OPT-IN_FRAMEWORK/
