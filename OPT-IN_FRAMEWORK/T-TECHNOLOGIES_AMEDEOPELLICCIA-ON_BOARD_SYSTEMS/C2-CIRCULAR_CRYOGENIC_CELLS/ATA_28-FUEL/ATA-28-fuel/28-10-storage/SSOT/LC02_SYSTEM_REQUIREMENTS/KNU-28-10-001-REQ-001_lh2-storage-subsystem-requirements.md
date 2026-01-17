@@ -302,16 +302,31 @@ The subsystem **shall** support traceable lifecycle evidence capture (configurat
 
 ---
 
-## 6. Verification Matrix (MoC Summary)
+## 6. Verification Matrix (Complete MoC)
 | Req ID | Verification Method | Evidence Artifact |
 |---|---|---|
 | REQ-28-10-001 | Analysis + Test | Thermal model + calorimetry report |
 | REQ-28-10-002 | Test + Analysis | Ground hold boil-off test report |
 | REQ-28-10-003 | Demonstration + Test | Endurance demo log + soak report |
-| REQ-28-10-020 | Test + Demo | BOG recovery efficiency results |
+| REQ-28-10-004 | Analysis + Test | Thermal transient analysis + boundary scenario test |
+| REQ-28-10-010 | Analysis + Test | Thermal model + calorimetry report |
+| REQ-28-10-011 | Test + Inspection | Vacuum performance test + inspection checklist |
+| REQ-28-10-012 | Analysis + Test | Thermal bridge analysis + conduction test |
+| REQ-28-10-020 | Test + Demonstration | BOG recovery efficiency results |
+| REQ-28-10-021 | Analysis + Test + ICD | BOG conditioning analysis + test + interface spec |
+| REQ-28-10-022 | Test + Demonstration | Pressure control test + demo log |
+| REQ-28-10-023 | Analysis + Test + ICD | Re-liquefaction analysis + test + interface spec |
 | REQ-28-10-030 | Analysis + Test | Relief sizing + proof test |
-| REQ-28-10-041 | Test + Demo | Leak detection validation report |
-| REQ-28-10-052 | Demonstration | Ground servicing procedure evidence |
+| REQ-28-10-031 | Analysis + Demonstration | Fail-safe analysis + safe-mode demo |
+| REQ-28-10-032 | Inspection + Analysis + ICD | Vent routing inspection + ICD compliance |
+| REQ-28-10-040 | Test + Inspection | Sensor performance test + inspection record |
+| REQ-28-10-041 | Test + Demonstration | Leak detection validation report |
+| REQ-28-10-042 | Analysis + Test | Boil-off accounting analysis + measurement test |
+| REQ-28-10-050 | Inspection + Test + ICD | Interface inspection + test + ICD compliance |
+| REQ-28-10-051 | Analysis + Test + ICD | Power interface analysis + test + ICD |
+| REQ-28-10-052 | Demonstration + ICD | Ground servicing procedure evidence + ICD |
+| REQ-28-10-060 | Inspection + Test | Degradation inspection + maintenance trigger test |
+| REQ-28-10-061 | Inspection | DPP evidence path inspection record |
 
 ---
 
