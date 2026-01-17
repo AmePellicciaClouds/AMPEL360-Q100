@@ -366,9 +366,9 @@ def scaffold_ssot(chapter_path, chapter, section, config, template_dir, dry_run=
             chapter, section, config, dry_run
         )
     
-    # LC04 derivation schema (to LC04_ANALYSIS_MODELS in canonical structure)
+    # LC04 derivation schema
     process_template_file(
-        template_dir / "SSOT_TEMPLATE" / "LC04_DESIGN_DEFINITION" / "_derivation.schema.yaml",
+        template_dir / "SSOT_TEMPLATE" / "LC04_ANALYSIS_MODELS" / "_derivation.schema.yaml",
         chapter_path / "SSOT" / "LC04_ANALYSIS_MODELS" / "_derivation.schema.yaml",
         chapter, section, config, dry_run
     )
