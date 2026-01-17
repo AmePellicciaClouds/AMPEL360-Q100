@@ -227,7 +227,7 @@ def create_directory_structure(base_path, chapter, section, config, dry_run=Fals
         "SSOT/LC02_SYSTEM_REQUIREMENTS",
         "SSOT/LC03_DESIGN_MODELS",
         "SSOT/LC04_ANALYSIS_MODELS",
-        "SSOT/LC05_INTEGRATION_TESTING_V6V",
+        "SSOT/LC05_INTEGRATION_TESTING_VandV",
         "SSOT/LC06_QUALITY",
         "SSOT/LC07_SAFETY_AND_SECURITY",
         "SSOT/LC08_CERTIFICATION_FIRST_FLIGHT",
