@@ -81,7 +81,7 @@ To standardize "Number of estimated files" across Section 5:
 | **ANA** | Engineering analysis / model-based evidence | 2 *(model/config + report)* |
 | **TST** | Test evidence | 2 *(procedure + report/data log)* |
 | **DEM** | Demonstration evidence | 2 *(demo procedure + demo log)* |
-| **INS** | Inspection evidence | 1 *(inspection checklist + record)* |
+| **INS** | Inspection evidence | 1 *(inspection package: checklist + record)* |
 | **ICD** | Interface Control Document / interface declaration | 1 *(ICD or interface spec)* |
 
 > Note: counts are the minimum pack size for traceable compliance closure. Programs may expand this baseline per certification and QA rigor.
